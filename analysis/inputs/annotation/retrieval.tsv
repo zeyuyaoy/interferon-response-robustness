@@ -1,0 +1,9 @@
+retrieved_utc	2026-11-06T22:08:58Z
+ensembl_release	116
+ensembl_assembly	GRCh38.p14
+primary_chromosomes	Y;20;X;13;22;10;6;19;14;18;2;4;21;9;11;17;8;7;15;12;1;16;5;3;MT
+grch37_assembly	GRCh37.p13
+grch37_primary_chromosomes	MT;11;21;7;Y;2;17;22;1;18;13;16;6;X;3;9;12;14;15;20;8;4;10;19;5
+grch37	https://grch37.rest.ensembl.org/lookup/id (POST); build reported on GEO GSE96583 (hg19)
+hgnc	https://rest.genenames.org/fetch/symbol/<symbol>
+ensembl	https://rest.ensembl.org/lookup/id (POST); archive/id for IDs not in current release

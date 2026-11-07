@@ -1,0 +1,29 @@
+Input manifest (frozen before any outcome was computed; retrieved 2026-11-06)
+
+Core signature
+  Source: Rigby et al. (2026) "Single-cell analysis of signalling and transcriptional
+          responses to type I interferons", EMBO Reports 27:2491-2513.
+  DOI:    10.1038/s44319-026-00750-3
+  Genes:  IFI44L ISG15 IFIT3 XAF1 MX1 IFI6 IFIT1 TRIM22 MX2 RSAD2  (analysis/inputs/core_isgs.tsv)
+  Verified against the article by the author. Discovery single-cell experiment: one donor, 24 h.
+
+Primary dataset
+  Kang et al. (2018) Nat Biotechnol; GEO GSE96583
+  Loaded via muscData::Kang18_8vs8() from ExperimentHub (record EH2259), Bioconductor 3.23.
+  md5 of the cached file is recorded at run time in results/01_quality_control/input_checksums.csv.
+
+Hallmark gene sets (alternative signature / control-gene exclusion)
+  msigdbr 26.1.1, MSigDB db_version 2026.1.Hs, collection H, human
+  HALLMARK_INTERFERON_ALPHA_RESPONSE  97 genes  (analysis/inputs/hallmark_ifna.tsv)
+  HALLMARK_INTERFERON_GAMMA_RESPONSE 200 genes  (analysis/inputs/hallmark_ifng.tsv; exclusion only)
+
+Software: R 4.6.2; edgeR 4.10.7; see results/sessionInfo.txt.
+
+Post hoc addition (after run 20261106T144044Z-b11246a; not part of the frozen protocol)
+  analysis/inputs/annotation/  HGNC REST + Ensembl REST (GRCh38 release 116; GRCh37.p13 via
+  grch37.rest.ensembl.org) snapshot written by analysis/00_fetch_annotation.R; retrieval time in
+  analysis/inputs/annotation/retrieval.tsv. Used for reference-panel exclusion of renamed /
+  alternative-annotation Hallmark rows and for the labelled post hoc Hallmark analysis.
+
+Pre-specified alternative normalization (post hoc; fixed before its outcome was computed)
+  analysis/inputs/alt_norm_specification.tsv

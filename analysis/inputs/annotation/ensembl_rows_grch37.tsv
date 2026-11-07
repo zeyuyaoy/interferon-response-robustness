@@ -1,0 +1,317 @@
+ENSEMBL	in_grch37	seq_region	biotype	display_name	ens_hgnc_id	description	in_current
+ENSG00000137959	TRUE	1	protein_coding	IFI44L	HGNC:17817	interferon-induced protein 44-like [Source:HGNC Symbol;Acc:17817]	TRUE
+ENSG00000187608	TRUE	1	protein_coding	ISG15	HGNC:4053	ISG15 ubiquitin-like modifier [Source:HGNC Symbol;Acc:4053]	TRUE
+ENSG00000119917	TRUE	10	protein_coding	IFIT3	HGNC:5411	interferon-induced protein with tetratricopeptide repeats 3 [Source:HGNC Symbol;Acc:5411]	TRUE
+ENSG00000132530	TRUE	17	protein_coding	XAF1	HGNC:30932	XIAP associated factor 1 [Source:HGNC Symbol;Acc:30932]	TRUE
+ENSG00000157601	TRUE	21	protein_coding	MX1	HGNC:7532	myxovirus (influenza virus) resistance 1, interferon-inducible protein p78 (mouse) [Source:HGNC Symbol;Acc:7532]	TRUE
+ENSG00000126709	TRUE	1	protein_coding	IFI6	HGNC:4054	interferon, alpha-inducible protein 6 [Source:HGNC Symbol;Acc:4054]	TRUE
+ENSG00000185745	TRUE	10	protein_coding	IFIT1	HGNC:5407	interferon-induced protein with tetratricopeptide repeats 1 [Source:HGNC Symbol;Acc:5407]	TRUE
+ENSG00000132274	TRUE	11	protein_coding	TRIM22	HGNC:16379	tripartite motif containing 22 [Source:HGNC Symbol;Acc:16379]	TRUE
+ENSG00000183486	TRUE	21	protein_coding	MX2	HGNC:7533	myxovirus (influenza virus) resistance 2 (mouse) [Source:HGNC Symbol;Acc:7533]	TRUE
+ENSG00000134321	TRUE	2	protein_coding	RSAD2	HGNC:30908	radical S-adenosyl methionine domain containing 2 [Source:HGNC Symbol;Acc:30908]	TRUE
+ENSG00000160710	TRUE	1	protein_coding	ADAR	HGNC:225	adenosine deaminase, RNA-specific [Source:HGNC Symbol;Acc:225]	TRUE
+ENSG00000166710	TRUE	15	protein_coding	B2M	HGNC:914	beta-2-microglobulin [Source:HGNC Symbol;Acc:914]	TRUE
+ENSG00000168062	TRUE	11	protein_coding	BATF2	HGNC:25163	basic leucine zipper transcription factor, ATF-like 2 [Source:HGNC Symbol;Acc:25163]	TRUE
+ENSG00000130303	TRUE	19	protein_coding	BST2	HGNC:1119	bone marrow stromal cell antigen 2 [Source:HGNC Symbol;Acc:1119]	TRUE
+ENSG00000182326	TRUE	12	protein_coding	C1S	HGNC:1247	complement component 1, s subcomponent [Source:HGNC Symbol;Acc:1247]	TRUE
+ENSG00000269882	TRUE	HG344_PATCH	protein_coding	C1S	HGNC:1247	complement component 1, s subcomponent [Source:HGNC Symbol;Acc:1247]	TRUE
+ENSG00000137752	TRUE	11	protein_coding	CASP1	HGNC:1499	caspase 1, apoptosis-related cysteine peptidase [Source:HGNC Symbol;Acc:1499]	TRUE
+ENSG00000064012	TRUE	2	protein_coding	CASP8	HGNC:1509	caspase 8, apoptosis-related cysteine peptidase [Source:HGNC Symbol;Acc:1509]	TRUE
+ENSG00000121797	TRUE	3	protein_coding	CCRL2	HGNC:1612	chemokine (C-C motif) receptor-like 2 [Source:HGNC Symbol;Acc:1612]	TRUE
+ENSG00000196776	TRUE	3	protein_coding	CD47	HGNC:1682	CD47 molecule [Source:HGNC Symbol;Acc:1682]	TRUE
+ENSG00000019582	TRUE	5	protein_coding	CD74	HGNC:1697	CD74 molecule, major histocompatibility complex, class II invariant chain [Source:HGNC Symbol;Acc:1697]	TRUE
+ENSG00000134326	TRUE	2	protein_coding	CMPK2	HGNC:27015	cytidine monophosphate (UMP-CMP) kinase 2, mitochondrial [Source:HGNC Symbol;Acc:27015]	TRUE
+ENSG00000137200	TRUE	6	protein_coding	CMTR1	HGNC:21077	cap methyltransferase 1 [Source:HGNC Symbol;Acc:21077]	TRUE
+ENSG00000173786	TRUE	17	protein_coding	CNP	HGNC:2158	2',3'-cyclic nucleotide 3' phosphodiesterase [Source:HGNC Symbol;Acc:2158]	TRUE
+ENSG00000260283	TRUE	HG185_PATCH	protein_coding	CNP	HGNC:2158	2',3'-cyclic nucleotide 3' phosphodiesterase [Source:HGNC Symbol;Acc:2158]	TRUE
+ENSG00000184371	TRUE	1	protein_coding	CSF1	HGNC:2432	colony stimulating factor 1 (macrophage) [Source:HGNC Symbol;Acc:2432]	TRUE
+ENSG00000169245	TRUE	4	protein_coding	CXCL10	HGNC:10637	chemokine (C-X-C motif) ligand 10 [Source:HGNC Symbol;Acc:10637]	TRUE
+ENSG00000169248	TRUE	4	protein_coding	CXCL11	HGNC:10638	chemokine (C-X-C motif) ligand 11 [Source:HGNC Symbol;Acc:10638]	TRUE
+ENSG00000137628	TRUE	4	protein_coding	DDX60	HGNC:25942	DEAD (Asp-Glu-Ala-Asp) box polypeptide 60 [Source:HGNC Symbol;Acc:25942]	TRUE
+ENSG00000108771	TRUE	17	protein_coding	DHX58	HGNC:29517	DEXH (Asp-Glu-X-His) box polypeptide 58 [Source:HGNC Symbol;Acc:29517]	TRUE
+ENSG00000260178	TRUE	HG185_PATCH	protein_coding	DHX58	HGNC:29517	DEXH (Asp-Glu-X-His) box polypeptide 58 [Source:HGNC Symbol;Acc:29517]	TRUE
+ENSG00000055332	TRUE	2	protein_coding	EIF2AK2	HGNC:9437	eukaryotic translation initiation factor 2-alpha kinase 2 [Source:HGNC Symbol;Acc:9437]	TRUE
+ENSG00000120690	TRUE	13	protein_coding	ELF1	HGNC:3316	E74-like factor 1 (ets domain transcription factor) [Source:HGNC Symbol;Acc:3316]	TRUE
+ENSG00000133106	TRUE	13	protein_coding	EPSTI1	HGNC:16465	epithelial stromal interaction 1 (breast) [Source:HGNC Symbol;Acc:16465]	TRUE
+ENSG00000162645	TRUE	1	protein_coding	GBP2	HGNC:4183	guanylate binding protein 2, interferon-inducible [Source:HGNC Symbol;Acc:4183]	TRUE
+ENSG00000162654	TRUE	1	protein_coding	GBP4	HGNC:20480	guanylate binding protein 4 [Source:HGNC Symbol;Acc:20480]	TRUE
+ENSG00000137198	TRUE	6	protein_coding	GMPR	HGNC:4376	guanosine monophosphate reductase [Source:HGNC Symbol;Acc:4376]	TRUE
+ENSG00000130589	TRUE	20	protein_coding	HELZ2	HGNC:30021	helicase with zinc finger 2, transcriptional coactivator [Source:HGNC Symbol;Acc:30021]	TRUE
+ENSG00000138642	TRUE	4	protein_coding	HERC6	HGNC:26072	HECT and RLD domain containing E3 ubiquitin protein ligase family member 6 [Source:HGNC Symbol;Acc:26072]	TRUE
+ENSG00000204525	TRUE	6	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000206435	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000225691	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000233841	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000237022	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000206452	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000228299	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-C	HGNC:4933	major histocompatibility complex, class I, C [Source:HGNC Symbol;Acc:4933]	TRUE
+ENSG00000165949	TRUE	14	protein_coding	IFI27	HGNC:5397	interferon, alpha-inducible protein 27 [Source:HGNC Symbol;Acc:5397]	TRUE
+ENSG00000216490	TRUE	19	protein_coding	IFI30	HGNC:5398	interferon, gamma-inducible protein 30 [Source:HGNC Symbol;Acc:5398]	TRUE
+ENSG00000068079	TRUE	17	protein_coding	IFI35	HGNC:5399	interferon-induced protein 35 [Source:HGNC Symbol;Acc:5399]	TRUE
+ENSG00000137965	TRUE	1	protein_coding	IFI44	HGNC:16938	interferon-induced protein 44 [Source:HGNC Symbol;Acc:16938]	TRUE
+ENSG00000115267	TRUE	2	protein_coding	IFIH1	HGNC:18873	interferon induced with helicase C domain 1 [Source:HGNC Symbol;Acc:18873]	TRUE
+ENSG00000119922	TRUE	10	protein_coding	IFIT2	HGNC:5409	interferon-induced protein with tetratricopeptide repeats 2 [Source:HGNC Symbol;Acc:5409]	TRUE
+ENSG00000185885	TRUE	11	protein_coding	IFITM1	HGNC:5412	interferon induced transmembrane protein 1 [Source:HGNC Symbol;Acc:5412]	TRUE
+ENSG00000185201	TRUE	11	protein_coding	IFITM2	HGNC:5413	interferon induced transmembrane protein 2 [Source:HGNC Symbol;Acc:5413]	TRUE
+ENSG00000142089	TRUE	11	protein_coding	IFITM3	HGNC:5414	interferon induced transmembrane protein 3 [Source:HGNC Symbol;Acc:5414]	TRUE
+ENSG00000164136	TRUE	4	protein_coding	IL15	HGNC:5977	interleukin 15 [Source:HGNC Symbol;Acc:5977]	TRUE
+ENSG00000077238	TRUE	16	protein_coding	IL4R	HGNC:6015	interleukin 4 receptor [Source:HGNC Symbol;Acc:6015]	TRUE
+ENSG00000104432	TRUE	8	protein_coding	IL7	HGNC:6023	interleukin 7 [Source:HGNC Symbol;Acc:6023]	TRUE
+ENSG00000125347	TRUE	5	protein_coding	IRF1	HGNC:6116	interferon regulatory factor 1 [Source:HGNC Symbol;Acc:6116]	TRUE
+ENSG00000168310	TRUE	4	protein_coding	IRF2	HGNC:6117	interferon regulatory factor 2 [Source:HGNC Symbol;Acc:6117]	TRUE
+ENSG00000185507	TRUE	11	protein_coding	IRF7	HGNC:6122	interferon regulatory factor 7 [Source:HGNC Symbol;Acc:6122]	TRUE
+ENSG00000213928	TRUE	14	protein_coding	IRF9	HGNC:6131	interferon regulatory factor 9 [Source:HGNC Symbol;Acc:6131]	TRUE
+ENSG00000172183	TRUE	15	protein_coding	ISG20	HGNC:6130	interferon stimulated exonuclease gene 20kDa [Source:HGNC Symbol;Acc:6130]	TRUE
+ENSG00000078081	TRUE	3	protein_coding	LAMP3	HGNC:14582	lysosomal-associated membrane protein 3 [Source:HGNC Symbol;Acc:14582]	TRUE
+ENSG00000002549	TRUE	4	protein_coding	LAP3	HGNC:18449	leucine aminopeptidase 3 [Source:HGNC Symbol;Acc:18449]	TRUE
+ENSG00000108679	TRUE	17	protein_coding	LGALS3BP	HGNC:6564	lectin, galactoside-binding, soluble, 3 binding protein [Source:HGNC Symbol;Acc:6564]	TRUE
+ENSG00000139679	TRUE	13	protein_coding	LPAR6	HGNC:15520	lysophosphatidic acid receptor 6 [Source:HGNC Symbol;Acc:15520]	TRUE
+ENSG00000160932	TRUE	8	protein_coding	LY6E	HGNC:6727	lymphocyte antigen 6 complex, locus E [Source:HGNC Symbol;Acc:6727]	TRUE
+ENSG00000155363	TRUE	1	protein_coding	MOV10	HGNC:7200	Mov10, Moloney leukemia virus 10, homolog (mouse) [Source:HGNC Symbol;Acc:7200]	TRUE
+ENSG00000141971	TRUE	19	protein_coding	MVB12A	HGNC:25153	multivesicular body subunit 12A [Source:HGNC Symbol;Acc:25153]	TRUE
+ENSG00000111912	TRUE	6	protein_coding	NCOA7	HGNC:21081	nuclear receptor coactivator 7 [Source:HGNC Symbol;Acc:21081]	TRUE
+ENSG00000123609	TRUE	2	protein_coding	NMI	HGNC:7854	N-myc (and STAT) interactor [Source:HGNC Symbol;Acc:7854]	TRUE
+ENSG00000013374	TRUE	7	protein_coding	NUB1	HGNC:17623	negative regulator of ubiquitin-like proteins 1 [Source:HGNC Symbol;Acc:17623]	TRUE
+ENSG00000089127	TRUE	12	protein_coding	OAS1	HGNC:8086	2'-5'-oligoadenylate synthetase 1, 40/46kDa [Source:HGNC Symbol;Acc:8086]	TRUE
+ENSG00000135114	TRUE	12	protein_coding	OASL	HGNC:8090	2'-5'-oligoadenylate synthetase-like [Source:HGNC Symbol;Acc:8090]	TRUE
+ENSG00000060491	TRUE	20	protein_coding	OGFR	HGNC:15768	opioid growth factor receptor [Source:HGNC Symbol;Acc:15768]	TRUE
+ENSG00000059378	TRUE	7	protein_coding	PARP12	HGNC:21919	poly (ADP-ribose) polymerase family, member 12 [Source:HGNC Symbol;Acc:21919]	TRUE
+ENSG00000173193	TRUE	3	protein_coding	PARP14	HGNC:29232	poly (ADP-ribose) polymerase family, member 14 [Source:HGNC Symbol;Acc:29232]	TRUE
+ENSG00000138496	TRUE	3	protein_coding	PARP9	HGNC:24118	poly (ADP-ribose) polymerase family, member 9 [Source:HGNC Symbol;Acc:24118]	TRUE
+ENSG00000188313	TRUE	3	protein_coding	PLSCR1	HGNC:9092	phospholipid scramblase 1 [Source:HGNC Symbol;Acc:9092]	TRUE
+ENSG00000138035	TRUE	2	protein_coding	PNPT1	HGNC:23166	polyribonucleotide nucleotidyltransferase 1 [Source:HGNC Symbol;Acc:23166]	TRUE
+ENSG00000101000	TRUE	20	protein_coding	PROCR	HGNC:9452	protein C receptor, endothelial [Source:HGNC Symbol;Acc:9452]	TRUE
+ENSG00000100567	TRUE	14	protein_coding	PSMA3	HGNC:9532	proteasome (prosome, macropain) subunit, alpha type, 3 [Source:HGNC Symbol;Acc:9532]	TRUE
+ENSG00000204264	TRUE	6	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000231631	TRUE	HSCHR6_MHC_SSTO	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000226201	TRUE	HSCHR6_MHC_MCF	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000235715	TRUE	HSCHR6_MHC_COX	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000236443	TRUE	HSCHR6_MHC_MANN	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000230669	TRUE	HSCHR6_MHC_APD	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000206298	TRUE	HSCHR6_MHC_QBL	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000230034	TRUE	HSCHR6_MHC_DBB	protein_coding	PSMB8	HGNC:9545	proteasome (prosome, macropain) subunit, beta type, 8 [Source:HGNC Symbol;Acc:9545]	TRUE
+ENSG00000240065	TRUE	6	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000243958	TRUE	HSCHR6_MHC_SSTO	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000240508	TRUE	HSCHR6_MHC_MCF	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000243067	TRUE	HSCHR6_MHC_COX	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000239836	TRUE	HSCHR6_MHC_MANN	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000242711	TRUE	HSCHR6_MHC_APD	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000243594	TRUE	HSCHR6_MHC_QBL	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000240118	TRUE	HSCHR6_MHC_DBB	protein_coding	PSMB9	HGNC:9546	proteasome (prosome, macropain) subunit, beta type, 9 [Source:HGNC Symbol;Acc:9546]	TRUE
+ENSG00000092010	TRUE	14	protein_coding	PSME1	HGNC:9568	proteasome (prosome, macropain) activator subunit 1 (PA28 alpha) [Source:HGNC Symbol;Acc:9568]	TRUE
+ENSG00000100911	TRUE	14	protein_coding	PSME2	HGNC:9569	proteasome (prosome, macropain) activator subunit 2 (PA28 beta) [Source:HGNC Symbol;Acc:9569]	TRUE
+ENSG00000104312	TRUE	8	protein_coding	RIPK2	HGNC:10020	receptor-interacting serine-threonine kinase 2 [Source:HGNC Symbol;Acc:10020]	TRUE
+ENSG00000092098	TRUE	14	protein_coding	RNF31	HGNC:16031	ring finger protein 31 [Source:HGNC Symbol;Acc:16031]	TRUE
+ENSG00000136514	TRUE	3	protein_coding	RTP4	HGNC:23992	receptor (chemosensory) transporter protein 4 [Source:HGNC Symbol;Acc:23992]	TRUE
+ENSG00000205413	TRUE	7	protein_coding	SAMD9	HGNC:1348	sterile alpha motif domain containing 9 [Source:HGNC Symbol;Acc:1348]	TRUE
+ENSG00000177409	TRUE	7	protein_coding	SAMD9L	HGNC:1349	sterile alpha motif domain containing 9-like [Source:HGNC Symbol;Acc:1349]	TRUE
+ENSG00000188404	TRUE	1	protein_coding	SELL	HGNC:10720	selectin L [Source:HGNC Symbol;Acc:10720]	TRUE
+ENSG00000155287	TRUE	10	protein_coding	SLC25A28	HGNC:23472	solute carrier family 25 (mitochondrial iron transporter), member 28 [Source:HGNC Symbol;Acc:23472]	TRUE
+ENSG00000135899	TRUE	2	protein_coding	SP110	HGNC:5401	SP110 nuclear body protein [Source:HGNC Symbol;Acc:5401]	TRUE
+ENSG00000170581	TRUE	12	protein_coding	STAT2	HGNC:11363	signal transducer and activator of transcription 2, 113kDa [Source:HGNC Symbol;Acc:11363]	TRUE
+ENSG00000168394	TRUE	6	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000224748	TRUE	HSCHR6_MHC_SSTO	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000230705	TRUE	HSCHR6_MHC_MCF	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000232367	TRUE	HSCHR6_MHC_COX	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000226173	TRUE	HSCHR6_MHC_MANN	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000227816	TRUE	HSCHR6_MHC_APD	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000206297	TRUE	HSCHR6_MHC_QBL	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000224212	TRUE	HSCHR6_MHC_DBB	protein_coding	TAP1	HGNC:43	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP) [Source:HGNC Symbol;Acc:43]	TRUE
+ENSG00000196116	TRUE	9	protein_coding	TDRD7	HGNC:30831	tudor domain containing 7 [Source:HGNC Symbol;Acc:30831]	TRUE
+ENSG00000112773	TRUE	6	protein_coding	FAM46A	HGNC:18345	family with sequence similarity 46, member A [Source:HGNC Symbol;Acc:18345]	TRUE
+ENSG00000146859	TRUE	7	protein_coding	TMEM140	HGNC:21870	transmembrane protein 140 [Source:HGNC Symbol;Acc:21870]	TRUE
+ENSG00000135148	TRUE	12	protein_coding	TRAFD1	HGNC:24808	TRAF-type zinc finger domain containing 1 [Source:HGNC Symbol;Acc:24808]	TRUE
+ENSG00000106785	TRUE	9	protein_coding	TRIM14	HGNC:16283	tripartite motif containing 14 [Source:HGNC Symbol;Acc:16283]	TRUE
+ENSG00000132109	TRUE	11	protein_coding	TRIM21	HGNC:11312	tripartite motif containing 21 [Source:HGNC Symbol;Acc:11312]	TRUE
+ENSG00000121060	TRUE	17	protein_coding	TRIM25	HGNC:12932	tripartite motif containing 25 [Source:HGNC Symbol;Acc:12932]	TRUE
+ENSG00000234127	TRUE	6	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000234046	TRUE	HSCHR6_MHC_SSTO	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000231641	TRUE	HSCHR6_MHC_MCF	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000230230	TRUE	HSCHR6_MHC_COX	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000231002	TRUE	HSCHR6_MHC_MANN	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000228881	TRUE	HSCHR6_MHC_APD	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000137313	TRUE	HSCHR6_MHC_QBL	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000226060	TRUE	HSCHR6_MHC_DBB	protein_coding	TRIM26	HGNC:12962	tripartite motif containing 26 [Source:HGNC Symbol;Acc:12962]	TRUE
+ENSG00000132256	TRUE	11	protein_coding	TRIM5	HGNC:16276	tripartite motif containing 5 [Source:HGNC Symbol;Acc:16276]	TRUE
+ENSG00000117289	TRUE	1	protein_coding	TXNIP	HGNC:16952	thioredoxin interacting protein [Source:HGNC Symbol;Acc:16952]	TRUE
+ENSG00000265972	TRUE	HG1287_PATCH	protein_coding	TXNIP	NA	cDNA FLJ61424, highly similar to Homo sapiens thioredoxin interacting protein (TXNIP), mRNA  [Source:UniProtKB/TrEMBL;Acc:B4DVM7]	TRUE
+ENSG00000182179	TRUE	3	protein_coding	UBA7	HGNC:12471	ubiquitin-like modifier activating enzyme 7 [Source:HGNC Symbol;Acc:12471]	TRUE
+ENSG00000156587	TRUE	11	protein_coding	UBE2L6	HGNC:12490	ubiquitin-conjugating enzyme E2L 6 [Source:HGNC Symbol;Acc:12490]	TRUE
+ENSG00000184979	TRUE	22	protein_coding	USP18	HGNC:12616	ubiquitin specific peptidase 18 [Source:HGNC Symbol;Acc:12616]	TRUE
+ENSG00000140105	TRUE	14	protein_coding	WARS	HGNC:12729	tryptophanyl-tRNA synthetase [Source:HGNC Symbol;Acc:12729]	TRUE
+ENSG00000221963	TRUE	22	protein_coding	APOL6	HGNC:14870	apolipoprotein L, 6 [Source:HGNC Symbol;Acc:14870]	TRUE
+ENSG00000150347	TRUE	10	protein_coding	ARID5B	HGNC:17362	AT rich interactive domain 5B (MRF1-like) [Source:HGNC Symbol;Acc:17362]	TRUE
+ENSG00000122644	TRUE	7	protein_coding	ARL4A	HGNC:695	ADP-ribosylation factor-like 4A [Source:HGNC Symbol;Acc:695]	TRUE
+ENSG00000158321	TRUE	7	protein_coding	AUTS2	HGNC:14262	autism susceptibility candidate 2 [Source:HGNC Symbol;Acc:14262]	TRUE
+ENSG00000153064	TRUE	4	protein_coding	BANK1	HGNC:18233	B-cell scaffold protein with ankyrin repeats 1 [Source:HGNC Symbol;Acc:18233]	TRUE
+ENSG00000172331	TRUE	7	protein_coding	BPGM	HGNC:1093	2,3-bisphosphoglycerate mutase [Source:HGNC Symbol;Acc:1093]	TRUE
+ENSG00000133639	TRUE	12	protein_coding	BTG1	HGNC:1130	B-cell translocation gene 1, anti-proliferative [Source:HGNC Symbol;Acc:1130]	TRUE
+ENSG00000159403	TRUE	12	protein_coding	C1R	HGNC:1246	complement component 1, r subcomponent [Source:HGNC Symbol;Acc:1246]	TRUE
+ENSG00000164305	TRUE	4	protein_coding	CASP3	HGNC:1504	caspase 3, apoptosis-related cysteine peptidase [Source:HGNC Symbol;Acc:1504]	TRUE
+ENSG00000196954	TRUE	11	protein_coding	CASP4	HGNC:1505	caspase 4, apoptosis-related cysteine peptidase [Source:HGNC Symbol;Acc:1505]	TRUE
+ENSG00000165806	TRUE	10	protein_coding	CASP7	HGNC:1508	caspase 7, apoptosis-related cysteine peptidase [Source:HGNC Symbol;Acc:1508]	TRUE
+ENSG00000108691	TRUE	17	protein_coding	CCL2	HGNC:10618	chemokine (C-C motif) ligand 2 [Source:HGNC Symbol;Acc:10618]	TRUE
+ENSG00000161570	TRUE	17	protein_coding	CCL5	HGNC:10632	chemokine (C-C motif) ligand 5 [Source:HGNC Symbol;Acc:10632]	TRUE
+ENSG00000271503	TRUE	HG385_PATCH	protein_coding	CCL5	HGNC:10632	chemokine (C-C motif) ligand 5 [Source:HGNC Symbol;Acc:10632]	TRUE
+ENSG00000108688	TRUE	17	protein_coding	CCL7	HGNC:10634	chemokine (C-C motif) ligand 7 [Source:HGNC Symbol;Acc:10634]	TRUE
+ENSG00000120217	TRUE	9	protein_coding	CD274	HGNC:17635	CD274 molecule [Source:HGNC Symbol;Acc:17635]	TRUE
+ENSG00000004468	TRUE	4	protein_coding	CD38	HGNC:1667	CD38 molecule [Source:HGNC Symbol;Acc:1667]	TRUE
+ENSG00000101017	TRUE	20	protein_coding	CD40	HGNC:11919	CD40 molecule, TNF receptor superfamily member 5 [Source:HGNC Symbol;Acc:11919]	TRUE
+ENSG00000110848	TRUE	12	protein_coding	CD69	HGNC:1694	CD69 molecule [Source:HGNC Symbol;Acc:1694]	TRUE
+ENSG00000114013	TRUE	3	protein_coding	CD86	HGNC:1705	CD86 molecule [Source:HGNC Symbol;Acc:1705]	TRUE
+ENSG00000124762	TRUE	6	protein_coding	CDKN1A	HGNC:1784	cyclin-dependent kinase inhibitor 1A (p21, Cip1) [Source:HGNC Symbol;Acc:1784]	TRUE
+ENSG00000243649	TRUE	6	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000244255	TRUE	6	protein_coding	CFB	NA	Complement factor B; Uncharacterized protein; cDNA FLJ55673, highly similar to Complement factor B   [Source:UniProtKB/TrEMBL;Acc:B4E1Z4]	TRUE
+ENSG00000242335	TRUE	HSCHR6_MHC_SSTO	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000243570	TRUE	HSCHR6_MHC_MCF	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000239754	TRUE	HSCHR6_MHC_COX	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000204359	TRUE	HSCHR6_MHC_MANN	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000241253	TRUE	HSCHR6_MHC_QBL	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000241534	TRUE	HSCHR6_MHC_DBB	protein_coding	CFB	HGNC:1037	complement factor B [Source:HGNC Symbol;Acc:1037]	TRUE
+ENSG00000000971	TRUE	1	protein_coding	CFH	HGNC:4883	complement factor H [Source:HGNC Symbol;Acc:4883]	TRUE
+ENSG00000179583	TRUE	16	protein_coding	CIITA	HGNC:7067	class II, major histocompatibility complex, transactivator [Source:HGNC Symbol;Acc:7067]	TRUE
+ENSG00000174600	TRUE	12	protein_coding	CMKLR1	HGNC:2121	chemokine-like receptor 1 [Source:HGNC Symbol;Acc:2121]	TRUE
+ENSG00000100368	TRUE	22	protein_coding	CSF2RB	HGNC:2436	colony stimulating factor 2 receptor, beta, low-affinity (granulocyte-macrophage) [Source:HGNC Symbol;Acc:2436]	TRUE
+ENSG00000138755	TRUE	4	protein_coding	CXCL9	HGNC:7098	chemokine (C-X-C motif) ligand 9 [Source:HGNC Symbol;Acc:7098]	TRUE
+ENSG00000163412	TRUE	3	protein_coding	EIF4E3	HGNC:31837	eukaryotic translation initiation factor 4E family member 3 [Source:HGNC Symbol;Acc:31837]	TRUE
+ENSG00000026103	TRUE	10	protein_coding	FAS	HGNC:11920	Fas cell surface death receptor [Source:HGNC Symbol;Acc:11920]	TRUE
+ENSG00000150337	TRUE	1	protein_coding	FCGR1A	HGNC:3613	Fc fragment of IgG, high affinity Ia, receptor (CD64) [Source:HGNC Symbol;Acc:3613]	TRUE
+ENSG00000266332	TRUE	HG1287_PATCH	protein_coding	FCGR1A	HGNC:3613	Fc fragment of IgG, high affinity Ia, receptor (CD64) [Source:HGNC Symbol;Acc:3613]	TRUE
+ENSG00000127951	TRUE	7	protein_coding	FGL2	HGNC:3696	fibrinogen-like 2 [Source:HGNC Symbol;Acc:3696]	TRUE
+ENSG00000171051	TRUE	19	protein_coding	FPR1	HGNC:3826	formyl peptide receptor 1 [Source:HGNC Symbol;Acc:3826]	TRUE
+ENSG00000183347	TRUE	1	protein_coding	GBP6	HGNC:25395	guanylate binding protein family, member 6 [Source:HGNC Symbol;Acc:25395]	TRUE
+ENSG00000131979	TRUE	14	protein_coding	GCH1	HGNC:4193	GTP cyclohydrolase 1 [Source:HGNC Symbol;Acc:4193]	TRUE
+ENSG00000125245	TRUE	13	protein_coding	GPR18	HGNC:4472	G protein-coupled receptor 18 [Source:HGNC Symbol;Acc:4472]	TRUE
+ENSG00000145649	TRUE	5	protein_coding	GZMA	HGNC:4708	granzyme A (granzyme 1, cytotoxic T-lymphocyte-associated serine esterase 3) [Source:HGNC Symbol;Acc:4708]	TRUE
+ENSG00000100644	TRUE	14	protein_coding	HIF1A	HGNC:4910	hypoxia inducible factor 1, alpha subunit (basic helix-loop-helix transcription factor) [Source:HGNC Symbol;Acc:4910]	TRUE
+ENSG00000206503	TRUE	6	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000223980	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000227715	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000224320	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000231834	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000229215	TRUE	HSCHR6_MHC_APD	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000206505	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000235657	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-A	HGNC:4931	major histocompatibility complex, class I, A [Source:HGNC Symbol;Acc:4931]	TRUE
+ENSG00000234745	TRUE	6	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000228964	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000232126	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000223532	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000224608	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000206450	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-B	HGNC:4932	major histocompatibility complex, class I, B [Source:HGNC Symbol;Acc:4932]	TRUE
+ENSG00000204257	TRUE	6	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000243215	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000239463	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000243719	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000243189	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000242361	TRUE	HSCHR6_MHC_APD	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000242685	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000241394	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-DMA	HGNC:4934	major histocompatibility complex, class II, DM alpha [Source:HGNC Symbol;Acc:4934]	TRUE
+ENSG00000196735	TRUE	6	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000232062	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000228284	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000225890	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000206305	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000236418	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-DQA1	HGNC:4942	major histocompatibility complex, class II, DQ alpha 1 [Source:HGNC Symbol;Acc:4942]	TRUE
+ENSG00000196126	TRUE	6	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000228080	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000206240	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000229074	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000206306	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000236884	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-DRB1	HGNC:4948	major histocompatibility complex, class II, DR beta 1 [Source:HGNC Symbol;Acc:4948]	TRUE
+ENSG00000204632	TRUE	6	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000233095	TRUE	HSCHR6_MHC_SSTO	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000237216	TRUE	HSCHR6_MHC_MCF	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000230413	TRUE	HSCHR6_MHC_COX	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000235680	TRUE	HSCHR6_MHC_MANN	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000206506	TRUE	HSCHR6_MHC_QBL	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000235346	TRUE	HSCHR6_MHC_DBB	protein_coding	HLA-G	HGNC:4964	major histocompatibility complex, class I, G [Source:HGNC Symbol;Acc:4964]	TRUE
+ENSG00000264751	TRUE	HG1322_PATCH	protein_coding	HLA-G	NA	MHC class I antigen  [Source:UniProtKB/TrEMBL;Acc:Q9BCT7]	TRUE
+ENSG00000090339	TRUE	19	protein_coding	ICAM1	HGNC:5344	intercellular adhesion molecule 1 [Source:HGNC Symbol;Acc:5344]	TRUE
+ENSG00000131203	TRUE	8	protein_coding	IDO1	HGNC:6059	indoleamine 2,3-dioxygenase 1 [Source:HGNC Symbol;Acc:6059]	TRUE
+ENSG00000159110	TRUE	21	protein_coding	IFNAR2	HGNC:5433	interferon (alpha, beta and omega) receptor 2 [Source:HGNC Symbol;Acc:5433]	TRUE
+ENSG00000110324	TRUE	11	protein_coding	IL10RA	HGNC:5964	interleukin 10 receptor, alpha [Source:HGNC Symbol;Acc:5964]	TRUE
+ENSG00000134470	TRUE	10	protein_coding	IL15RA	HGNC:5978	interleukin 15 receptor, alpha [Source:HGNC Symbol;Acc:5978]	TRUE
+ENSG00000137496	TRUE	11	protein_coding	IL18BP	HGNC:5987	interleukin 18 binding protein [Source:HGNC Symbol;Acc:5987]	TRUE
+ENSG00000100385	TRUE	22	protein_coding	IL2RB	HGNC:6009	interleukin 2 receptor, beta [Source:HGNC Symbol;Acc:6009]	TRUE
+ENSG00000136244	TRUE	7	protein_coding	IL6	HGNC:6018	interleukin 6 (interferon, beta 2) [Source:HGNC Symbol;Acc:6018]	TRUE
+ENSG00000137265	TRUE	6	protein_coding	IRF4	HGNC:6119	interferon regulatory factor 4 [Source:HGNC Symbol;Acc:6119]	TRUE
+ENSG00000160953	TRUE	19	protein_coding	MUM1	HGNC:29641	melanoma associated antigen (mutated) 1 [Source:HGNC Symbol;Acc:29641]	TRUE
+ENSG00000128604	TRUE	7	protein_coding	IRF5	HGNC:6120	interferon regulatory factor 5 [Source:HGNC Symbol;Acc:6120]	TRUE
+ENSG00000140968	TRUE	16	protein_coding	IRF8	HGNC:5358	interferon regulatory factor 8 [Source:HGNC Symbol;Acc:5358]	TRUE
+ENSG00000066583	TRUE	5	protein_coding	ISOC1	HGNC:24254	isochorismatase domain containing 1 [Source:HGNC Symbol;Acc:24254]	TRUE
+ENSG00000139626	TRUE	12	protein_coding	ITGB7	HGNC:6162	integrin, beta 7 [Source:HGNC Symbol;Acc:6162]	TRUE
+ENSG00000096968	TRUE	9	protein_coding	JAK2	HGNC:6192	Janus kinase 2 [Source:HGNC Symbol;Acc:6192]	TRUE
+ENSG00000213809	TRUE	12	protein_coding	KLRK1	HGNC:18788	killer cell lectin-like receptor subfamily K, member 1 [Source:HGNC Symbol;Acc:18788]	TRUE
+ENSG00000150457	TRUE	13	protein_coding	LATS2	HGNC:6515	large tumor suppressor kinase 2 [Source:HGNC Symbol;Acc:6515]	TRUE
+ENSG00000043462	TRUE	5	protein_coding	LCP2	HGNC:6529	lymphocyte cytosolic protein 2 (SH2 domain containing leukocyte protein of 76kDa) [Source:HGNC Symbol;Acc:6529]	TRUE
+ENSG00000140280	TRUE	15	protein_coding	LYSMD2	HGNC:28571	LysM, putative peptidoglycan-binding, domain containing 2 [Source:HGNC Symbol;Acc:28571]	TRUE
+ENSG00000145416	TRUE	4	protein_coding	MARCH1	HGNC:26077	membrane-associated ring finger (C3HC4) 1, E3 ubiquitin protein ligase [Source:HGNC Symbol;Acc:26077]	TRUE
+ENSG00000125148	TRUE	16	protein_coding	MT2A	HGNC:7406	metallothionein 2A [Source:HGNC Symbol;Acc:7406]	TRUE
+ENSG00000065911	TRUE	2	protein_coding	MTHFD2	HGNC:7434	methylenetetrahydrofolate dehydrogenase (NADP+ dependent) 2, methenyltetrahydrofolate cyclohydrolase [Source:HGNC Symbol;Acc:7434]	TRUE
+ENSG00000013364	TRUE	16	protein_coding	MVP	HGNC:7531	major vault protein [Source:HGNC Symbol;Acc:7531]	TRUE
+ENSG00000172936	TRUE	3	protein_coding	MYD88	HGNC:7562	myeloid differentiation primary response 88 [Source:HGNC Symbol;Acc:7562]	TRUE
+ENSG00000105835	TRUE	7	protein_coding	NAMPT	HGNC:30092	nicotinamide phosphoribosyltransferase [Source:HGNC Symbol;Acc:30092]	TRUE
+ENSG00000124151	TRUE	20	protein_coding	NCOA3	HGNC:7670	nuclear receptor coactivator 3 [Source:HGNC Symbol;Acc:7670]	TRUE
+ENSG00000109320	TRUE	4	protein_coding	NFKB1	HGNC:7794	nuclear factor of kappa light polypeptide gene enhancer in B-cells 1 [Source:HGNC Symbol;Acc:7794]	TRUE
+ENSG00000100906	TRUE	14	protein_coding	NFKBIA	HGNC:7797	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, alpha [Source:HGNC Symbol;Acc:7797]	TRUE
+ENSG00000140853	TRUE	16	protein_coding	NLRC5	HGNC:29933	NLR family, CARD domain containing 5 [Source:HGNC Symbol;Acc:29933]	TRUE
+ENSG00000106100	TRUE	7	protein_coding	NOD1	HGNC:16390	nucleotide-binding oligomerization domain containing 1 [Source:HGNC Symbol;Acc:16390]	TRUE
+ENSG00000102900	TRUE	16	protein_coding	NUP93	HGNC:28958	nucleoporin 93kDa [Source:HGNC Symbol;Acc:28958]	TRUE
+ENSG00000111335	TRUE	12	protein_coding	OAS2	HGNC:8087	2'-5'-oligoadenylate synthetase 2, 69/71kDa [Source:HGNC Symbol;Acc:8087]	TRUE
+ENSG00000111331	TRUE	12	protein_coding	OAS3	HGNC:8088	2'-5'-oligoadenylate synthetase 3, 100kDa [Source:HGNC Symbol;Acc:8088]	TRUE
+ENSG00000174944	TRUE	3	protein_coding	P2RY14	HGNC:16442	purinergic receptor P2Y, G-protein coupled, 14 [Source:HGNC Symbol;Acc:16442]	TRUE
+ENSG00000184588	TRUE	1	protein_coding	PDE4B	HGNC:8781	phosphodiesterase 4B, cAMP-specific [Source:HGNC Symbol;Acc:8781]	TRUE
+ENSG00000197329	TRUE	2	protein_coding	PELI1	HGNC:8827	pellino E3 ubiquitin protein ligase 1 [Source:HGNC Symbol;Acc:8827]	TRUE
+ENSG00000067057	TRUE	10	protein_coding	PFKP	HGNC:8878	phosphofructokinase, platelet [Source:HGNC Symbol;Acc:8878]	TRUE
+ENSG00000137193	TRUE	6	protein_coding	PIM1	HGNC:8986	pim-1 oncogene [Source:HGNC Symbol;Acc:8986]	TRUE
+ENSG00000116711	TRUE	1	protein_coding	PLA2G4A	HGNC:9035	phospholipase A2, group IVA (cytosolic, calcium-dependent) [Source:HGNC Symbol;Acc:9035]	TRUE
+ENSG00000140464	TRUE	15	protein_coding	PML	HGNC:9113	promyelocytic leukemia [Source:HGNC Symbol;Acc:9113]	TRUE
+ENSG00000198805	TRUE	14	protein_coding	PNP	HGNC:7892	purine nucleoside phosphorylase [Source:HGNC Symbol;Acc:7892]	TRUE
+ENSG00000256646	TRUE	7	protein_coding	PSMA2	NA	Proteasome subunit alpha type-2  [Source:UniProtKB/TrEMBL;Acc:H3BT36]	TRUE
+ENSG00000106588	TRUE	7	protein_coding	PSMA2	HGNC:9531	proteasome (prosome, macropain) subunit, alpha type, 2 [Source:HGNC Symbol;Acc:9531]	TRUE
+ENSG00000205220	TRUE	16	protein_coding	PSMB10	HGNC:9538	proteasome (prosome, macropain) subunit, beta type, 10 [Source:HGNC Symbol;Acc:9538]	TRUE
+ENSG00000126067	TRUE	1	protein_coding	PSMB2	HGNC:9539	proteasome (prosome, macropain) subunit, beta type, 2 [Source:HGNC Symbol;Acc:9539]	TRUE
+ENSG00000073756	TRUE	1	protein_coding	PTGS2	HGNC:9605	prostaglandin-endoperoxide synthase 2 (prostaglandin G/H synthase and cyclooxygenase) [Source:HGNC Symbol;Acc:9605]	TRUE
+ENSG00000196396	TRUE	20	protein_coding	PTPN1	HGNC:9642	protein tyrosine phosphatase, non-receptor type 1 [Source:HGNC Symbol;Acc:9642]	TRUE
+ENSG00000175354	TRUE	18	protein_coding	PTPN2	HGNC:9650	protein tyrosine phosphatase, non-receptor type 2 [Source:HGNC Symbol;Acc:9650]	TRUE
+ENSG00000111679	TRUE	12	protein_coding	PTPN6	HGNC:9658	protein tyrosine phosphatase, non-receptor type 6 [Source:HGNC Symbol;Acc:9658]	TRUE
+ENSG00000268954	TRUE	HG344_PATCH	protein_coding	PTPN6	HGNC:9658	protein tyrosine phosphatase, non-receptor type 6 [Source:HGNC Symbol;Acc:9658]	TRUE
+ENSG00000158987	TRUE	5	protein_coding	RAPGEF6	HGNC:20655	Rap guanine nucleotide exchange factor (GEF) 6 [Source:HGNC Symbol;Acc:20655]	TRUE
+ENSG00000125826	TRUE	20	protein_coding	RBCK1	HGNC:15864	RanBP-type and C3HC4-type zinc finger containing 1 [Source:HGNC Symbol;Acc:15864]	TRUE
+ENSG00000107201	TRUE	9	protein_coding	DDX58	HGNC:19102	DEAD (Asp-Glu-Ala-Asp) box polypeptide 58 [Source:HGNC Symbol;Acc:19102]	TRUE
+ENSG00000137275	TRUE	6	protein_coding	RIPK1	HGNC:10019	receptor (TNFRSF)-interacting serine-threonine kinase 1 [Source:HGNC Symbol;Acc:10019]	TRUE
+ENSG00000173821	TRUE	17	protein_coding	RNF213	HGNC:14539	ring finger protein 213 [Source:HGNC Symbol;Acc:14539]	TRUE
+ENSG00000101347	TRUE	20	protein_coding	SAMHD1	HGNC:15925	SAM domain and HD domain 1 [Source:HGNC Symbol;Acc:15925]	TRUE
+ENSG00000141574	TRUE	17	protein_coding	SECTM1	HGNC:10707	secreted and transmembrane 1 [Source:HGNC Symbol;Acc:10707]	TRUE
+ENSG00000174175	TRUE	1	protein_coding	SELP	HGNC:10721	selectin P (granule membrane protein 140kDa, antigen CD62) [Source:HGNC Symbol;Acc:10721]	TRUE
+ENSG00000149131	TRUE	11	protein_coding	SERPING1	HGNC:1228	serpin peptidase inhibitor, clade G (C1 inhibitor), member 1 [Source:HGNC Symbol;Acc:1228]	TRUE
+ENSG00000026751	TRUE	1	protein_coding	SLAMF7	HGNC:21394	SLAM family member 7 [Source:HGNC Symbol;Acc:21394]	TRUE
+ENSG00000185338	TRUE	16	protein_coding	SOCS1	HGNC:19383	suppressor of cytokine signaling 1 [Source:HGNC Symbol;Acc:19383]	TRUE
+ENSG00000184557	TRUE	17	protein_coding	SOCS3	HGNC:19391	suppressor of cytokine signaling 3 [Source:HGNC Symbol;Acc:19391]	TRUE
+ENSG00000112096	TRUE	6	protein_coding	SOD2	HGNC:11180	superoxide dismutase 2, mitochondrial [Source:HGNC Symbol;Acc:11180]	TRUE
+ENSG00000138600	TRUE	15	protein_coding	SPPL2A	HGNC:30227	signal peptide peptidase like 2A [Source:HGNC Symbol;Acc:30227]	TRUE
+ENSG00000075142	TRUE	7	protein_coding	SRI	HGNC:11292	sorcin [Source:HGNC Symbol;Acc:11292]	TRUE
+ENSG00000123096	TRUE	12	protein_coding	SSPN	HGNC:11322	sarcospan [Source:HGNC Symbol;Acc:11322]	TRUE
+ENSG00000115525	TRUE	2	protein_coding	ST3GAL5	HGNC:10872	ST3 beta-galactoside alpha-2,3-sialyltransferase 5 [Source:HGNC Symbol;Acc:10872]	TRUE
+ENSG00000113532	TRUE	5	protein_coding	ST8SIA4	HGNC:10871	ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase 4 [Source:HGNC Symbol;Acc:10871]	TRUE
+ENSG00000115415	TRUE	2	protein_coding	STAT1	HGNC:11362	signal transducer and activator of transcription 1, 91kDa [Source:HGNC Symbol;Acc:11362]	TRUE
+ENSG00000168610	TRUE	17	protein_coding	STAT3	HGNC:11364	signal transducer and activator of transcription 3 (acute-phase response factor) [Source:HGNC Symbol;Acc:11364]	TRUE
+ENSG00000138378	TRUE	2	protein_coding	STAT4	HGNC:11365	signal transducer and activator of transcription 4 [Source:HGNC Symbol;Acc:11365]	TRUE
+ENSG00000231925	TRUE	6	protein_coding	TAPBP	HGNC:11566	TAP binding protein (tapasin) [Source:HGNC Symbol;Acc:11566]	TRUE
+ENSG00000206208	TRUE	HSCHR6_MHC_MCF	protein_coding	TAPBP	HGNC:11566	TAP binding protein (tapasin) [Source:HGNC Symbol;Acc:11566]	TRUE
+ENSG00000112493	TRUE	HSCHR6_MHC_COX	protein_coding	TAPBP	HGNC:11566	TAP binding protein (tapasin) [Source:HGNC Symbol;Acc:11566]	TRUE
+ENSG00000206281	TRUE	HSCHR6_MHC_QBL	protein_coding	TAPBP	HGNC:11566	TAP binding protein (tapasin) [Source:HGNC Symbol;Acc:11566]	TRUE
+ENSG00000236490	TRUE	HSCHR6_MHC_DBB	protein_coding	TAPBP	HGNC:11566	TAP binding protein (tapasin) [Source:HGNC Symbol;Acc:11566]	TRUE
+ENSG00000170439	TRUE	12	protein_coding	METTL7B	HGNC:28276	methyltransferase like 7B [Source:HGNC Symbol;Acc:28276]	TRUE
+ENSG00000185215	TRUE	14	protein_coding	TNFAIP2	HGNC:11895	tumor necrosis factor, alpha-induced protein 2 [Source:HGNC Symbol;Acc:11895]	TRUE
+ENSG00000118503	TRUE	6	protein_coding	TNFAIP3	HGNC:11896	tumor necrosis factor, alpha-induced protein 3 [Source:HGNC Symbol;Acc:11896]	TRUE
+ENSG00000123610	TRUE	2	protein_coding	TNFAIP6	HGNC:11898	tumor necrosis factor, alpha-induced protein 6 [Source:HGNC Symbol;Acc:11898]	TRUE
+ENSG00000121858	TRUE	3	protein_coding	TNFSF10	HGNC:11925	tumor necrosis factor (ligand) superfamily, member 10 [Source:HGNC Symbol;Acc:11925]	TRUE
+ENSG00000136816	TRUE	9	protein_coding	TOR1B	HGNC:11995	torsin family 1, member B (torsin B) [Source:HGNC Symbol;Acc:11995]	TRUE
+ENSG00000183696	TRUE	7	protein_coding	UPP1	HGNC:12576	uridine phosphorylase 1 [Source:HGNC Symbol;Acc:12576]	TRUE
+ENSG00000168899	TRUE	2	protein_coding	VAMP5	HGNC:12646	vesicle-associated membrane protein 5 [Source:HGNC Symbol;Acc:12646]	TRUE
+ENSG00000118640	TRUE	2	protein_coding	VAMP8	HGNC:12647	vesicle-associated membrane protein 8 [Source:HGNC Symbol;Acc:12647]	TRUE
+ENSG00000162692	TRUE	1	protein_coding	VCAM1	HGNC:12663	vascular cell adhesion molecule 1 [Source:HGNC Symbol;Acc:12663]	TRUE
+ENSG00000143184	TRUE	1	protein_coding	XCL1	HGNC:10645	chemokine (C motif) ligand 1 [Source:HGNC Symbol;Acc:10645]	TRUE
+ENSG00000124256	TRUE	20	protein_coding	ZBP1	HGNC:16176	Z-DNA binding protein 1 [Source:HGNC Symbol;Acc:16176]	TRUE
+ENSG00000124201	TRUE	20	protein_coding	ZNFX1	HGNC:29271	zinc finger, NFX1-type containing 1 [Source:HGNC Symbol;Acc:29271]	TRUE
