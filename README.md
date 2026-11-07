@@ -1,6 +1,6 @@
 ### Measurement Sensitivity of Interferon-Signature Induction Contrast in Human Monocytes and NK Cells
 
-We examined a fixed ten-gene interferon panel in matched untreated and six-hour IFN-β-stimulated samples from eight SLE donors in GSE96583. Our donor-paired pseudobulk analysis distinguished the persistence of the average monocyte–NK induction direction from the sensitivity of its magnitude and individual donor signs to measurement choices.
+We examined a fixed ten-gene interferon panel in matched untreated and six-hour IFN-β-stimulated samples from eight SLE donors in GSE96583. Our donor-paired pseudobulk analysis distinguished the persistence of the average monocyte-NK induction direction from the sensitivity of its magnitude and individual donor signs to measurement choices.
 
 #### Results
 
@@ -22,7 +22,7 @@ From 7,346 CD14⁺ monocytes and NK cells, the primary estimate was $\hat{\theta
 | Balanced subsamples (18 cells/group), prior 2   | 1.450 ‡        | $[1.196, 1.724]$ ‡ | 8/8 in 89 of 100 draws     |
 | Balanced subsamples (18 cells/group), prior 0.5 | 1.473 ‡        | $[1.036, 1.859]$ ‡ | 8/8 in 54 of 100 draws     |
 
-All values are in $\log_2$ units. † Post hoc. ‡ Median and 2.5th–97.5th percentiles over 100 cell draws. All other intervals are conditional donor-level 95% $t$-intervals with 7 degrees of freedom.
+All values are in $\log_2$ units. † Post hoc. ‡ Median and 2.5th-97.5th percentiles over 100 cell draws. All other intervals are conditional donor-level 95% $t$-intervals with 7 degrees of freedom.
 
 > [!NOTE]
 > Donor 1016 drove the sign sensitivity—$\delta_{1016}$ moved from 0.232 to $-0.034$ when we lowered the prior count from 2 to 0.5.
