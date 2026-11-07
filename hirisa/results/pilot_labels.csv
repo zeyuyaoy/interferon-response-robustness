@@ -1,0 +1,138 @@
+"gsm","lineage","cond","l1","l2","Freq"
+"GSM9205458","mono","ctrl","B","B naive",1
+"GSM9205458","mono","ctrl","CD4 T","CD14 Mono",50
+"GSM9205458","mono","ctrl","Mono","CD14 Mono",12959
+"GSM9205458","mono","ctrl","Mono","CD16 Mono",1975
+"GSM9205458","mono","ctrl","CD4 T","CD4 TCM",433
+"GSM9205458","mono","ctrl","DC","CD4 TCM",14
+"GSM9205458","mono","ctrl","Mono","CD4 TCM",154
+"GSM9205458","mono","ctrl","DC","cDC1",2
+"GSM9205458","mono","ctrl","CD4 T","cDC2",3
+"GSM9205458","mono","ctrl","DC","cDC2",115
+"GSM9205458","mono","ctrl","Mono","cDC2",7
+"GSM9205458","mono","ctrl","other","HSPC",56
+"GSM9205458","mono","ctrl","NK","NK",80
+"GSM9205458","mono","ctrl","NK","NK Proliferating",2
+"GSM9205458","mono","ctrl","DC","pDC",219
+"GSM9205458","mono","ctrl","B","Plasmablast",38
+"GSM9205458","mono","ctrl","other","Platelet",1
+"GSM9205460","mono","stim","B","B intermediate",5
+"GSM9205460","mono","stim","CD4 T","CD14 Mono",3
+"GSM9205460","mono","stim","Mono","CD14 Mono",10539
+"GSM9205460","mono","stim","Mono","CD16 Mono",6029
+"GSM9205460","mono","stim","B","CD4 TCM",1
+"GSM9205460","mono","stim","CD4 T","CD4 TCM",385
+"GSM9205460","mono","stim","DC","CD4 TCM",12
+"GSM9205460","mono","stim","Mono","CD4 TCM",5
+"GSM9205460","mono","stim","DC","cDC2",21
+"GSM9205460","mono","stim","other","HSPC",52
+"GSM9205460","mono","stim","NK","NK",70
+"GSM9205460","mono","stim","DC","pDC",565
+"GSM9205460","mono","stim","Mono","pDC",4
+"GSM9205460","mono","stim","B","Plasmablast",53
+"GSM9205460","mono","stim","DC","Plasmablast",3
+"GSM9205460","mono","stim","other","Platelet",1
+"GSM9205463","nk","ctrl","CD4 T","CD4 Naive",2
+"GSM9205463","nk","ctrl","CD4 T","CD4 TCM",31
+"GSM9205463","nk","ctrl","CD4 T","CD4 TEM",1
+"GSM9205463","nk","ctrl","CD4 T","CD8 Naive",2
+"GSM9205463","nk","ctrl","CD8 T","CD8 Naive",8
+"GSM9205463","nk","ctrl","CD4 T","CD8 TCM",1
+"GSM9205463","nk","ctrl","CD8 T","CD8 TCM",2
+"GSM9205463","nk","ctrl","CD8 T","CD8 TEM",13
+"GSM9205463","nk","ctrl","other T","CD8 TEM",1
+"GSM9205463","nk","ctrl","other T","dnT",2
+"GSM9205463","nk","ctrl","CD4 T","gdT",1
+"GSM9205463","nk","ctrl","CD8 T","gdT",4
+"GSM9205463","nk","ctrl","other T","gdT",16
+"GSM9205463","nk","ctrl","other","HSPC",1
+"GSM9205463","nk","ctrl","CD4 T","ILC",9
+"GSM9205463","nk","ctrl","NK","ILC",4
+"GSM9205463","nk","ctrl","other","ILC",94
+"GSM9205463","nk","ctrl","other T","ILC",1
+"GSM9205463","nk","ctrl","NK","NK",15610
+"GSM9205463","nk","ctrl","NK","NK Proliferating",41
+"GSM9205463","nk","ctrl","NK","NK_CD56bright",513
+"GSM9205463","nk","ctrl","B","Plasmablast",1
+"GSM9205465","nk","stim","CD4 T","CD4 TCM",360
+"GSM9205465","nk","stim","NK","CD4 TCM",16
+"GSM9205465","nk","stim","other T","CD4 TCM",1
+"GSM9205465","nk","stim","CD8 T","CD8 TEM",1
+"GSM9205465","nk","stim","NK","gdT",1
+"GSM9205465","nk","stim","other T","gdT",3
+"GSM9205465","nk","stim","CD4 T","NK",2
+"GSM9205465","nk","stim","NK","NK",14536
+"GSM9205465","nk","stim","NK","NK Proliferating",46
+"GSM9205465","nk","stim","NK","NK_CD56bright",995
+"GSM9205465","nk","stim","B","Plasmablast",1
+"GSM9205476","mono","ctrl","Mono","CD14 Mono",977
+"GSM9205476","mono","ctrl","DC","CD16 Mono",3
+"GSM9205476","mono","ctrl","Mono","CD16 Mono",155
+"GSM9205476","mono","ctrl","CD4 T","CD4 TCM",15
+"GSM9205476","mono","ctrl","CD4 T","CD4 TEM",1
+"GSM9205476","mono","ctrl","DC","cDC1",1
+"GSM9205476","mono","ctrl","DC","cDC2",5
+"GSM9205476","mono","ctrl","other","HSPC",19
+"GSM9205476","mono","ctrl","CD4 T","ILC",4
+"GSM9205476","mono","ctrl","DC","ILC",3
+"GSM9205476","mono","ctrl","other","ILC",11
+"GSM9205476","mono","ctrl","CD4 T","MAIT",2
+"GSM9205476","mono","ctrl","NK","NK",4
+"GSM9205476","mono","ctrl","B","Plasmablast",6
+"GSM9205476","mono","ctrl","other","Platelet",5
+"GSM9205509","mono","ctrl","B","B naive",12
+"GSM9205509","mono","ctrl","DC","CD14 Mono",1
+"GSM9205509","mono","ctrl","Mono","CD14 Mono",10207
+"GSM9205509","mono","ctrl","Mono","CD16 Mono",268
+"GSM9205509","mono","ctrl","CD4 T","CD4 Proliferating",1
+"GSM9205509","mono","ctrl","CD4 T","CD4 TCM",32
+"GSM9205509","mono","ctrl","DC","cDC1",5
+"GSM9205509","mono","ctrl","DC","cDC2",97
+"GSM9205509","mono","ctrl","Mono","cDC2",1
+"GSM9205509","mono","ctrl","other T","gdT",1
+"GSM9205509","mono","ctrl","DC","HSPC",1
+"GSM9205509","mono","ctrl","other","HSPC",135
+"GSM9205509","mono","ctrl","DC","ILC",7
+"GSM9205509","mono","ctrl","other","ILC",39
+"GSM9205509","mono","ctrl","CD4 T","MAIT",8
+"GSM9205509","mono","ctrl","other T","MAIT",1
+"GSM9205509","mono","ctrl","NK","NK",62
+"GSM9205509","mono","ctrl","DC","pDC",3
+"GSM9205509","mono","ctrl","B","Plasmablast",14
+"GSM9205509","mono","ctrl","other","Platelet",29
+"GSM9205527","mono","ctrl","CD4 T","CD14 Mono",1
+"GSM9205527","mono","ctrl","DC","CD14 Mono",1
+"GSM9205527","mono","ctrl","Mono","CD14 Mono",12336
+"GSM9205527","mono","ctrl","Mono","CD16 Mono",39
+"GSM9205527","mono","ctrl","CD4 T","CD4 TCM",215
+"GSM9205527","mono","ctrl","Mono","CD4 TCM",167
+"GSM9205527","mono","ctrl","other","CD4 TCM",1
+"GSM9205527","mono","ctrl","CD4 T","cDC2",3
+"GSM9205527","mono","ctrl","DC","cDC2",80
+"GSM9205527","mono","ctrl","Mono","cDC2",4
+"GSM9205527","mono","ctrl","other","cDC2",2
+"GSM9205527","mono","ctrl","other","HSPC",76
+"GSM9205527","mono","ctrl","CD4 T","ILC",4
+"GSM9205527","mono","ctrl","other","ILC",2
+"GSM9205527","mono","ctrl","NK","NK",12
+"GSM9205527","mono","ctrl","DC","pDC",15
+"GSM9205527","mono","ctrl","B","Plasmablast",1
+"GSM9205527","mono","ctrl","other","Platelet",9
+"GSM9205544","mono","ctrl","B","B intermediate",1
+"GSM9205544","mono","ctrl","B","B naive",2
+"GSM9205544","mono","ctrl","Mono","CD14 Mono",12490
+"GSM9205544","mono","ctrl","DC","CD16 Mono",1
+"GSM9205544","mono","ctrl","Mono","CD16 Mono",295
+"GSM9205544","mono","ctrl","CD4 T","CD4 TCM",11
+"GSM9205544","mono","ctrl","DC","CD4 TCM",1
+"GSM9205544","mono","ctrl","Mono","CD4 TCM",5
+"GSM9205544","mono","ctrl","DC","cDC1",14
+"GSM9205544","mono","ctrl","DC","cDC2",452
+"GSM9205544","mono","ctrl","Mono","cDC2",181
+"GSM9205544","mono","ctrl","other","HSPC",53
+"GSM9205544","mono","ctrl","CD4 T","ILC",4
+"GSM9205544","mono","ctrl","other","ILC",19
+"GSM9205544","mono","ctrl","NK","NK",6
+"GSM9205544","mono","ctrl","DC","pDC",2
+"GSM9205544","mono","ctrl","B","Plasmablast",5
+"GSM9205544","mono","ctrl","other","Platelet",31
