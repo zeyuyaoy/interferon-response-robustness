@@ -115,3 +115,23 @@ fo_counts_nk	0.12	0.12 per NK pseudobulk	with(r("08_pseudocount_sensitivity/pc_l
 range_all_lo	1.23	ranged from 1.23 to 1.87	min(r("13_summary_figures/theta_specifications.csv")$theta[1:7], r("14_fixed_offset_measurement/fixed_offset_summary.csv")$theta[3])
 range_all_hi	1.87	ranged from 1.23 to 1.87	max(r("13_summary_figures/theta_specifications.csv")$theta[1:7], r("14_fixed_offset_measurement/fixed_offset_summary.csv")$theta[3])
 cache_md5	0	b890d4b6a805f6f7be00e89927d4b34e	as.numeric(r("01_quality_control/input_checksums.csv")$md5 != "b890d4b6a805f6f7be00e89927d4b34e")
+hirisa_theta_p2	-4.609	contrast was negative in all five donors ($`\hat\theta = -4.609`$)	utils::read.csv("hirisa/results/h2_theta.csv")$theta[1]
+hirisa_ci_lo	-7.158	−4.609 (−7.158, −2.060)	utils::read.csv("hirisa/results/h2_theta.csv")$ci_lower[1]
+hirisa_ci_hi	-2.060	−4.609 (−7.158, −2.060)	utils::read.csv("hirisa/results/h2_theta.csv")$ci_upper[1]
+hirisa_theta_p05	-4.616	| −4.616 	utils::read.csv("hirisa/results/h2_theta.csv")$theta[2]
+hirisa_theta_fixed	-4.454	$`\hat\theta`$ was −4.454	utils::read.csv("hirisa/results/h2_theta.csv")$theta[3]
+hirisa_n_pos	0	| 0/5 	sum(utils::read.csv("hirisa/results/h2_donor_contrasts.csv")$delta[1:5] > 0)
+hirisa_D	-0.155	the difference $`D = -0.155`$	utils::read.csv("hirisa/results/h2_offset_sensitivity.csv")$D[1]
+hirisa_D_lo	-0.239	−0.155 (−0.239, −0.070)	utils::read.csv("hirisa/results/h2_offset_sensitivity.csv")$D_ci_lower[1]
+hirisa_D_hi	-0.070	−0.155 (−0.239, −0.070)	utils::read.csv("hirisa/results/h2_offset_sensitivity.csv")$D_ci_upper[1]
+hirisa_c_mono	0.027	0.027 CPM to monocyte	utils::read.csv("hirisa/results/h2_library.csv")$cpm_added_p2[1]
+hirisa_c_nk	0.045	0.045 CPM to NK profiles	utils::read.csv("hirisa/results/h2_library.csv")$cpm_added_p2[2]
+hirisa_lib_ratio_mono	94	94 (monocytes) and 378 (NK cells) times	utils::read.csv("hirisa/results/h2_library.csv")$mean_eff_lib[1] / utils::read.csv("hirisa/results/h2_library.csv")$mean_eff_lib[3]
+hirisa_lib_ratio_nk	378	94 (monocytes) and 378 (NK cells) times	utils::read.csv("hirisa/results/h2_library.csv")$mean_eff_lib[2] / utils::read.csv("hirisa/results/h2_library.csv")$mean_eff_lib[4]
+hirisa_cells	217231	217,231 cells in 20 groups	sum(utils::read.csv("hirisa/results/h2_groups.csv")$n_cells_kept)
+hirisa_min_group	977	control monocytes of donor 3283BW, 977 cells	min(utils::read.csv("hirisa/results/h2_groups.csv")$n_cells_kept)
+hirisa_3283_delta	-0.963	monocyte induction was 5.86 and the contrast −0.963	utils::read.csv("hirisa/results/h2_donor_contrasts.csv")$delta[2]
+hirisa_3283_Rmono	5.86	monocyte induction was 5.86 and the contrast	utils::read.csv("hirisa/results/h2_donor_contrasts.csv")$R_mono[2]
+hirisa_sub_median	-4.571	the median $`\hat\theta`$ was −4.571	utils::read.csv("hirisa/results/h2_subsample_summary.csv")$theta_p2[1]
+hirisa_sub_D	-0.081	the median $`D`$ −0.081	utils::read.csv("hirisa/results/h2_subsample_summary.csv")$D[1]
+hirisa_ifit1_ifi44l	0.097	accounted for 0.097 of the 0.155	-sum(utils::read.csv("hirisa/results/h2_gene_decomposition.csv")$contribution_to_D[utils::read.csv("hirisa/results/h2_gene_decomposition.csv")$gene %in% c("IFIT1", "IFI44L")])

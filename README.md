@@ -4,7 +4,7 @@ Interferon (IFN) responses are frequently compared between immune cell types by 
 
 We examined the extent to which one such comparison depends on analytical choices. We analysed single-cell RNA-sequencing data from peripheral blood cells of eight donors with systemic lupus erythematosus (SLE). Matched aliquots from each donor were either left untreated or stimulated with IFN-β for 6 h (GEO GSE96583). Counts from CD14$`^+`$ monocytes and natural killer (NK) cells were aggregated by donor, cell type and condition into pseudobulk profiles, and the induction of a published ten-gene IFN panel was quantified. 
 
-We found that mean induction was 1.834 $`\log_2`$ units greater in monocytes than in NK cells, and greater in monocytes in every donor. The direction of this difference was preserved in every alternative analysis; its magnitude ranged from 1.23 to 1.87, however, and the sign for one donor reversed. The most influential choices were how low counts were regularized before log transformation (the prior count, or a fixed offset in counts per million) and the number of cells aggregated per pseudobulk.
+We found that mean induction was 1.834 $`\log_2`$ units greater in monocytes than in NK cells, and greater in monocytes in every donor. The direction of this difference was preserved in every alternative analysis; its magnitude ranged from 1.23 to 1.87, however, and the sign for one donor reversed. The most influential choices were how low counts were regularized before log transformation (the prior count, or a fixed offset in counts per million) and the number of cells aggregated per pseudobulk. In an independent cohort of five healthy donors whose monocytes and NK cells were enriched and cultured separately for 21 h (HIRISA, GEO GSE306664), the contrast was reversed, because untreated monocytes were already IFN-activated in four of the five donors; the regularization of low counts changed the contrast by only 0.155, because pseudobulk libraries were 94-378 times larger.
 
 Cell-type-specific IFN responses in this dataset were reported previously ([Kang et al., 2018](https://doi.org/10.1038/nbt.4042)); our study further evaluated three properties of the comparison:
 
@@ -50,7 +50,7 @@ Here, $`y_{jg} = \log_2\!\left[10^6 (C_{jg} + p_j)/(E_j + 2p_j)\right]`$, where 
 > $`\theta`$ does not represent a difference in absolute transcript abundance or in signalling activity.
 
 | Analysis                                                  | $`\hat{\theta}`$  | Interval                       | Donors with $`\delta_d > 0`$ |
-| --------------------------------------------------------- | ----------------- | ------------------------------ | ---------------------------- |
+|-----------------------------------------------------------|-------------------|--------------------------------|------------------------------|
 | Ten-gene panel, prior count 2 (primary)                   | 1.834             | $`[1.163, 2.506]`$             | 8/8                          |
 | Ten-gene panel, prior count 0.5                           | 1.595             | $`[0.905, 2.284]`$             | 7/8                          |
 | Ten-gene panel, TMM factors estimated without IFN genes   | 1.853             | $`[1.171, 2.534]`$             | 8/8                          |
@@ -131,13 +131,37 @@ TMM normalization assumes that most genes are not differentially expressed betwe
 
 To verify that this occurred, TMM factors were re-estimated without IFN-related genes. The prior count was adjusted to add the same CPM as in the primary analysis, so that the comparison isolated the effect of the normalization factors. $`\hat\theta`$ changed by 0.018 at prior count 2 and by 0.019 at prior count 0.5. Median induction of non-IFN genes remained between −0.10 and 0.02 in every donor and cell type, consistent with the null change expected for unaffected genes. IFN-related genes therefore did not materially distort normalization. Exclusion of cells above the 99.5th percentile of UMI counts within each group (38 cells) yielded $`\hat\theta = 1.870`$.
 
+##### In an independent cohort the contrast was reversed, and the regularization of low counts had little effect
+
+To assess whether the direction of the contrast and its sensitivity to low-count regularization transfer beyond GSE96583, the same panel, estimand and transformations were applied to the Human IFN Response in Immune Subsets Atlas (HIRISA; GEO GSE306664; [Kuan et al., 2025](https://doi.org/10.21203/rs.3.rs-8197575/v1)). CD14$`^+`$ monocytes and NK cells were enriched separately from cryopreserved PBMC of five healthy donors, cultured for 21 h with or without 100 U/mL IFN-β, and profiled by 10x Genomics Flex. Control and stimulated samples of each donor and cell type were multiplexed into a single processing pool, so that, unlike in GSE96583, stimulation was not confounded with pool. The analysis was specified in `hirisa/specification.tsv`, which was locked after a one-donor pilot and before stimulated or NK data of the remaining four donors were downloaded. Cells labelled by the depositors as CD14 monocytes or NK cells with at least 200 detected genes were retained (217,231 cells in 20 groups; smallest group, the control monocytes of donor 3283BW, 977 cells). Each cell type was normalized separately by TMM across the ten profiles.
+
+| Quantity                                                        | GSE96583 (8 SLE donors) | HIRISA (5 healthy donors)   |
+|-----------------------------------------------------------------|-------------------------|-----------------------------|
+| Stimulation; preparation                                        | 6 h; PBMC               | 21 h; enriched cell types   |
+| $`\hat\theta`$, prior count 2                                   | 1.834 (1.163, 2.506)    | −4.609 (−7.158, −2.060)     |
+| $`\hat\theta`$, prior count 0.5                                 | 1.595                   | −4.616                      |
+| $`\hat\theta`$, $`\log_2(\mathrm{CPM}+1)`$                      | 1.233                   | −4.454                      |
+| $`D = \hat\theta_{\text{prior }2} - \hat\theta_{\text{CPM}+1}`$ | 0.601 (0.341, 0.862)    | −0.155 (−0.239, −0.070)     |
+| Donors with $`\delta_d > 0`$ at prior count 2                   | 8/8                     | 0/5                         |
+| Mean effective library size, monocytes / NK cells               | 793,081 / 117,580       | 74.9 million / 44.5 million |
+| CPM added by prior count 2, monocytes / NK cells                | 2.52 / 17.01            | 0.027 / 0.045               |
+
+<sup>Intervals are 95% $`t`$-intervals across donor contrasts (7 and 4 degrees of freedom); they are descriptive and conditional on the specification.</sup>
+
+The contrast was negative in all five donors ($`\hat\theta = -4.609`$). NK induction (5.99-7.17) exceeded that in GSE96583 (3.50-5.05), whereas monocyte induction was small in four donors (0.16-1.90). In these four donors the panel was already highly expressed in untreated monocytes: mean control expression was 9.57-11.32 $`\log_2(\mathrm{CPM}+1)`$, compared with 5.80 in donor 3283BW, and ISG15 reached 1,409-11,406 CPM, compared with 109. Such levels exceed the range of control monocytes in GSE96583 (3.58-6.66). The rule specified to identify anomalous controls flagged no donor, because elevated control expression was the norm rather than the exception. In donor 3283BW, the only donor with low control expression, monocyte induction was 5.86 and the contrast −0.963. Elevated control expression after 21 h of culture of isolated monocytes, accompanied by CXCL10 and IFNB1 transcripts, is consistent with IFN production during culture; the present data cannot establish its cause.
+
+On average, HIRISA pseudobulks contained 94 (monocytes) and 378 (NK cells) times more counts than those of GSE96583, and the prior count of 2 consequently added only 0.027 CPM to monocyte and 0.045 CPM to NK profiles. Reducing the prior count to 0.5 changed $`\hat\theta`$ by 0.007. Under $`\log_2(\mathrm{CPM}+1)`$, $`\hat\theta`$ was −4.454; the difference $`D = -0.155`$ (donor values −0.27 to −0.09) was below the threshold of 0.25, and no donor changed sign, which meets the prespecified criterion for agreement. $`D`$ is negative here because the fixed offset of 1 CPM now exceeds the offset applied by edgeR. As in GSE96583, its effect arose principally from NK genes that were sparsely detected in controls: IFIT1 and IFI44L (detected in 0.2-3.3% of control NK cells) accounted for 0.097 of the 0.155. In 100 subsamples of 977 cells per group, the median $`\hat\theta`$ was −4.571 (2.5th-97.5th percentiles, −4.663 to −4.474) and the median $`D`$ −0.081.
+
+Thus, neither the direction nor the magnitude of the GSE96583 contrast was reproduced. Because the cohorts differ in donor health, stimulation duration, cell preparation and sequencing platform, the reversal cannot be attributed to any one of these differences, and HIRISA does not constitute a replication. The mechanism of the regularization effect did transfer: in both cohorts it acted through genes with sparse control expression, and it was small when both cell types had large libraries.
+
 #### Conclusions
 
-The results support three conclusions of differing strength.
+The results support four conclusions of differing strength.
 
 1) In this cohort, monocytes exhibited greater mean induction than NK cells in every analysis, in every subsample and with both larger IFN gene sets. 
 2) The magnitude of the contrast ranged from 1.23 to 1.87 in analyses using all cells and was approximately 1.45-1.47 in subsamples. It depended on the regularization of low counts (the prior count or a fixed CPM offset), the number of cells aggregated and the gene set. Any single estimate should therefore be reported together with these analytical choices. 
 3) The contrast was positive in seven donors across all analyses. Its sign for donor 1016 depended on the regularization of low counts and on cell selection; this donor also had the highest control monocyte expression.
+4) In an independent cohort of healthy donors whose monocytes and NK cells were cultured separately for 21 h, the contrast was reversed (−4.609), principally because untreated monocytes were already IFN-activated in four of five donors. The regularization of low counts changed this contrast by only 0.155, consistent with the much larger and more similar library sizes. The direction of the GSE96583 contrast should therefore not be generalized to other experimental designs.
 
 > [!TIP]
 > These findings suggest four reporting practices for studies that compare IFN scores between cell types:
@@ -151,13 +175,13 @@ The results support three conclusions of differing strength.
 
 In the original experiment, cells from all donors were pooled by condition, so that all control cells and all stimulated cells were each processed as a single pool. Effects of stimulation therefore cannot be fully separated from differences in the processing of the two pools. Neither donor pairing nor subsampling resolves this confounding.
 
-Secondly, the analysis is restricted to a single cohort of eight SLE donors, one IFN-β dose and time point, and two broadly defined cell types. Clinical information and an independent validation cohort were not available.
+Secondly, the analysis is restricted to a single cohort of eight SLE donors, one IFN-β dose and time point, and two broadly defined cell types. Clinical information was not available. The independent cohort examined (HIRISA) differs from GSE96583 in donor health, stimulation duration, cell preparation and platform, comprises five donors, and therefore assesses transferability rather than replication.
 
 Furthermore, the control NK group of donor 1039 contained only 18 cells. All 13 mitochondrial genes have zero counts in the supplied matrix, which precluded filtering on mitochondrial content. The deposited annotation lists 24,679 singlets, whereas the original article reports 24,305; the source of this discrepancy could not be determined.
 
 Finally, all results concern normalized transcript levels. Protein, signalling and functional measurements were not available.
 
-A more definitive test would specify the gene set and all analytical parameters and apply them to an independent donor cohort, with control and stimulated cells distributed across multiple processing batches. A time course with matched signalling measurements would be required to establish whether the transcriptional difference reflects a difference in cellular responsiveness to IFN.
+A more definitive test would specify the gene set and all analytical parameters and apply them to an independent donor cohort, with control and stimulated cells distributed across multiple processing batches. HIRISA met the batch condition, but culture of isolated monocytes for 21 h altered their control state; a replication would also require mixed-cell culture and a stimulation duration comparable to that of GSE96583. A time course with matched signalling measurements would be required to establish whether the transcriptional difference reflects a difference in cellular responsiveness to IFN.
 
 #### Figures
 
@@ -185,9 +209,15 @@ A more definitive test would specify the gene set and all analytical parameters 
 
 **(m) Donor contrasts under edgeR log-CPM (prior count 2) and $`\log_2(\mathrm{CPM}+1)`$.** Circles show the primary contrasts and triangles the fixed-offset contrasts; grey segments connect the two values for each donor, and the bars at the top show each mean with its 95% interval. Every contrast decreases under the fixed offset, and only donor 1016 falls below zero (−0.142). Both measurements use identical counts, TMM factors, genes and donors; they differ only in the CPM added before log transformation.
 
+##### Independent cohort (HIRISA)
+
+![HIRISA donor contrasts](hirisa/figures/h2_donor_contrasts.png)
+
+**(n) HIRISA donor contrasts under the three measurements.** Filled circles show edgeR log-CPM at prior count 2, open circles prior count 0.5 (largely hidden, as the values nearly coincide), and triangles $`\log_2(\mathrm{CPM}+1)`$; dashed lines show the means. All five contrasts are negative. Donor 3283BW, the only donor with low control monocyte expression, has the contrast closest to zero (−0.963). The three measurements differ by at most 0.29 in any donor.
+
 #### Data and code availability
 
-The input data is publicly available from [GEO GSE96583](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96583) and was accessed through `muscData::Kang18_8vs8()` (ExperimentHub EH2259, muscData 1.26.0). The local count cache has the MD5 checksum `b890d4b6a805f6f7be00e89927d4b34e`. No new data were generated.
+The input data is publicly available from [GEO GSE96583](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96583) and was accessed through `muscData::Kang18_8vs8()` (ExperimentHub EH2259, muscData 1.26.0). The local count cache has the MD5 checksum `b890d4b6a805f6f7be00e89927d4b34e`. The independent cohort comprises 20 per-sample count files from [GEO GSE306664](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306664), listed with their MD5 checksums in `hirisa/samples.tsv` and `hirisa/downloads.tsv`, and read with rhdf5 2.56.1. No new data were generated.
 
 This project is implemented in R 4.6.2 with Bioconductor 3.23. The following packages were used: 
 
@@ -202,13 +232,7 @@ The analysis can be reproduced by running the commands below from the repository
 
 ```bash
 Rscript analysis/tests/test_utils.R
-```
-
-```bash
 Rscript analysis/run_all.R
-```
-
-```bash
 Rscript release/verify_release.R
 ```
 
@@ -216,6 +240,13 @@ The HGNC and Ensembl annotation snapshot in `analysis/inputs/annotation/` is par
 
 > [!IMPORTANT]
 > Each run clears `results/` and `figures/`; existing outputs should therefore be preserved by running the analysis in a separate working copy.
+
+The independent-cohort analysis is separate from the pipeline above and writes to `hirisa/results/` and `hirisa/figures/`. It downloads about 727 MB to `cache/hirisa/` (not tracked by Git) and requires about 5 GB of memory. `hirisa/01_pilot.R` reproduces the one-donor pilot that preceded the locked specification.
+
+```bash
+Rscript hirisa/00_download.R
+Rscript hirisa/02_analysis.R
+```
 
 #### References
 
@@ -236,4 +267,8 @@ analysis/
   tests/test_utils.R
 results/<step>/
 figures/
+hirisa/
+  specification.tsv, spec_history.tsv, samples.tsv, downloads.tsv
+  00_download.R, 01_pilot.R, 02_analysis.R, utils_hirisa.R
+  results/, figures/
 ```
