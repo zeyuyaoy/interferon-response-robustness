@@ -1,2 +1,2 @@
 "gene_set","n_genes","overlap_with_core","overlap_genes","theta","sd","ci_lower","ci_upper","signflip_p_one_sided","n_pos_delta","min_delta","prior_count","run_id"
-"hallmark_ifna_grch37_minus_core",91,5,"IFI44L;IFIT3;ISG15;MX1;RSAD2",1.40192063180229,0.271380218038178,1.17504109180594,1.62880017179864,0.00390625,8,0.790387801355796,2,"20261107T123109Z-04ff0a4-dirty"
+"hallmark_ifna_grch37_minus_core",91,5,"IFI44L;IFIT3;ISG15;MX1;RSAD2",1.40192063180229,0.271380218038178,1.17504109180594,1.62880017179864,0.00390625,8,0.790387801355796,2,"20261107T124310Z-f1823b7"

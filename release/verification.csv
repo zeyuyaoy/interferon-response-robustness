@@ -115,7 +115,7 @@
 "reported_value","range_all_lo",TRUE,"reported 1.23; computed 1.23; context found"
 "reported_value","range_all_hi",TRUE,"reported 1.87; computed 1.87; context found"
 "reported_value","cache_md5",TRUE,"reported 0; computed 0; context found"
-"provenance","every output table carries the canonical run ID",TRUE,"20261107T123109Z-04ff0a4-dirty"
+"provenance","every output table carries the canonical run ID",TRUE,"20261107T124310Z-f1823b7"
 "provenance","no failed pipeline component",TRUE,"sens_qc_mitochondrial;hallmark_ifna"
 "implementation","step 12 checks pass",TRUE,"52/52"
 "implementation","step 14 checks pass",TRUE,"9/9"

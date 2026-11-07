@@ -217,10 +217,6 @@ The HGNC and Ensembl annotation snapshot in `analysis/inputs/annotation/` is par
 > [!IMPORTANT]
 > Each run clears `results/` and `figures/`; existing outputs should therefore be preserved by running the analysis in a separate working copy.
 
-#### Release
-
-The canonical run is `20261107T123109Z-04ff0a4-dirty`; its numerical results reproduce the previous run of steps 01-13 to within a relative difference of $`10^{-10}`$ (`release/reproduction_comparison.csv`). `release/MANIFEST.md` lists the software versions, configuration, checksums and verification results. Any later correction will be issued as a separately versioned erratum or release.
-
 #### References
 
 BibTeX entries for all references are in `references/references.bib`.
@@ -230,7 +226,7 @@ BibTeX entries for all references are in `references/references.bib`.
 ```
 README.md          manuscript and final report
 references/        references.bib
-release/           MANIFEST.md, checksums.sha256, verification and reproduction records
+release/           checksums.sha256, verification and reproduction records
 analysis/
   config.R, utils_*.R
   00_fetch_annotation.R
