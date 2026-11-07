@@ -17,8 +17,10 @@ run_component("fixed_offset_measurement", function() {
   c_of <- function(pc) 1e6 * pc / mean_eff
 
   chk <- list()
+
   add <- function(check, pass, value = NA_real_)
     chk[[length(chk) + 1]] <<- data.frame(check = check, pass = isTRUE(pass), value = value)
+
   saved <- utils::read.csv(file.path(CFG$results_dir, "02_primary_estimate", "normalization.csv"))
   add("effective library sizes identical to step 02 normalization.csv",
       reldiff(eff, saved$eff_lib_size[match(names(eff), saved$profile)]) < TOL,
@@ -43,7 +45,8 @@ run_component("fixed_offset_measurement", function() {
     add(sprintf("edgeR theta (prior %s) = theta from log2(CPM + c_L), c_L = 1e6 p / mean_L(E)", k$pc),
         reldiff(th, k$fit$theta) < TOL, reldiff(th, k$fit$theta))
   }
-  add("same 8 donors and 10 genes as primary", nrow(d) == 8 && identical(sort(d$donor), sort(f$delta$donor)) &&
+  add("same 8 donors and 10 genes as primary", nrow(d) == 8 &&
+    identical(sort(d$donor), sort(f$delta$donor)) &&
     length(core) == 10)
 
   gp <- gene_contrasts(f$norm$Y, pm, core); ga <- gene_contrasts(Y, pm, core)
@@ -68,12 +71,14 @@ run_component("fixed_offset_measurement", function() {
   write_result(D, "fixed_offset_donor_contrasts.csv", RUN_ID)
 
   ci <- ci_t(d$delta, CFG$ci_level); ciD <- ci_t(D$Delta, CFG$ci_level)
+
   meas <- function(name, fit, cm, cn) {
     ci <- ci_t(fit$delta, CFG$ci_level)
     data.frame(measurement = name, offset_cpm_mono = cm, offset_cpm_nk = cn, theta = mean(fit$delta),
                sd = stats::sd(fit$delta), ci_lower = ci[1], ci_upper = ci[2], n_pos_delta = sum(fit$delta > 0),
                R_mono = mean(fit$R_mono), R_nk = mean(fit$R_nk))
   }
+
   S <- rbind(meas(sprintf("edgeR logCPM, prior count %s (primary)", CFG$prior_count), f$delta,
                   c_of(CFG$prior_count)[[MONO]], c_of(CFG$prior_count)[[NK]]),
              meas(sprintf("edgeR logCPM, prior count %s", CFG$prior_count_sens), ST$fit_sens$delta,
@@ -95,7 +100,8 @@ run_component("fixed_offset_measurement", function() {
                   prior_range_lower = prior_range[1], prior_range_upper = prior_range[2],
                   flag_directional_instability = dir_inst, flag_magnitude_sensitivity = mag,
                   flag_agreement = !mag && !dir_inst,
-                  flag_limited_information = mean(d$delta) >= prior_range[1] && mean(d$delta) <= prior_range[2] &&
+                  flag_limited_information = mean(d$delta) >= prior_range[1] &&
+                    mean(d$delta) <= prior_range[2] &&
                     all(changed %in% "1016"),
                   magnitude_threshold = CFG$crit_influence_flag,
                   status = "descriptive intervals; no hypothesis test")

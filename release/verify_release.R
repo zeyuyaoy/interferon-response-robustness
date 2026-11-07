@@ -1,11 +1,14 @@
 RUN <- "20261107T123109Z-04ff0a4-dirty"
 cache <- new.env()
+
 r <- function(f) {
   if (is.null(cache[[f]])) cache[[f]] <- utils::read.csv(file.path("results", f), stringsAsFactors = FALSE)
   cache[[f]]
 }
+
 th <- function(i, col) r("13_summary_figures/theta_specifications.csv")[[col]][i]
 out <- list()
+
 add <- function(area, item, pass, detail = "")
   out[[length(out) + 1]] <<- data.frame(area = area, item = item, pass = isTRUE(pass), detail = detail)
 
@@ -16,7 +19,9 @@ for (i in seq_len(nrow(rv))) {
   v <- tryCatch(eval(parse(text = rv$source_expression[i])), error = function(e) NA_real_)
   d <- if (grepl(".", rv$reported[i], fixed = TRUE)) nchar(sub(".*\\.", "", rv$reported[i])) else 0
   f <- formatC(round(v, d) + 0, format = "f", digits = d)
-  add("reported_value", rv$id[i], length(v) == 1 && !is.na(v) && f == rv$reported[i] &&
+  add("reported_value", rv$id[i], length(v) == 1 &&
+    !is.na(v) &&
+    f == rv$reported[i] &&
     grepl(rv$readme_context[i], readme, fixed = TRUE),
       sprintf("reported %s; computed %s; context %s", rv$reported[i], f,
               if (grepl(rv$readme_context[i], readme, fixed = TRUE)) "found" else "MISSING"))
@@ -52,4 +57,4 @@ if (file.exists("release/checksums.sha256")) {
 res <- do.call(rbind, out)
 utils::write.csv(res, "release/verification.csv", row.names = FALSE)
 cat(sprintf("%d/%d verification items pass\n", sum(res$pass), nrow(res)))
-if (!all(res$pass)) { print(res[!res$pass, ], row.names = FALSE); quit(status = 1) }
+if (!all(res$pass)) { print(res[!res$pass,], row.names = FALSE); quit(status = 1) }

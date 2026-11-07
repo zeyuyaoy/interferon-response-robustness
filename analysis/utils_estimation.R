@@ -205,9 +205,11 @@ robustness_criteria <- function(theta, loo_df, sub_theta, R, mono, nk, cfg,
 gene_contrasts <- function(Y, pm, genes) {
   dl <- expand.grid(donor = sort(unique(pm$donor)), lineage = c(MONO, NK), stringsAsFactors = FALSE)
   D <- sapply(seq_len(nrow(dl)), function(i) {
+
     p <- function(cond) pm$profile[pm$donor == dl$donor[i] &
                                      pm$lineage == dl$lineage[i] &
                                      pm$cond == cond]
+
     Y[genes, p("stim")] - Y[genes, p("ctrl")]
   })
   rownames(D) <- genes
