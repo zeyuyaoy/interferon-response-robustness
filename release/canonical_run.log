@@ -1,0 +1,33 @@
+run_id: 20261107T123109Z-04ff0a4-dirty
+[completed] load_dataset 
+[completed] audit_integrity 
+[completed_with_warning] qc - 13 mitochondrial features present but all counts are zero; MT filtering uninformative; 1 nonempty groups below 20 cells (limited cell support)
+[completed] gene_mapping 
+[completed] mitochondrial_counts 
+[completed] analysis_set 
+[completed_with_warning] primary_estimate - some groups below 20 cells: limited cell support
+[completed] lodo_primary 
+[completed] lodo_pipeline 
+[completed] figure_lodo 
+[completed_with_warning] subsampling_prior2 - subsampling target reduced to 18 (smallest group)
+[completed_with_warning] subsampling_prior0.5 - subsampling target reduced to 18 (smallest group)
+[completed] figure_subsampling 
+[completed] sens_prior_count 
+[completed] sens_qc_upper_umi 
+[not_estimable] sens_qc_mitochondrial - mitochondrial features present but all counts are zero; filter uninformative
+[not_estimable] hallmark_ifna - Hallmark coverage 88.7% < 90%
+[completed] figure_sensitivity 
+[completed] reference_panels 
+[completed] figure_reference 
+[completed] robustness_criteria 
+[completed] pseudocount_subsampling 
+[completed] level_decomposition 
+[completed] tmm_diagnostics 
+[completed] alt_normalization 
+[completed] hallmark_ifna_post_hoc 
+[completed] hallmark_minus_core 
+[completed] verification 
+[completed] theta_specifications 
+[completed] figure_collections 
+[completed] fixed_offset_measurement 
+run exit 0

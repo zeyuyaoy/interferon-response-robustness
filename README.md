@@ -4,7 +4,7 @@ Interferon (IFN) responses are frequently compared between immune cell types by 
 
 We examined the extent to which one such comparison depends on analytical choices. We analysed single-cell RNA-sequencing data from peripheral blood cells of eight donors with systemic lupus erythematosus (SLE). Matched aliquots from each donor were either left untreated or stimulated with IFN-β for 6 h (GEO GSE96583). Counts from CD14$`^+`$ monocytes and natural killer (NK) cells were aggregated by donor, cell type and condition into pseudobulk profiles, and the induction of a published ten-gene IFN panel was quantified. 
 
-We found that mean induction was 1.834 $`\log_2`$ units greater in monocytes than in NK cells, and greater in monocytes in every donor. The direction of this difference was preserved in every alternative analysis; its magnitude ranged from 1.40 to 1.87, however, and the sign for one donor reversed. The two most influential choices were the prior count added before log transformation and the number of cells aggregated per pseudobulk.
+We found that mean induction was 1.834 $`\log_2`$ units greater in monocytes than in NK cells, and greater in monocytes in every donor. The direction of this difference was preserved in every alternative analysis; its magnitude ranged from 1.23 to 1.87, however, and the sign for one donor reversed. The most influential choices were how low counts were regularized before log transformation (the prior count, or a fixed offset in counts per million) and the number of cells aggregated per pseudobulk.
 
 Cell-type-specific IFN responses in this dataset were reported previously ([Kang et al., 2018](https://doi.org/10.1038/nbt.4042)); our study further evaluated three properties of the comparison:
 
@@ -22,7 +22,7 @@ Counts were summed within each group to generate 32 pseudobulk profiles. Monocyt
 
 The panel comprised IFI44L, ISG15, IFIT3, XAF1, MX1, IFI6, IFIT1, TRIM22, MX2 and RSAD2. These genes were defined in an independent study by their consistent induction across type I IFNs and cell types ([Rigby et al., 2026](https://doi.org/10.1038/s44319-026-00750-3)). No gene was selected or excluded on the basis of the present data.
 
-We analysed the following:
+All analyses are specified in `analysis/config.R` and the files in `analysis/inputs/`:
 - a lower prior count (0.5);
 - sequential exclusion of each donor;
 - 100 random subsamples of 18 cells per group, equalizing cell numbers across groups;
@@ -31,7 +31,8 @@ We analysed the following:
 - estimation of TMM factors without IFN-related genes;
 - a revised identifier mapping of the Hallmark IFN-α gene set;
 - the Hallmark set excluding the genes shared with the panel;
-- ordering of donors by baseline expression.
+- ordering of donors by baseline expression;
+- an alternative expression measurement, $`\log_2(\mathrm{CPM}+1)`$ with a fixed offset of 1 CPM (`fixed_offset_cpm`; `analysis/inputs/fixed_offset_specification.tsv`).
 
 #### Results
 
@@ -48,20 +49,21 @@ Here, $`y_{jg} = \log_2\!\left[10^6 (C_{jg} + p_j)/(E_j + 2p_j)\right]`$, where 
 > [!NOTE]
 > $`\theta`$ does not represent a difference in absolute transcript abundance or in signalling activity.
 
-| Analysis                                                            | $`\hat{\theta}`$  | Interval                       | Donors with $`\delta_d > 0`$ |
-|---------------------------------------------------------------------|-------------------|--------------------------------|------------------------------|
-| Ten-gene panel, prior count 2 (primary)                             | 1.834             | $`[1.163, 2.506]`$             | 8/8                          |
-| Ten-gene panel, prior count 0.5                                     | 1.595             | $`[0.905, 2.284]`$             | 7/8                          |
-| Ten-gene panel, TMM factors estimated without IFN genes<sup>†</sup> | 1.853             | $`[1.171, 2.534]`$             | 8/8                          |
-| Ten-gene panel, top 0.5% UMI cells per group removed (38)           | 1.870             | -                              | -                            |
-| Hallmark IFN-α set, 96 genes<sup>†</sup>                            | 1.452             | $`[1.196, 1.709]`$             | 8/8                          |
-| Hallmark IFN-α set excluding 5 panel genes, 91 genes<sup>†</sup>    | 1.402             | $`[1.175, 1.629]`$             | 8/8                          |
-| Subsamples of 18 cells per group, prior count 2                     | 1.450<sup>‡</sup> | $`[1.196, 1.724]`$<sup>‡</sup> | 8/8 in 89 of 100 draws       |
-| Subsamples of 18 cells per group, prior count 0.5                   | 1.473<sup>‡</sup> | $`[1.036, 1.859]`$<sup>‡</sup> | 8/8 in 54 of 100 draws       |
+| Analysis                                                  | $`\hat{\theta}`$  | Interval                       | Donors with $`\delta_d > 0`$ |
+| --------------------------------------------------------- | ----------------- | ------------------------------ | ---------------------------- |
+| Ten-gene panel, prior count 2 (primary)                   | 1.834             | $`[1.163, 2.506]`$             | 8/8                          |
+| Ten-gene panel, prior count 0.5                           | 1.595             | $`[0.905, 2.284]`$             | 7/8                          |
+| Ten-gene panel, TMM factors estimated without IFN genes   | 1.853             | $`[1.171, 2.534]`$             | 8/8                          |
+| Ten-gene panel, top 0.5% UMI cells per group removed (38) | 1.870             | -                              | -                            |
+| Ten-gene panel, $`\log_2(\mathrm{CPM}+1)`$, fixed offset  | 1.233             | $`[0.692, 1.773]`$             | 7/8                          |
+| Hallmark IFN-α set, 96 genes                              | 1.452             | $`[1.196, 1.709]`$             | 8/8                          |
+| Hallmark IFN-α set excluding 5 panel genes, 91 genes      | 1.402             | $`[1.175, 1.629]`$             | 8/8                          |
+| Subsamples of 18 cells per group, prior count 2           | 1.450<sup>‡</sup> | $`[1.196, 1.724]`$<sup>‡</sup> | 8/8 in 89 of 100 draws       |
+| Subsamples of 18 cells per group, prior count 0.5         | 1.473<sup>‡</sup> | $`[1.036, 1.859]`$<sup>‡</sup> | 8/8 in 54 of 100 draws       |
 
 Values are in $`\log_2`$ units. Unless otherwise indicated, intervals are 95% $`t`$-intervals across the eight donor contrasts (7 degrees of freedom). 
 
-<sup>† Post hoc. ‡ Median and 2.5th-97.5th percentiles across 100 random cell subsamples; hallmark analyses score a larger and different gene set, and their values are therefore not directly comparable with those of the ten-gene panel.</sup>
+<sup>‡ Median and 2.5th-97.5th percentiles across 100 random cell subsamples; hallmark analyses score a larger and different gene set, and their values are therefore not directly comparable with those of the ten-gene panel.</sup>
 
 ##### Monocytes exhibited greater induction than NK cells in all eight donors
 
@@ -81,6 +83,14 @@ The prior count is a constant added to all counts before log transformation. Red
 
 This asymmetry arises because edgeR scales the prior count by library size. NK pseudobulks contained substantially fewer counts than monocyte pseudobulks (mean effective library size, 117,580 versus 793,081), principally because NK groups comprised fewer cells. A prior count of 2 consequently added 17.01 CPM to each NK gene and 2.52 CPM to each monocyte gene. A larger additive constant raises near-zero control values disproportionately and thereby reduces the estimated induction. In NK cells, this effect was most pronounced for genes with minimal expression before stimulation. Three such genes, RSAD2, IFIT1 and IFI44L, were detected in 1.2-4.5% of control cells; they accounted for 0.156 of the 0.239 reduction in $`\hat\theta`$ (65.1%). The sensitivity of log-transformed single-cell data to the prior count is well documented ([Ahlmann-Eltze & Huber, 2023](https://doi.org/10.1038/s41592-023-01814-1)). In the present data, an identical setting acted unequally on two cell types that differed in library size.
 
+##### A fixed offset of 1 CPM reduced the magnitude of the contrast and again reversed the sign for donor 1016
+
+To test whether the sensitivity of the contrast is associated with the library-size-dependent regularization in edgeR log-CPM, we replaced $`\log_2`$ CPM with $`\log_2(\mathrm{CPM}+1)`$, which adds a fixed offset of 1 CPM to every pseudobulk profile. The primary TMM effective library sizes, pseudobulk profiles, genes and donors were reused without refitting. Because the edgeR denominator term cancels in stimulated-minus-control differences, the two measurements differ only in the CPM added to each value: 2.52 (monocytes) and 17.01 (NK cells) in the primary analysis, and 1 in both cell types here.
+
+With the fixed offset, $`\hat\theta`$ was 1.233 (0.692-1.773), 0.601 lower than in the primary analysis. The contrast decreased in every donor, by 0.202-0.953 (mean paired difference, −0.601; 95% $`t`$-interval, −0.862 to −0.341). NK induction increased by 0.778 and monocyte induction by 0.176. Seven donor contrasts remained positive (1.131-2.152), whereas that of donor 1016 changed from 0.232 to −0.142, as it had at prior count 0.5. RSAD2, IFIT1 and IFI44L accounted for 0.442 of the 0.601 reduction (73.5%), almost entirely through greater NK induction; these are the same sparsely detected control NK genes that accounted for the effect of the prior count. Under the criteria in `analysis/inputs/fixed_offset_specification.tsv`, the result shows sensitivity of magnitude (change ≥ 0.25) and a donor-level change of direction confined to donor 1016; the positive mean was unchanged.
+
+These results indicate that approximately one third of the primary magnitude depends on the larger CPM offset that edgeR applies to the smaller NK libraries. They do not identify a correct value. An equal offset on the CPM scale corresponds to unequal regularization on the count scale (approximately 0.79 counts per monocyte and 0.12 per NK pseudobulk at the mean library size); the fixed-offset estimate therefore redistributes, rather than removes, the dependence on library size.
+
 ##### Equalizing cell numbers preserved the direction of the contrast and reduced its magnitude
 
 Because monocyte groups contained more cells than NK groups, 18 cells (the size of the smallest group) were drawn from every group, and the analysis was repeated across 100 draws. Identical cells were used at both prior counts. The mean contrast was positive in all 100 draws at both prior counts, with medians of 1.450 (prior count 2) and 1.473 (prior count 0.5). All eight donor contrasts were simultaneously positive in 89 draws at prior count 2 and in 54 draws at prior count 0.5. The contrast for donor 1016 was positive in 90 and 59 draws, respectively, whereas that of every other donor was positive in at least 95.
@@ -92,7 +102,7 @@ Subsampling reduced the estimate: the full-data value (1.834) exceeded the 97.5t
 
 ##### Between-donor variation reflected differences in control monocyte expression
 
-To identify the source of between-donor variation, panel expression in control and stimulated monocytes was compared across donors. All monocyte profiles were normalized jointly, so these values are directly comparable between donors. Stimulated monocyte expression was similar across donors (10.74-11.24 $`\log_2`$ CPM), whereas control expression ranged more widely, from 3.58 to 6.66. The ranking of donors by control monocyte expression was the exact inverse of their ranking by contrast (post hoc Spearman ρ = −1). This relationship is largely a consequence of the definition: when stimulated levels are nearly constant, higher control expression necessarily corresponds to lower induction. The correlation therefore identifies the source of between-donor variation and is descriptive.
+To identify the source of between-donor variation, panel expression in control and stimulated monocytes was compared across donors. All monocyte profiles were normalized jointly, so these values are directly comparable between donors. Stimulated monocyte expression was similar across donors (10.74-11.24 $`\log_2`$ CPM), whereas control expression ranged more widely, from 3.58 to 6.66. The ranking of donors by control monocyte expression was the exact inverse of their ranking by contrast (Spearman ρ = −1). This relationship is largely a consequence of the definition: when stimulated levels are nearly constant, higher control expression necessarily corresponds to lower induction. The correlation therefore identifies the source of between-donor variation and is descriptive.
 
 Donor 1016 had the highest control monocyte expression (6.66), the lowest monocyte induction (4.18) and the smallest contrast. It was also the only donor in which control monocytes expressed the panel at a higher level than control NK cells (+0.28). Peripheral blood cells from many patients with SLE express IFN-inducible genes at elevated levels as a result of ongoing IFN exposure in vivo ([Baechler et al., 2003](https://doi.org/10.1073/pnas.0337679100); [Bennett et al., 2003](https://doi.org/10.1084/jem.20021553)). Cells with such elevated baseline expression have less capacity for further induction in culture, which may account for the profile of donor 1016. Evaluation of this explanation would require clinical, serum IFN or treatment data, which are not available for this dataset.
 
@@ -102,7 +112,7 @@ Individual genes differed in induction amplitude. Nine of the ten genes were ind
 
 ##### A larger IFN-α gene set reproduced the direction of the contrast with reduced between-donor variability
 
-To determine whether the result depended on the choice of ten genes, the analysis was repeated with the Hallmark IFN-α response gene set ([Liberzon et al., 2015](https://doi.org/10.1016/j.cels.2015.12.004)). The version specified in the analysis plan could not be evaluated: only 86 of the 97 gene symbols (88.7%) mapped uniquely to the dataset, below the specified minimum of 90%. In a post hoc revision, symbols were mapped through HGNC and Ensembl identifiers from GRCh37, the genome build of the dataset ([Seal et al., 2023](https://doi.org/10.1093/nar/gkac888); [Yates et al., 2015](https://doi.org/10.1093/bioinformatics/btu613)). This procedure resolved 96 genes and yielded $`\hat\theta = 1.452`$ (1.196-1.709; SD, 0.307). Five of these genes are also members of the ten-gene panel; their exclusion left 91 genes and yielded 1.402 (1.175-1.629; SD, 0.271), with a minimum donor contrast of 0.790. All donor contrasts were positive in both analyses.
+To determine whether the result depended on the choice of ten genes, the analysis was repeated with the Hallmark IFN-α response gene set ([Liberzon et al., 2015](https://doi.org/10.1016/j.cels.2015.12.004)). The version specified in the analysis plan could not be evaluated: only 86 of the 97 gene symbols (88.7%) mapped uniquely to the dataset, below the specified minimum of 90%. In a revised analysis, symbols were mapped through HGNC and Ensembl identifiers from GRCh37, the genome build of the dataset ([Seal et al., 2023](https://doi.org/10.1093/nar/gkac888); [Yates et al., 2015](https://doi.org/10.1093/bioinformatics/btu613)). This procedure resolved 96 genes and yielded $`\hat\theta = 1.452`$ (1.196-1.709; SD, 0.307). Five of these genes are also members of the ten-gene panel; their exclusion left 91 genes and yielded 1.402 (1.175-1.629; SD, 0.271), with a minimum donor contrast of 0.790. All donor contrasts were positive in both analyses.
 
 Between-donor standard deviation was 62-66% lower than for the ten-gene panel (0.804); the contrast for donor 1016 increased from 0.23 to 0.76. Averaging across a larger number of genes is likely to reduce the influence of a small number of sparsely detected genes. Because the 91-gene analysis excludes all panel genes, the greater induction in monocytes is not restricted to those ten genes. These analyses nevertheless derive from the same donors and experiment and do not constitute independent replication. 
 
@@ -126,14 +136,14 @@ To verify that this occurred, TMM factors were re-estimated without IFN-related 
 The results support three conclusions of differing strength.
 
 1) In this cohort, monocytes exhibited greater mean induction than NK cells in every analysis, in every subsample and with both larger IFN gene sets. 
-2) The magnitude of the contrast ranged from 1.40 to 1.87 in analyses using all cells and was approximately 1.45-1.47 in subsamples. It depended on the prior count, the number of cells aggregated and the gene set. Any single estimate should therefore be reported together with these analytical choices. 
-3) The contrast was positive in seven donors across all analyses. Its sign for donor 1016 depended on the prior count and on cell selection; this donor also had the highest control monocyte expression.
+2) The magnitude of the contrast ranged from 1.23 to 1.87 in analyses using all cells and was approximately 1.45-1.47 in subsamples. It depended on the regularization of low counts (the prior count or a fixed CPM offset), the number of cells aggregated and the gene set. Any single estimate should therefore be reported together with these analytical choices. 
+3) The contrast was positive in seven donors across all analyses. Its sign for donor 1016 depended on the regularization of low counts and on cell selection; this donor also had the highest control monocyte expression.
 
 > [!TIP]
 > These findings suggest four reporting practices for studies that compare IFN scores between cell types:
 >
 > - Report the direction, the magnitude and the donor-level results separately.
-> - Report the library size of each cell type, or the CPM added by the prior count, with any log-CPM comparison, because an identical prior count acts differently on cell types with different library sizes.
+> - Report the library size of each cell type, and the CPM added by the prior count or offset, with any log-CPM comparison, because an identical prior count acts differently on cell types with different library sizes, and an identical CPM offset corresponds to different numbers of counts.
 > - Report control expression together with induction, because donors with elevated baseline IFN activity, as is common in SLE, exhibit reduced induction.
 > - Treat scores from a larger gene set as a distinct measurement; such scores reduced between-donor variability in the present analysis but are on a different scale.
 
@@ -169,6 +179,12 @@ A more definitive test would specify the gene set and all analytical parameters 
 
 **(i) Control and stimulated expression of each panel gene.** Circles indicate control expression and arrowheads stimulated expression; arrow length corresponds to induction. All genes are induced in both cell types, to differing extents. IFI6 is the exception, with higher control expression and slightly lower induction in monocytes. Reducing the prior count principally alters the control values of sparsely detected genes such as IFI44L and IFIT1. Because the two cell types were normalized separately, horizontal positions are not directly comparable between them. **(j) Decomposition of each donor contrast.** For each donor, the contrast (×) equals the monocyte-minus-NK difference after stimulation (▲) plus the NK-minus-monocyte difference in controls (●). Because the cell types were normalized separately, the partition between these terms is arithmetic and lacks biological interpretation. The comparison across donors is informative: donor 1016 alone has a negative control term, consistent with its near-zero contrast. **(k) Gene contributions to the effect of the prior count.** Using all cells, the reduction in the contrast at prior count 0.5 arises principally from increased NK induction of RSAD2, IFIT1 and IFI44L. In subsamples, the monocyte and NK changes approximately cancel (net change, −0.023). The effect of the prior count therefore depends on the number of aggregated cells. **(l) Induction of all genes used for normalization.** Non-IFN genes are centred near zero in every donor and cell type, as expected under appropriate normalization. Hallmark IFN genes are induced more strongly in monocytes than in NK cells in every donor, indicating that the pattern extends beyond the ten panel genes. Panel genes are among the most strongly induced genes in every sample.
 
+##### Fixed-offset expression measurement
+
+![Fixed-offset comparison](figures/14_fixed_offset_donor_contrasts.png)
+
+**(m) Donor contrasts under edgeR log-CPM (prior count 2) and $`\log_2(\mathrm{CPM}+1)`$.** Circles show the primary contrasts and triangles the fixed-offset contrasts; grey segments connect the two values for each donor, and the bars at the top show each mean with its 95% interval. Every contrast decreases under the fixed offset, and only donor 1016 falls below zero (−0.142). Both measurements use identical counts, TMM factors, genes and donors; they differ only in the CPM added before log transformation.
+
 #### Data and code availability
 
 The input data is publicly available from [GEO GSE96583](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96583) and was accessed through `muscData::Kang18_8vs8()` (ExperimentHub EH2259, muscData 1.26.0). The local count cache has the MD5 checksum `b890d4b6a805f6f7be00e89927d4b34e`. No new data were generated.
@@ -182,16 +198,28 @@ This project is implemented in R 4.6.2 with Bioconductor 3.23. The following pac
 
 The CRAN packages `msigdbr` and `httr2` were also used to retrieve gene annotations.
 
-The analysis can be reproduced by running the commands below from the repository root. `00_fetch_annotation.R` performs a one-time download into `analysis/inputs/annotation/`. The analysis specification comprises `analysis/config.R` and the files in `analysis/inputs/` (listed in `analysis/inputs/manifest.txt`). Each output table is labelled with the identifier of the run that produced it.
+The analysis can be reproduced by running the commands below from the repository root of a fresh clone. The dataset is loaded from `cache/Kang18_8vs8.Rda` (MD5 above; not tracked by Git) if present, and otherwise downloaded through `muscData::Kang18_8vs8()`. The analysis specification comprises `analysis/config.R` and the files in `analysis/inputs/` (listed in `analysis/inputs/manifest.txt`). Each output table is labelled with the identifier of the run that produced it; the identifier ends in `-dirty` if the analysis sources differed from the recorded commit.
 
 ```bash
 Rscript analysis/tests/test_utils.R
-Rscript analysis/00_fetch_annotation.R
+```
+
+```bash
 Rscript analysis/run_all.R
 ```
 
+```bash
+Rscript release/verify_release.R
+```
+
+The HGNC and Ensembl annotation snapshot in `analysis/inputs/annotation/` is part of the frozen inputs. `analysis/00_fetch_annotation.R` re-queries the live services and overwrites that snapshot; it is not part of reproduction.
+
 > [!IMPORTANT]
 > Each run clears `results/` and `figures/`; existing outputs should therefore be preserved by running the analysis in a separate working copy.
+
+#### Release
+
+The canonical run is `20261107T123109Z-04ff0a4-dirty`; its numerical results reproduce the previous run of steps 01-13 to within a relative difference of $`10^{-10}`$ (`release/reproduction_comparison.csv`). `release/MANIFEST.md` lists the software versions, configuration, checksums and verification results. Any later correction will be issued as a separately versioned erratum or release.
 
 #### References
 
@@ -200,13 +228,13 @@ BibTeX entries for all references are in `references/references.bib`.
 #### Layout
 
 ```
-README.md
-manuscript/        manuscript.qmd, supplementary.qmd
+README.md          manuscript and final report
 references/        references.bib
+release/           MANIFEST.md, checksums.sha256, verification and reproduction records
 analysis/
   config.R, utils_*.R
   00_fetch_annotation.R
-  01_quality_control.R ... 13_summary_figures.R
+  01_quality_control.R ... 14_fixed_offset_measurement.R
   run_all.R
   inputs/
   tests/test_utils.R

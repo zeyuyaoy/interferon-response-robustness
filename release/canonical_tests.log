@@ -1,0 +1,41 @@
+ok - pseudobulk columns align with metadata 
+ok - group sums equal per-group column sums 
+ok - total counts conserved, n_cells correct 
+ok - pseudobulk invariant to cell order 
+ok - theta invariant to cell order 
+ok - group_table reports empty group as 0 
+ok - complete_donors drops donor with empty group 
+ok - missing group: donor contrast is dropped, not imputed 
+ok - zero pseudobulk library -> not_estimable 
+ok - map_genes flags mapped/ambiguous/missing 
+ok - counts_valid rejects non-integer and negative 
+ok - sign-flip all positive = 1/256 
+ok - sign-flip all negative = 1 
+ok - sign-flip all zero = 1 
+ok - sign-flip mixed in (1/256, 1) 
+ok - t-interval NA for n = 1 
+ok - LODO arithmetic 
+ok - subsample balanced without replacement 
+ok - subsample reproducible by seed 
+ok - subsample target > group -> not_estimable 
+ok - reference pools exclude core/excluded genes 
+ok - reference panel: no duplicates within panel 
+ok - exhausted pool -> not_estimable 
+ok - theta == 0 -> directional criteria NA 
+ok - 95/100 agreeing -> met 
+ok - failed draws count as disagreeing; denominator stays 100 
+ok - complete-donor set -> 8-donor criteria NA 
+[completed] a 
+[not_estimable] b - data
+[failed] c - bug [call: fn()]
+[completed_with_warning] d - w
+ok - run_component maps statuses 
+ok - resolve_symbols: renamed and alt-haplotype resolve; unannotated duplicate and absent gene do not 
+ok - resolve_symbols: row classes (distinct gene, alt annotation, unannotated) 
+ok - linked_rows: selected, HGNC-ID and alt-annotation rows; not distinct or unannotated 
+ok - theta = mean of gene-level contrasts 
+ok - logcpm_fixed = log2(1e6 C / E + 1) 
+ok - edgeR logCPM = log2(CPM + c_L) + lineage constant, c_L = 1e6 p / mean_L(E) 
+
+ALL TESTS PASSED
+tests exit 0
