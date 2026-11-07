@@ -43,7 +43,10 @@ R_{d\ell} = \frac{1}{10} \sum_{g=1}^{10} \left( y_{dg\ell}^{\text{stim}} - y_{dg
 \theta = \frac{1}{8} \sum_{d=1}^{8} \delta_d .
 $$
 
-Here, $`y_{jg} = \log_2\!\left[10^6 (C_{jg} + p_j)/(E_j + 2p_j)\right]`$, where $`C_{jg}`$ is the count for gene $`g`$ in pseudobulk $`j`$. $`E_j`$ is the **effective library size**, defined as the total count multiplied by the TMM factor. $`p_j = p\,E_j/\bar{E}_\ell`$ scales the prior count by relative library size, as implemented in edgeR. Each gene contributes equally to $`R`$; each donor contributes equally to $`\theta`$, irrespective of cell number. A value of $`\theta = 1.834`$ therefore denotes a mean difference in induction of 1.834 $`\log_2`$ units on this normalized relative scale. It does not represent a difference in absolute transcript abundance or in signalling activity.
+Here, $`y_{jg} = \log_2\!\left[10^6 (C_{jg} + p_j)/(E_j + 2p_j)\right]`$, where $`C_{jg}`$ is the count for gene $`g`$ in pseudobulk $`j`$. $`E_j`$ is the **effective library size**, defined as the total count multiplied by the TMM factor. $`p_j = p\,E_j/\bar{E}_\ell`$ scales the prior count by relative library size, as implemented in edgeR. Each gene contributes equally to $`R`$; each donor contributes equally to $`\theta`$, irrespective of cell number. A value of $`\theta = 1.834`$ therefore denotes a mean difference in induction of 1.834 $`\log_2`$ units on this normalized relative scale.
+
+> [!NOTE]
+> $`\theta`$ does not represent a difference in absolute transcript abundance or in signalling activity.
 
 | Analysis                                                            | $`\hat{\theta}`$  | Interval                       | Donors with $`\delta_d > 0`$ |
 |---------------------------------------------------------------------|-------------------|--------------------------------|------------------------------|
@@ -82,7 +85,10 @@ This asymmetry arises because edgeR scales the prior count by library size. NK p
 
 Because monocyte groups contained more cells than NK groups, 18 cells (the size of the smallest group) were drawn from every group, and the analysis was repeated across 100 draws. Identical cells were used at both prior counts. The mean contrast was positive in all 100 draws at both prior counts, with medians of 1.450 (prior count 2) and 1.473 (prior count 0.5). All eight donor contrasts were simultaneously positive in 89 draws at prior count 2 and in 54 draws at prior count 0.5. The contrast for donor 1016 was positive in 90 and 59 draws, respectively, whereas that of every other donor was positive in at least 95.
 
-Subsampling reduced the estimate: the full-data value (1.834) exceeded the 97.5th percentile of the prior-count-2 draws (1.724), and induction was lower in both cell types (monocytes, 4.59; NK cells, 3.15). In subsamples, reducing the prior count had little effect (change in $`\hat\theta`$, −0.023, compared with 0.239 using all cells). Subsampling simultaneously alters the cells included, library sizes, the genes that pass filtering, the TMM factors and the CPM added by the prior count. The present analysis cannot attribute the reduction to any one of these factors. Neither the full-data nor the subsampled estimate is more valid, as each is conditional on the number of cells aggregated. All draws derive from the same donors and sequenced cells; they therefore quantify sensitivity to cell selection and do not constitute independent biological replicates.
+Subsampling reduced the estimate: the full-data value (1.834) exceeded the 97.5th percentile of the prior-count-2 draws (1.724), and induction was lower in both cell types (monocytes, 4.59; NK cells, 3.15). In subsamples, reducing the prior count had little effect (change in $`\hat\theta`$, −0.023, compared with 0.239 using all cells). Subsampling simultaneously alters the cells included, library sizes, the genes that pass filtering, the TMM factors and the CPM added by the prior count. The present analysis cannot attribute the reduction to any one of these factors. Neither the full-data nor the subsampled estimate is more valid, as each is conditional on the number of cells aggregated.
+
+> [!NOTE]
+> All draws derive from the same donors and sequenced cells; they therefore quantify sensitivity to cell selection and do not constitute independent biological replicates.
 
 ##### Between-donor variation reflected differences in control monocyte expression
 
@@ -98,7 +104,10 @@ Individual genes differed in induction amplitude. Nine of the ten genes were ind
 
 To determine whether the result depended on the choice of ten genes, the analysis was repeated with the Hallmark IFN-α response gene set ([Liberzon et al., 2015](https://doi.org/10.1016/j.cels.2015.12.004)). The version specified in the analysis plan could not be evaluated: only 86 of the 97 gene symbols (88.7%) mapped uniquely to the dataset, below the specified minimum of 90%. In a post hoc revision, symbols were mapped through HGNC and Ensembl identifiers from GRCh37, the genome build of the dataset ([Seal et al., 2023](https://doi.org/10.1093/nar/gkac888); [Yates et al., 2015](https://doi.org/10.1093/bioinformatics/btu613)). This procedure resolved 96 genes and yielded $`\hat\theta = 1.452`$ (1.196-1.709; SD, 0.307). Five of these genes are also members of the ten-gene panel; their exclusion left 91 genes and yielded 1.402 (1.175-1.629; SD, 0.271), with a minimum donor contrast of 0.790. All donor contrasts were positive in both analyses.
 
-Between-donor standard deviation was 62-66% lower than for the ten-gene panel (0.804); the contrast for donor 1016 increased from 0.23 to 0.76. Averaging across a larger number of genes is likely to reduce the influence of a small number of sparsely detected genes. Because the 91-gene analysis excludes all panel genes, the greater induction in monocytes is not restricted to those ten genes. These analyses nevertheless derive from the same donors and experiment and do not constitute independent replication. Scores derived from gene sets that differ in size and composition are, moreover, not on a common scale ([Andreatta & Carmona, 2021](https://doi.org/10.1016/j.csbj.2021.06.043); [Ciernik et al., 2026](https://doi.org/10.1101/gr.280926.125)), so the values 1.45 and 1.83 should not be interpreted as estimates of a single quantity.
+Between-donor standard deviation was 62-66% lower than for the ten-gene panel (0.804); the contrast for donor 1016 increased from 0.23 to 0.76. Averaging across a larger number of genes is likely to reduce the influence of a small number of sparsely detected genes. Because the 91-gene analysis excludes all panel genes, the greater induction in monocytes is not restricted to those ten genes. These analyses nevertheless derive from the same donors and experiment and do not constitute independent replication. 
+
+> [!CAUTION]
+> Scores derived from gene sets that differ in size and composition are not on a common scale ([Andreatta & Carmona, 2021](https://doi.org/10.1016/j.csbj.2021.06.043); [Ciernik et al., 2026](https://doi.org/10.1101/gr.280926.125)), so the values 1.45 and 1.83 should not be interpreted as estimates of a single quantity.
 
 ##### The panel contrast exceeded that of all expression-matched random panels
 
@@ -120,16 +129,18 @@ The results support three conclusions of differing strength.
 2) The magnitude of the contrast ranged from 1.40 to 1.87 in analyses using all cells and was approximately 1.45-1.47 in subsamples. It depended on the prior count, the number of cells aggregated and the gene set. Any single estimate should therefore be reported together with these analytical choices. 
 3) The contrast was positive in seven donors across all analyses. Its sign for donor 1016 depended on the prior count and on cell selection; this donor also had the highest control monocyte expression.
 
-These findings suggest four reporting practices for studies that compare IFN scores between cell types:
-
-- Report the direction, the magnitude and the donor-level results separately.
-- Report the library size of each cell type, or the CPM added by the prior count, with any log-CPM comparison, because an identical prior count acts differently on cell types with different library sizes.
-- Report control expression together with induction, because donors with elevated baseline IFN activity, as is common in SLE, exhibit reduced induction.
-- Treat scores from a larger gene set as a distinct measurement; such scores reduced between-donor variability in the present analysis but are on a different scale.
+> [!TIP]
+> These findings suggest four reporting practices for studies that compare IFN scores between cell types:
+>
+> - Report the direction, the magnitude and the donor-level results separately.
+> - Report the library size of each cell type, or the CPM added by the prior count, with any log-CPM comparison, because an identical prior count acts differently on cell types with different library sizes.
+> - Report control expression together with induction, because donors with elevated baseline IFN activity, as is common in SLE, exhibit reduced induction.
+> - Treat scores from a larger gene set as a distinct measurement; such scores reduced between-donor variability in the present analysis but are on a different scale.
 
 #### Limitations
 
-In the original experiment, cells from all donors were pooled by condition, so that all control cells and all stimulated cells were each processed as a single pool. Effects of stimulation therefore cannot be fully separated from differences in the processing of the two pools. Neither donor pairing nor subsampling resolves this confounding.
+> [!WARNING]
+> In the original experiment, cells from all donors were pooled by condition, so that all control cells and all stimulated cells were each processed as a single pool. Effects of stimulation therefore cannot be fully separated from differences in the processing of the two pools. Neither donor pairing nor subsampling resolves this confounding.
 
 The analysis is restricted to a single cohort of eight SLE donors, one IFN-β dose and time point, and two broadly defined cell types. Clinical information and an independent validation cohort were not available.
 
