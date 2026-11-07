@@ -270,3 +270,5 @@ norm_lineage <- function(pb, L, drop_rows = character()) {
     norm.factors
   list(y = y, cnt = cnt, lib = lib, k = k, kk = kk, nf = nf, eff = lib * nf, profiles = colnames(cnt))
 }
+
+logcpm_fixed <- function(cnt, eff, offset) log2(t(t(cnt) / eff) * 1e6 + offset)

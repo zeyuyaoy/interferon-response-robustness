@@ -21,7 +21,7 @@ run_component("theta_specifications", function() {
                 sprintf("Core, TMM excluding IFN genes, prior.count %s (κ fixed)", pc2),
                 sprintf("Core, TMM excluding IFN genes, prior.count %s (κ fixed)", pc05),
                 sprintf("Core, upper-UMI QC filter, prior.count %s", pc2),
-                sprintf("Hallmark IFN-α, %d genes (post hoc mapping)", hm$n_resolved),
+                sprintf("Hallmark IFN-α, %d genes (GRCh37 mapping)", hm$n_resolved),
                 sprintf("Hallmark IFN-α minus core overlap, %d genes", ST$hmc$n_genes),
                 sprintf("Core, balanced subsamples, prior.count %s", pc2), sprintf("Core, balanced subsamples, prior.count %s", pc05)),
     statistic = c(rep("mean over donors", 7), rep("median over draws", 2)),

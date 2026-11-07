@@ -40,7 +40,7 @@ run_component("hallmark_ifna_post_hoc", function() {
 })
 
 run_component("hallmark_minus_core", function() {
-  if (is.null(ST$hm_symbols)) not_estimable("post hoc Hallmark resolution unavailable")
+  if (is.null(ST$hm_symbols)) not_estimable("Hallmark resolution unavailable")
   core <- ST$core_rows
   hs <- ST$hm_symbols[ST$hm_symbols$build == "grch37" & ST$hm_symbols$status == "resolved",]
   ov <- hs$symbol[hs$row %in% core]

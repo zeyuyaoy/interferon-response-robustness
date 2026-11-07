@@ -6,12 +6,12 @@ run_component("analysis_set", function() {
   gt <- ST$group_table
   eight <- length(ST$donors_observed) == CFG$n_donors_expected && all(gt$n_cells > 0)
   donors <- if (eight) ST$donors_observed else complete_donors(gt)
-  ST$analysis <- list(label = if (eight) "primary_8_donor" else "exploratory_complete_donor",
+  ST$analysis <- list(label = if (eight) "primary_8_donor" else "complete_donor",
                       eight = eight, donors = donors, n = length(donors))
   write_result(data.frame(label = ST$analysis$label, n_donors = ST$analysis$n,
                           donors = paste(donors, collapse = ";")), "analysis_set.csv", RUN_ID)
   if (!eight) component_warning(sprintf(
-    "8-donor primary not estimable (empty group or donor count); exploratory complete-donor set n = %d",
+    "8-donor primary not estimable (empty group or donor count); complete-donor set n = %d",
     length(donors)))
   if (!length(donors)) not_estimable("no donor has all four groups")
 })

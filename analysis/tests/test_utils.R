@@ -100,7 +100,7 @@ ok(!c2$criterion_met[c2$criterion == "subsampling_robustness"] &&
      grepl("of 100 attempted", c2$threshold[c2$criterion == "subsampling_robustness"]),
    "failed draws count as disagreeing; denominator stays 100")
 c3 <- robustness_criteria(1, NULL, NULL, R, "mono", "nk", CFG, FALSE)
-ok(all(is.na(c3$criterion_met)), "exploratory set -> 8-donor criteria NA")
+ok(all(is.na(c3$criterion_met)), "complete-donor set -> 8-donor criteria NA")
 
 .status$rows <- list()
 run_component("a", function() 1)
@@ -141,5 +141,16 @@ tg <- sapply(paste0("g", 1:10), function(g) mean(sapply(c("d1", "d2", "d3"), fun
   (Y[g, p("mono", "stim")] - Y[g, p("mono", "ctrl")]) - (Y[g, p("nk", "stim")] - Y[g, p("nk", "ctrl")])
 })))
 ok(isTRUE(all.equal(mean(tg), f$theta, tolerance = 1e-12)), "theta = mean of gene-level contrasts")
+
+eff <- f$norm$norm$eff_lib_size[match(colnames(f$pb$counts), f$norm$norm$profile)]
+Yf <- logcpm_fixed(f$pb$counts, eff, 1)
+ok(max(abs(Yf - log2(sweep(f$pb$counts, 2, eff, "/") * 1e6 + 1))) < 1e-12, "logcpm_fixed = log2(1e6 C / E + 1)")
+cst <- sapply(c("mono", "nk"), function(l) {
+  j <- pm$lineage == l
+  cL <- 1e6 * 2 / mean(eff[j])
+  D <- Y[, j] - logcpm_fixed(f$pb$counts[, j], eff[j], cL)
+  max(D) - min(D)
+})
+ok(all(cst < 1e-10), "edgeR logCPM = log2(CPM + c_L) + lineage constant, c_L = 1e6 p / mean_L(E)")
 
 cat("\nALL TESTS PASSED\n")
