@@ -1,0 +1,24 @@
+key	value
+status	LOCKED; external cross-context transferability check of the GSE96583 monocyte-NK contrast and its low-count regularization sensitivity; descriptive; not a replication (healthy vs SLE, 21 h vs 6 h, enriched populations vs PBMC, 10x Flex vs 10x 3')
+data	GEO GSE306664 (HIRISA); 20 per-sample *_labeled.h5 files listed in hirisa/samples.tsv (5 donors x mono/nk x none/IFNb); md5 recorded in hirisa/downloads.tsv
+design	control and IFN-b samples of each donor x lineage share one Flex pool (batch_pool), so stimulation is not confounded with pool; lineage maps to pool and is normalized separately
+fixed_inputs	10 core genes (analysis/inputs/core_isgs.tsv) mapped by features/name, unique match required; donors 3955BW, 3283BW, 2616BW, 6811BW, 3491BW
+cell_inclusion	mono: celltype.l2 == "CD14 Mono"; nk: celltype.l1 == "NK"; n_genes >= 200; no UMI-quantile filter in the primary analysis; Scrublet doublet removal as supplied
+groups	20 pseudobulks (donor x lineage x condition); groups < 20 cells flagged (min_cells_warn), included; a donor with any empty group is excluded
+normalization	edgeR TMM per lineage over 5 donors x 2 conditions; filterByExpr used only for factor estimation; all genes retained for scoring (logcpm_by_lineage)
+transformations	edgeR cpm(log = TRUE, prior.count = 2) [primary]; prior.count = 0.5; log2(CPM + 1) with CPM = 1e6 C / E using the prior-count-2 TMM effective library sizes (logcpm_fixed)
+estimand	R_dl = mean_g(y stim - y ctrl); delta_d = R_d,mono - R_d,nk; theta = mean_d delta_d over 5 donors, donors equally weighted
+sensitivity_estimand	D_HIRISA = theta(prior 2) - theta(log2(CPM+1)); paired donor differences Delta_d with mean and 95% t-interval (4 df)
+supporting	per-donor delta_d under each transformation; mean effective library size and CPM added (c_L = 1e6 p / mean_L(E)) per lineage; control detection fraction and CPM per gene per lineage; gene-wise decomposition of D into monocyte and NK parts
+subsampling	equal cells per group: target = smallest kept group size over the 20 groups; seeds 1:100 (subsample_idx); theta at prior 2 and log2(CPM+1) on identical cells; TMM refit per draw
+rule_control_ifn_high	baseline only, no stimulated data used: B_dl = mean over the 10 panel genes of log2(CPM + 1) in the control pseudobulk of donor d, lineage l (raw library sizes); flag (d, l) if B_dl - median over the other 4 donors of B_l > 3.08, the range of control monocyte panel expression across the 8 GSE96583 donors (3.58-6.66 log2 CPM), which that analysis did not treat as anomalous
+rule_control_ifn_high_use	all-donor estimates and estimates excluding flagged donors are both reported in full; neither is selected after seeing contrasts; if 2 or more donors are flagged in either lineage, the monocyte-NK contrast is declared not estimable in HIRISA and only the library-size and offset diagnostics are reported
+rule_control_ifn_high_provenance	written after inspecting control and IFN-b levels of donor 3955BW (control monocyte ISG15 10,410 CPM vs 132 in 3283BW) and before downloading or inspecting any data from 2616BW, 6811BW or 3491BW, and before any 5-donor contrast
+observed_control_mono	control monocyte B (log2(CPM+1), raw libraries): 3283BW 5.81, 2616BW 9.57, 3491BW 10.40, 6811BW 10.85, 3955BW 11.32; B minus median of others -4.82 to 1.33; no donor flagged; 4 of 5 donors exceed the GSE96583 control monocyte range (3.58-6.66, log2 CPM prior 2) and show CXCL10 75-854 CPM; recorded before any stimulated data from these donors were downloaded and before any 5-donor contrast (hirisa/results/pilot_levels.csv)
+inference	descriptive 95% t-intervals over 5 donors; one-sided sign-flip p reported (minimum 2^-5 = 0.031) but not a success criterion; cells are not replicates
+rule_directional_instability	sign(theta_alt) != sign(theta_primary) or any donor sign change between transformations
+rule_magnitude_sensitivity	abs(D_HIRISA) >= 0.25 (crit_influence_flag)
+rule_agreement	abs(D_HIRISA) < 0.25 and no cohort or donor sign change
+comparison	GSE96583 values (theta 1.834 / 1.595 / 1.233; D = 0.601; c_mono 2.52, c_nk 17.01 CPM) shown side by side, descriptively; no test across cohorts
+not_done	no search over offsets, normalization methods, gene sets, other IFNs (IFN-a, IFN-g, IFN-L1), other lineages, or re-clustering/relabelling
+specified_utc	2026-11-07T14:11:31Z
