@@ -1,0 +1,2 @@
+"analysis","n_donors","theta","sd","ci_lower","ci_upper","ci_level","ci_assumption","signflip_p_one_sided","signflip_assumption","n_pos_mono","n_pos_nk","prior_count","run_id"
+"primary_8_donor",8,1.83436592743764,0.803604109893159,1.16253607885934,2.50619577601595,0.95,"paired t-interval on donor contrasts; assumes approx. normal delta_d, independent donors",0.00390625,"exact over 2^8 sign patterns; assumes delta_d symmetric about 0 under H0",8,8,2,"20261107T010848Z-b11246a"
