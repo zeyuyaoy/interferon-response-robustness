@@ -139,16 +139,13 @@ The results support three conclusions of differing strength.
 
 #### Limitations
 
-> [!WARNING]
-> In the original experiment, cells from all donors were pooled by condition, so that all control cells and all stimulated cells were each processed as a single pool. Effects of stimulation therefore cannot be fully separated from differences in the processing of the two pools. Neither donor pairing nor subsampling resolves this confounding.
+In the original experiment, cells from all donors were pooled by condition, so that all control cells and all stimulated cells were each processed as a single pool. Effects of stimulation therefore cannot be fully separated from differences in the processing of the two pools. Neither donor pairing nor subsampling resolves this confounding.
 
-The analysis is restricted to a single cohort of eight SLE donors, one IFN-β dose and time point, and two broadly defined cell types. Clinical information and an independent validation cohort were not available.
+Secondly, the analysis is restricted to a single cohort of eight SLE donors, one IFN-β dose and time point, and two broadly defined cell types. Clinical information and an independent validation cohort were not available.
 
-The control NK group of donor 1039 contained only 18 cells. All 13 mitochondrial genes have zero counts in the supplied matrix, which precluded filtering on mitochondrial content. The deposited annotation lists 24,679 singlets, whereas the original article reports 24,305; the source of this discrepancy could not be determined.
+Furthermore, the control NK group of donor 1039 contained only 18 cells. All 13 mitochondrial genes have zero counts in the supplied matrix, which precluded filtering on mitochondrial content. The deposited annotation lists 24,679 singlets, whereas the original article reports 24,305; the source of this discrepancy could not be determined.
 
-Several analyses were conducted post hoc, and the available record does not independently establish that the analysis plan preceded the initial results.
-
-All results concern normalized transcript levels. Protein, signalling and functional measurements were not available.
+Finally, all results concern normalized transcript levels. Protein, signalling and functional measurements were not available.
 
 A more definitive test would specify the gene set and all analytical parameters and apply them to an independent donor cohort, with control and stimulated cells distributed across multiple processing batches. A time course with matched signalling measurements would be required to establish whether the transcriptional difference reflects a difference in cellular responsiveness to IFN.
 
