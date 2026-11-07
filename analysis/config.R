@@ -21,6 +21,7 @@ CFG <- list(
   norm_method = "TMM",
   prior_count = 2,
   prior_count_sens = 0.5,
+  fixed_offset_cpm = 1,
   subsample_target = 20L,
   subsample_seeds = 1:100,
   hallmark_min_coverage = 0.90,

@@ -1,0 +1,18 @@
+key	value
+status	formal analysis; descriptive donor-level intervals; no hypothesis test; same cohort, so not independent validation
+question	whether the sensitivity of the monocyte-NK contrast is associated with the library-size-dependent regularization of edgeR logCPM
+transformation	Y_alt[j,g] = log2(CPM[j,g] + 1), CPM[j,g] = 1e6 * C[j,g] / E[j]; offset fixed at 1 CPM for every pseudobulk profile (config fixed_offset_cpm)
+normalization	reuse eff_lib_size = lib_size * norm_factor from the primary fit (results/02_primary_estimate/normalization.csv); no refit of TMM factors, no change to filterByExpr, lineages normalized separately as in the primary
+fixed_inputs	same 32 pseudobulk profiles, 8 donors, 10 core genes (analysis/inputs/core_isgs.tsv), QC rules and cell inclusion as the primary analysis
+estimand	R_dl = mean_g(Y_alt stim - Y_alt ctrl); delta_d = R_d,mono - R_d,nk; theta_alt = mean_d delta_d, donors equally weighted
+primary_identity	edgeR: Y = log2(CPM + c_L) - log2(1 + 2 kappa_L), kappa_L = p / mean_L(E), c_L = 1e6 kappa_L; the second term cancels in stim - ctrl, so primary induction = mean_g log2((CPM_stim + c_L)/(CPM_ctrl + c_L)) with c_mono = 2.52 and c_nk = 17.01 CPM at p = 2
+distinction	fixed offset sets c = 1 CPM in both lineages; equivalent for induction to edgeR prior counts p_L = mean_L(E)/1e6 per lineage; only the additive CPM offset differs from the primary
+metrics	theta_alt, SD, 95% t-interval over 8 donors; donor delta_alt; Delta_d = delta_alt - delta_primary with mean and 95% t-interval over donors; R_mono and R_nk under both measurements; c_L under both measurements; donors with sign change; gene-wise arithmetic decomposition of theta_alt - theta_primary into monocyte and NK parts
+inference	descriptive t-intervals only (assume independent, approximately normal donor-level quantities; conditional on shared normalization); no p-values, no new hypothesis tests; genes, cells and profiles are not replicates
+rule_directional_instability	sign(theta_alt) != sign(theta_primary) or any donor sign(delta_alt) != sign(delta_primary)
+rule_magnitude_sensitivity	abs(theta_alt - theta_primary) >= 0.25 (existing crit_influence_flag reporting threshold)
+rule_agreement	abs(theta_alt - theta_primary) < 0.25 and no sign change at cohort or donor level
+rule_limited_information	theta_alt within [1.595, 1.870], the range of existing ten-gene all-cell estimates, and no donor sign change other than donor 1016, whose sign already changed at prior count 0.5
+rule_reporting	flags may co-occur; all applicable flags are reported regardless of direction
+not_done	no search over offsets, normalization methods, gene sets, cell subsets or models
+specified_utc	2026-11-07T11:56:13Z
