@@ -1,0 +1,950 @@
+"author_celltype","author_population","marker_label","time","n"
+"17. Memory B cells","B cells","B","0h",600
+"32. CD3+ CD19+","B cells","B","0h",61
+"33. Plasmablasts","B cells","B","0h",21
+"5. Naive B cells","B cells","B","0h",1221
+"1. Naive CD4","CD4","B","0h",3
+"19. Tregs","CD4","B","0h",1
+"23. IFN-high Naive CD4","CD4","B","0h",1
+"7. CM CD4","CD4","B","0h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","B","0h",1
+"16. Classical monocytes 2","Monocytes and DCs","B","0h",1
+"25. cDCs","Monocytes and DCs","B","0h",2
+"30. pDCs","Monocytes and DCs","B","0h",4
+"15. IFN-high NK","NK","B","0h",1
+"17. Memory B cells","B cells","CD14 Mono","0h",1
+"5. Naive B cells","B cells","CD14 Mono","0h",1
+"3. EM CD4","CD4","CD14 Mono","0h",2
+"6. CM and EM CD8","CD8","CD14 Mono","0h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","0h",183
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","0h",20
+"25. cDCs","Monocytes and DCs","CD14 Mono","0h",7
+"30. pDCs","Monocytes and DCs","CD14 Mono","0h",2
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","0h",852
+"1. Naive CD4","CD4","CD16 Mono","0h",1
+"11. Naive CD4","CD4","CD16 Mono","0h",1
+"19. Tregs","CD4","CD16 Mono","0h",3
+"23. IFN-high Naive CD4","CD4","CD16 Mono","0h",1
+"3. EM CD4","CD4","CD16 Mono","0h",2
+"7. CM CD4","CD4","CD16 Mono","0h",1
+"13. TE CD8","CD8","CD16 Mono","0h",3
+"6. CM and EM CD8","CD8","CD16 Mono","0h",2
+"12. Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","0h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","0h",15
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","0h",266
+"25. cDCs","Monocytes and DCs","CD16 Mono","0h",24
+"30. pDCs","Monocytes and DCs","CD16 Mono","0h",1
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","0h",13
+"2. NK CD56dim","NK","CD16 Mono","0h",1
+"9. NK CD56dim","NK","CD16 Mono","0h",1
+"1. Naive CD4","CD4","cDC","0h",1
+"18. Non-classical Monocytes","Monocytes and DCs","cDC","0h",1
+"17. Memory B cells","B cells","NK","0h",1
+"33. Plasmablasts","B cells","NK","0h",1
+"5. Naive B cells","B cells","NK","0h",15
+"1. Naive CD4","CD4","NK","0h",1
+"11. Naive CD4","CD4","NK","0h",1
+"19. Tregs","CD4","NK","0h",1
+"23. IFN-high Naive CD4","CD4","NK","0h",1
+"3. EM CD4","CD4","NK","0h",2
+"7. CM CD4","CD4","NK","0h",2
+"8. TE CD4","CD4","NK","0h",1
+"0. Naive CD8","CD8","NK","0h",2
+"13. TE CD8","CD8","NK","0h",5
+"6. CM and EM CD8","CD8","NK","0h",2
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","0h",4
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","0h",21
+"20. Vd2 gd T cells","MAIT and gd T cells","NK","0h",1
+"18. Non-classical Monocytes","Monocytes and DCs","NK","0h",3
+"25. cDCs","Monocytes and DCs","NK","0h",1
+"30. pDCs","Monocytes and DCs","NK","0h",5
+"4. Classical Monocytes","Monocytes and DCs","NK","0h",6
+"14. NK CD56dim","NK","NK","0h",436
+"15. IFN-high NK","NK","NK","0h",380
+"2. NK CD56dim","NK","NK","0h",1368
+"21. NK CD56bright","NK","NK","0h",317
+"28. NK CIML","NK","NK","0h",116
+"9. NK CD56dim","NK","NK","0h",792
+"17. Memory B cells","B cells","pDC","0h",1
+"5. Naive B cells","B cells","pDC","0h",1
+"30. pDCs","Monocytes and DCs","pDC","0h",91
+"17. Memory B cells","B cells","Platelet","0h",1
+"1. Naive CD4","CD4","Platelet","0h",3
+"7. CM CD4","CD4","Platelet","0h",1
+"0. Naive CD8","CD8","Platelet","0h",1
+"13. TE CD8","CD8","Platelet","0h",1
+"6. CM and EM CD8","CD8","Platelet","0h",1
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","Platelet","0h",2
+"30. pDCs","Monocytes and DCs","Platelet","0h",1
+"4. Classical Monocytes","Monocytes and DCs","Platelet","0h",1
+"17. Memory B cells","B cells","T","0h",9
+"32. CD3+ CD19+","B cells","T","0h",24
+"33. Plasmablasts","B cells","T","0h",3
+"5. Naive B cells","B cells","T","0h",8
+"1. Naive CD4","CD4","T","0h",2524
+"11. Naive CD4","CD4","T","0h",1134
+"19. Tregs","CD4","T","0h",622
+"23. IFN-high Naive CD4","CD4","T","0h",528
+"3. EM CD4","CD4","T","0h",1486
+"7. CM CD4","CD4","T","0h",1277
+"8. TE CD4","CD4","T","0h",1085
+"0. Naive CD8","CD8","T","0h",2898
+"13. TE CD8","CD8","T","0h",561
+"6. CM and EM CD8","CD8","T","0h",1134
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","0h",790
+"12. Vd2 gd T cells","MAIT and gd T cells","T","0h",458
+"20. Vd2 gd T cells","MAIT and gd T cells","T","0h",460
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","0h",202
+"16. Classical monocytes 2","Monocytes and DCs","T","0h",5
+"18. Non-classical Monocytes","Monocytes and DCs","T","0h",23
+"25. cDCs","Monocytes and DCs","T","0h",103
+"30. pDCs","Monocytes and DCs","T","0h",6
+"4. Classical Monocytes","Monocytes and DCs","T","0h",1
+"14. NK CD56dim","NK","T","0h",44
+"15. IFN-high NK","NK","T","0h",10
+"21. NK CD56bright","NK","T","0h",1
+"28. NK CIML","NK","T","0h",3
+"9. NK CD56dim","NK","T","0h",47
+"17. Memory B cells","B cells","unassigned","0h",5
+"32. CD3+ CD19+","B cells","unassigned","0h",1
+"5. Naive B cells","B cells","unassigned","0h",14
+"1. Naive CD4","CD4","unassigned","0h",22
+"11. Naive CD4","CD4","unassigned","0h",23
+"19. Tregs","CD4","unassigned","0h",16
+"23. IFN-high Naive CD4","CD4","unassigned","0h",18
+"3. EM CD4","CD4","unassigned","0h",29
+"7. CM CD4","CD4","unassigned","0h",10
+"8. TE CD4","CD4","unassigned","0h",18
+"0. Naive CD8","CD8","unassigned","0h",35
+"13. TE CD8","CD8","unassigned","0h",206
+"6. CM and EM CD8","CD8","unassigned","0h",92
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","0h",159
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","0h",382
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","0h",151
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","0h",33
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","0h",420
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","0h",65
+"25. cDCs","Monocytes and DCs","unassigned","0h",41
+"30. pDCs","Monocytes and DCs","unassigned","0h",10
+"4. Classical Monocytes","Monocytes and DCs","unassigned","0h",178
+"14. NK CD56dim","NK","unassigned","0h",350
+"15. IFN-high NK","NK","unassigned","0h",174
+"2. NK CD56dim","NK","unassigned","0h",650
+"21. NK CD56bright","NK","unassigned","0h",352
+"28. NK CIML","NK","unassigned","0h",44
+"9. NK CD56dim","NK","unassigned","0h",402
+"17. Memory B cells","B cells","B","12h",362
+"32. CD3+ CD19+","B cells","B","12h",28
+"33. Plasmablasts","B cells","B","12h",23
+"5. Naive B cells","B cells","B","12h",692
+"7. CM CD4","CD4","B","12h",1
+"6. CM and EM CD8","CD8","B","12h",2
+"20. Vd2 gd T cells","MAIT and gd T cells","B","12h",1
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","B","12h",1
+"16. Classical monocytes 2","Monocytes and DCs","B","12h",1
+"18. Non-classical Monocytes","Monocytes and DCs","B","12h",3
+"30. pDCs","Monocytes and DCs","B","12h",1
+"4. Classical Monocytes","Monocytes and DCs","B","12h",4
+"17. Memory B cells","B cells","CD14 Mono","12h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","12h",102
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","12h",19
+"25. cDCs","Monocytes and DCs","CD14 Mono","12h",2
+"30. pDCs","Monocytes and DCs","CD14 Mono","12h",1
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","12h",504
+"17. Memory B cells","B cells","CD16 Mono","12h",1
+"1. Naive CD4","CD4","CD16 Mono","12h",5
+"19. Tregs","CD4","CD16 Mono","12h",3
+"3. EM CD4","CD4","CD16 Mono","12h",1
+"0. Naive CD8","CD8","CD16 Mono","12h",1
+"13. TE CD8","CD8","CD16 Mono","12h",2
+"6. CM and EM CD8","CD8","CD16 Mono","12h",2
+"12. Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","12h",3
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","12h",34
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","12h",187
+"25. cDCs","Monocytes and DCs","CD16 Mono","12h",14
+"30. pDCs","Monocytes and DCs","CD16 Mono","12h",2
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","12h",109
+"14. NK CD56dim","NK","CD16 Mono","12h",1
+"28. NK CIML","NK","CD16 Mono","12h",2
+"25. cDCs","Monocytes and DCs","cDC","12h",1
+"17. Memory B cells","B cells","NK","12h",8
+"5. Naive B cells","B cells","NK","12h",8
+"1. Naive CD4","CD4","NK","12h",1
+"11. Naive CD4","CD4","NK","12h",2
+"19. Tregs","CD4","NK","12h",1
+"23. IFN-high Naive CD4","CD4","NK","12h",3
+"3. EM CD4","CD4","NK","12h",8
+"8. TE CD4","CD4","NK","12h",1
+"0. Naive CD8","CD8","NK","12h",2
+"13. TE CD8","CD8","NK","12h",11
+"6. CM and EM CD8","CD8","NK","12h",4
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","12h",3
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","12h",17
+"20. Vd2 gd T cells","MAIT and gd T cells","NK","12h",1
+"16. Classical monocytes 2","Monocytes and DCs","NK","12h",9
+"18. Non-classical Monocytes","Monocytes and DCs","NK","12h",7
+"25. cDCs","Monocytes and DCs","NK","12h",7
+"30. pDCs","Monocytes and DCs","NK","12h",3
+"4. Classical Monocytes","Monocytes and DCs","NK","12h",17
+"14. NK CD56dim","NK","NK","12h",443
+"15. IFN-high NK","NK","NK","12h",440
+"2. NK CD56dim","NK","NK","12h",925
+"21. NK CD56bright","NK","NK","12h",190
+"28. NK CIML","NK","NK","12h",88
+"9. NK CD56dim","NK","NK","12h",530
+"17. Memory B cells","B cells","pDC","12h",3
+"30. pDCs","Monocytes and DCs","pDC","12h",54
+"3. EM CD4","CD4","Platelet","12h",1
+"7. CM CD4","CD4","Platelet","12h",1
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","Platelet","12h",1
+"16. Classical monocytes 2","Monocytes and DCs","Platelet","12h",1
+"18. Non-classical Monocytes","Monocytes and DCs","Platelet","12h",1
+"4. Classical Monocytes","Monocytes and DCs","Platelet","12h",6
+"17. Memory B cells","B cells","T","12h",4
+"32. CD3+ CD19+","B cells","T","12h",8
+"5. Naive B cells","B cells","T","12h",2
+"1. Naive CD4","CD4","T","12h",1097
+"11. Naive CD4","CD4","T","12h",548
+"19. Tregs","CD4","T","12h",312
+"23. IFN-high Naive CD4","CD4","T","12h",218
+"3. EM CD4","CD4","T","12h",1031
+"7. CM CD4","CD4","T","12h",655
+"8. TE CD4","CD4","T","12h",692
+"0. Naive CD8","CD8","T","12h",1381
+"13. TE CD8","CD8","T","12h",302
+"6. CM and EM CD8","CD8","T","12h",654
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","12h",575
+"12. Vd2 gd T cells","MAIT and gd T cells","T","12h",383
+"20. Vd2 gd T cells","MAIT and gd T cells","T","12h",192
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","12h",101
+"16. Classical monocytes 2","Monocytes and DCs","T","12h",5
+"18. Non-classical Monocytes","Monocytes and DCs","T","12h",16
+"25. cDCs","Monocytes and DCs","T","12h",48
+"30. pDCs","Monocytes and DCs","T","12h",2
+"4. Classical Monocytes","Monocytes and DCs","T","12h",9
+"14. NK CD56dim","NK","T","12h",21
+"15. IFN-high NK","NK","T","12h",5
+"21. NK CD56bright","NK","T","12h",1
+"28. NK CIML","NK","T","12h",13
+"9. NK CD56dim","NK","T","12h",8
+"17. Memory B cells","B cells","unassigned","12h",7
+"32. CD3+ CD19+","B cells","unassigned","12h",2
+"33. Plasmablasts","B cells","unassigned","12h",4
+"5. Naive B cells","B cells","unassigned","12h",9
+"1. Naive CD4","CD4","unassigned","12h",13
+"11. Naive CD4","CD4","unassigned","12h",26
+"19. Tregs","CD4","unassigned","12h",13
+"23. IFN-high Naive CD4","CD4","unassigned","12h",13
+"3. EM CD4","CD4","unassigned","12h",48
+"7. CM CD4","CD4","unassigned","12h",6
+"8. TE CD4","CD4","unassigned","12h",30
+"0. Naive CD8","CD8","unassigned","12h",23
+"13. TE CD8","CD8","unassigned","12h",165
+"6. CM and EM CD8","CD8","unassigned","12h",55
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","12h",119
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","12h",235
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","12h",79
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","12h",14
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","12h",258
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","12h",50
+"25. cDCs","Monocytes and DCs","unassigned","12h",32
+"30. pDCs","Monocytes and DCs","unassigned","12h",6
+"4. Classical Monocytes","Monocytes and DCs","unassigned","12h",327
+"14. NK CD56dim","NK","unassigned","12h",202
+"15. IFN-high NK","NK","unassigned","12h",90
+"2. NK CD56dim","NK","unassigned","12h",227
+"21. NK CD56bright","NK","unassigned","12h",133
+"28. NK CIML","NK","unassigned","12h",23
+"9. NK CD56dim","NK","unassigned","12h",151
+"17. Memory B cells","B cells","B","1h",97
+"32. CD3+ CD19+","B cells","B","1h",7
+"33. Plasmablasts","B cells","B","1h",7
+"5. Naive B cells","B cells","B","1h",209
+"11. Naive CD4","CD4","B","1h",1
+"3. EM CD4","CD4","B","1h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","1h",59
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","1h",1
+"25. cDCs","Monocytes and DCs","CD14 Mono","1h",3
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","1h",215
+"5. Naive B cells","B cells","CD16 Mono","1h",1
+"1. Naive CD4","CD4","CD16 Mono","1h",1
+"13. TE CD8","CD8","CD16 Mono","1h",1
+"6. CM and EM CD8","CD8","CD16 Mono","1h",2
+"12. Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","1h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","1h",7
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","1h",87
+"25. cDCs","Monocytes and DCs","CD16 Mono","1h",13
+"30. pDCs","Monocytes and DCs","CD16 Mono","1h",2
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","1h",3
+"14. NK CD56dim","NK","CD16 Mono","1h",1
+"2. NK CD56dim","NK","CD16 Mono","1h",1
+"5. Naive B cells","B cells","NK","1h",2
+"11. Naive CD4","CD4","NK","1h",3
+"19. Tregs","CD4","NK","1h",1
+"3. EM CD4","CD4","NK","1h",3
+"0. Naive CD8","CD8","NK","1h",1
+"13. TE CD8","CD8","NK","1h",3
+"6. CM and EM CD8","CD8","NK","1h",4
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","1h",3
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","1h",7
+"16. Classical monocytes 2","Monocytes and DCs","NK","1h",1
+"18. Non-classical Monocytes","Monocytes and DCs","NK","1h",1
+"25. cDCs","Monocytes and DCs","NK","1h",2
+"30. pDCs","Monocytes and DCs","NK","1h",3
+"14. NK CD56dim","NK","NK","1h",146
+"15. IFN-high NK","NK","NK","1h",154
+"2. NK CD56dim","NK","NK","1h",342
+"21. NK CD56bright","NK","NK","1h",75
+"28. NK CIML","NK","NK","1h",43
+"9. NK CD56dim","NK","NK","1h",221
+"30. pDCs","Monocytes and DCs","pDC","1h",13
+"1. Naive CD4","CD4","Platelet","1h",1
+"11. Naive CD4","CD4","Platelet","1h",1
+"8. TE CD4","CD4","Platelet","1h",1
+"17. Memory B cells","B cells","T","1h",2
+"32. CD3+ CD19+","B cells","T","1h",4
+"5. Naive B cells","B cells","T","1h",3
+"1. Naive CD4","CD4","T","1h",471
+"11. Naive CD4","CD4","T","1h",212
+"19. Tregs","CD4","T","1h",140
+"23. IFN-high Naive CD4","CD4","T","1h",100
+"3. EM CD4","CD4","T","1h",413
+"7. CM CD4","CD4","T","1h",275
+"8. TE CD4","CD4","T","1h",306
+"0. Naive CD8","CD8","T","1h",533
+"13. TE CD8","CD8","T","1h",165
+"6. CM and EM CD8","CD8","T","1h",317
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","1h",270
+"12. Vd2 gd T cells","MAIT and gd T cells","T","1h",176
+"20. Vd2 gd T cells","MAIT and gd T cells","T","1h",138
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","1h",44
+"18. Non-classical Monocytes","Monocytes and DCs","T","1h",3
+"25. cDCs","Monocytes and DCs","T","1h",14
+"30. pDCs","Monocytes and DCs","T","1h",2
+"4. Classical Monocytes","Monocytes and DCs","T","1h",1
+"14. NK CD56dim","NK","T","1h",12
+"15. IFN-high NK","NK","T","1h",3
+"21. NK CD56bright","NK","T","1h",1
+"9. NK CD56dim","NK","T","1h",15
+"17. Memory B cells","B cells","unassigned","1h",6
+"5. Naive B cells","B cells","unassigned","1h",4
+"1. Naive CD4","CD4","unassigned","1h",13
+"11. Naive CD4","CD4","unassigned","1h",9
+"19. Tregs","CD4","unassigned","1h",6
+"23. IFN-high Naive CD4","CD4","unassigned","1h",3
+"3. EM CD4","CD4","unassigned","1h",12
+"7. CM CD4","CD4","unassigned","1h",6
+"8. TE CD4","CD4","unassigned","1h",9
+"0. Naive CD8","CD8","unassigned","1h",10
+"13. TE CD8","CD8","unassigned","1h",149
+"6. CM and EM CD8","CD8","unassigned","1h",47
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","1h",75
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","1h",204
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","1h",79
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","1h",4
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","1h",79
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","1h",17
+"25. cDCs","Monocytes and DCs","unassigned","1h",16
+"30. pDCs","Monocytes and DCs","unassigned","1h",6
+"4. Classical Monocytes","Monocytes and DCs","unassigned","1h",31
+"14. NK CD56dim","NK","unassigned","1h",131
+"15. IFN-high NK","NK","unassigned","1h",75
+"2. NK CD56dim","NK","unassigned","1h",224
+"21. NK CD56bright","NK","unassigned","1h",106
+"28. NK CIML","NK","unassigned","1h",7
+"9. NK CD56dim","NK","unassigned","1h",147
+"17. Memory B cells","B cells","B","24h",452
+"32. CD3+ CD19+","B cells","B","24h",33
+"33. Plasmablasts","B cells","B","24h",29
+"5. Naive B cells","B cells","B","24h",807
+"1. Naive CD4","CD4","B","24h",2
+"3. EM CD4","CD4","B","24h",2
+"6. CM and EM CD8","CD8","B","24h",1
+"20. Vd2 gd T cells","MAIT and gd T cells","B","24h",1
+"16. Classical monocytes 2","Monocytes and DCs","B","24h",5
+"18. Non-classical Monocytes","Monocytes and DCs","B","24h",5
+"25. cDCs","Monocytes and DCs","B","24h",6
+"30. pDCs","Monocytes and DCs","B","24h",1
+"4. Classical Monocytes","Monocytes and DCs","B","24h",5
+"21. NK CD56bright","NK","B","24h",1
+"28. NK CIML","NK","B","24h",1
+"19. Tregs","CD4","CD14 Mono","24h",1
+"0. Naive CD8","CD8","CD14 Mono","24h",1
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","CD14 Mono","24h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","24h",92
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","24h",16
+"25. cDCs","Monocytes and DCs","CD14 Mono","24h",1
+"30. pDCs","Monocytes and DCs","CD14 Mono","24h",1
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","24h",350
+"33. Plasmablasts","B cells","CD16 Mono","24h",4
+"5. Naive B cells","B cells","CD16 Mono","24h",1
+"1. Naive CD4","CD4","CD16 Mono","24h",6
+"11. Naive CD4","CD4","CD16 Mono","24h",2
+"19. Tregs","CD4","CD16 Mono","24h",1
+"23. IFN-high Naive CD4","CD4","CD16 Mono","24h",1
+"3. EM CD4","CD4","CD16 Mono","24h",7
+"7. CM CD4","CD4","CD16 Mono","24h",2
+"8. TE CD4","CD4","CD16 Mono","24h",1
+"13. TE CD8","CD8","CD16 Mono","24h",2
+"6. CM and EM CD8","CD8","CD16 Mono","24h",2
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","CD16 Mono","24h",1
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","24h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","24h",40
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","24h",261
+"25. cDCs","Monocytes and DCs","CD16 Mono","24h",27
+"30. pDCs","Monocytes and DCs","CD16 Mono","24h",2
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","24h",413
+"33. Plasmablasts","B cells","cDC","24h",1
+"17. Memory B cells","B cells","NK","24h",3
+"33. Plasmablasts","B cells","NK","24h",2
+"5. Naive B cells","B cells","NK","24h",13
+"1. Naive CD4","CD4","NK","24h",1
+"11. Naive CD4","CD4","NK","24h",1
+"19. Tregs","CD4","NK","24h",2
+"3. EM CD4","CD4","NK","24h",3
+"7. CM CD4","CD4","NK","24h",1
+"0. Naive CD8","CD8","NK","24h",3
+"13. TE CD8","CD8","NK","24h",5
+"6. CM and EM CD8","CD8","NK","24h",2
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","24h",6
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","24h",4
+"16. Classical monocytes 2","Monocytes and DCs","NK","24h",3
+"18. Non-classical Monocytes","Monocytes and DCs","NK","24h",14
+"25. cDCs","Monocytes and DCs","NK","24h",5
+"30. pDCs","Monocytes and DCs","NK","24h",8
+"4. Classical Monocytes","Monocytes and DCs","NK","24h",30
+"14. NK CD56dim","NK","NK","24h",259
+"15. IFN-high NK","NK","NK","24h",350
+"2. NK CD56dim","NK","NK","24h",885
+"21. NK CD56bright","NK","NK","24h",173
+"28. NK CIML","NK","NK","24h",71
+"9. NK CD56dim","NK","NK","24h",429
+"17. Memory B cells","B cells","pDC","24h",1
+"25. cDCs","Monocytes and DCs","pDC","24h",1
+"30. pDCs","Monocytes and DCs","pDC","24h",91
+"1. Naive CD4","CD4","Platelet","24h",1
+"19. Tregs","CD4","Platelet","24h",1
+"7. CM CD4","CD4","Platelet","24h",1
+"0. Naive CD8","CD8","Platelet","24h",4
+"6. CM and EM CD8","CD8","Platelet","24h",1
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","Platelet","24h",1
+"16. Classical monocytes 2","Monocytes and DCs","Platelet","24h",1
+"25. cDCs","Monocytes and DCs","Platelet","24h",1
+"30. pDCs","Monocytes and DCs","Platelet","24h",1
+"4. Classical Monocytes","Monocytes and DCs","Platelet","24h",2
+"17. Memory B cells","B cells","T","24h",1
+"32. CD3+ CD19+","B cells","T","24h",8
+"33. Plasmablasts","B cells","T","24h",3
+"1. Naive CD4","CD4","T","24h",1218
+"11. Naive CD4","CD4","T","24h",589
+"19. Tregs","CD4","T","24h",318
+"23. IFN-high Naive CD4","CD4","T","24h",233
+"3. EM CD4","CD4","T","24h",1100
+"7. CM CD4","CD4","T","24h",699
+"8. TE CD4","CD4","T","24h",763
+"0. Naive CD8","CD8","T","24h",1645
+"13. TE CD8","CD8","T","24h",325
+"6. CM and EM CD8","CD8","T","24h",724
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","24h",502
+"12. Vd2 gd T cells","MAIT and gd T cells","T","24h",378
+"20. Vd2 gd T cells","MAIT and gd T cells","T","24h",171
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","24h",126
+"16. Classical monocytes 2","Monocytes and DCs","T","24h",16
+"18. Non-classical Monocytes","Monocytes and DCs","T","24h",34
+"25. cDCs","Monocytes and DCs","T","24h",45
+"30. pDCs","Monocytes and DCs","T","24h",5
+"4. Classical Monocytes","Monocytes and DCs","T","24h",46
+"14. NK CD56dim","NK","T","24h",45
+"15. IFN-high NK","NK","T","24h",11
+"28. NK CIML","NK","T","24h",2
+"9. NK CD56dim","NK","T","24h",16
+"17. Memory B cells","B cells","unassigned","24h",5
+"32. CD3+ CD19+","B cells","unassigned","24h",1
+"33. Plasmablasts","B cells","unassigned","24h",4
+"5. Naive B cells","B cells","unassigned","24h",4
+"1. Naive CD4","CD4","unassigned","24h",11
+"11. Naive CD4","CD4","unassigned","24h",11
+"19. Tregs","CD4","unassigned","24h",11
+"23. IFN-high Naive CD4","CD4","unassigned","24h",11
+"3. EM CD4","CD4","unassigned","24h",28
+"7. CM CD4","CD4","unassigned","24h",6
+"8. TE CD4","CD4","unassigned","24h",17
+"0. Naive CD8","CD8","unassigned","24h",21
+"13. TE CD8","CD8","unassigned","24h",142
+"6. CM and EM CD8","CD8","unassigned","24h",27
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","24h",121
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","24h",242
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","24h",79
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","24h",9
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","24h",258
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","24h",78
+"25. cDCs","Monocytes and DCs","unassigned","24h",54
+"30. pDCs","Monocytes and DCs","unassigned","24h",6
+"4. Classical Monocytes","Monocytes and DCs","unassigned","24h",373
+"14. NK CD56dim","NK","unassigned","24h",215
+"15. IFN-high NK","NK","unassigned","24h",108
+"2. NK CD56dim","NK","unassigned","24h",281
+"21. NK CD56bright","NK","unassigned","24h",172
+"28. NK CIML","NK","unassigned","24h",23
+"9. NK CD56dim","NK","unassigned","24h",162
+"17. Memory B cells","B cells","B","2h",264
+"32. CD3+ CD19+","B cells","B","2h",20
+"33. Plasmablasts","B cells","B","2h",25
+"5. Naive B cells","B cells","B","2h",620
+"1. Naive CD4","CD4","B","2h",2
+"19. Tregs","CD4","B","2h",2
+"3. EM CD4","CD4","B","2h",1
+"0. Naive CD8","CD8","B","2h",1
+"6. CM and EM CD8","CD8","B","2h",1
+"25. cDCs","Monocytes and DCs","B","2h",1
+"17. Memory B cells","B cells","CD14 Mono","2h",3
+"1. Naive CD4","CD4","CD14 Mono","2h",1
+"19. Tregs","CD4","CD14 Mono","2h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","2h",159
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","2h",27
+"25. cDCs","Monocytes and DCs","CD14 Mono","2h",2
+"30. pDCs","Monocytes and DCs","CD14 Mono","2h",3
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","2h",581
+"14. NK CD56dim","NK","CD14 Mono","2h",1
+"5. Naive B cells","B cells","CD16 Mono","2h",3
+"1. Naive CD4","CD4","CD16 Mono","2h",3
+"11. Naive CD4","CD4","CD16 Mono","2h",4
+"19. Tregs","CD4","CD16 Mono","2h",2
+"23. IFN-high Naive CD4","CD4","CD16 Mono","2h",2
+"3. EM CD4","CD4","CD16 Mono","2h",2
+"7. CM CD4","CD4","CD16 Mono","2h",4
+"8. TE CD4","CD4","CD16 Mono","2h",3
+"0. Naive CD8","CD8","CD16 Mono","2h",1
+"13. TE CD8","CD8","CD16 Mono","2h",1
+"6. CM and EM CD8","CD8","CD16 Mono","2h",4
+"12. Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","2h",4
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","2h",9
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","2h",157
+"25. cDCs","Monocytes and DCs","CD16 Mono","2h",19
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","2h",10
+"15. IFN-high NK","NK","CD16 Mono","2h",2
+"1. Naive CD4","CD4","cDC","2h",2
+"3. EM CD4","CD4","cDC","2h",2
+"7. CM CD4","CD4","cDC","2h",1
+"6. CM and EM CD8","CD8","cDC","2h",1
+"25. cDCs","Monocytes and DCs","cDC","2h",1
+"17. Memory B cells","B cells","NK","2h",6
+"5. Naive B cells","B cells","NK","2h",7
+"1. Naive CD4","CD4","NK","2h",1
+"11. Naive CD4","CD4","NK","2h",2
+"3. EM CD4","CD4","NK","2h",3
+"7. CM CD4","CD4","NK","2h",3
+"0. Naive CD8","CD8","NK","2h",10
+"13. TE CD8","CD8","NK","2h",14
+"6. CM and EM CD8","CD8","NK","2h",14
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","2h",6
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","2h",11
+"20. Vd2 gd T cells","MAIT and gd T cells","NK","2h",2
+"18. Non-classical Monocytes","Monocytes and DCs","NK","2h",7
+"25. cDCs","Monocytes and DCs","NK","2h",2
+"30. pDCs","Monocytes and DCs","NK","2h",3
+"4. Classical Monocytes","Monocytes and DCs","NK","2h",2
+"14. NK CD56dim","NK","NK","2h",246
+"15. IFN-high NK","NK","NK","2h",398
+"2. NK CD56dim","NK","NK","2h",785
+"21. NK CD56bright","NK","NK","2h",135
+"28. NK CIML","NK","NK","2h",69
+"9. NK CD56dim","NK","NK","2h",401
+"30. pDCs","Monocytes and DCs","pDC","2h",45
+"11. Naive CD4","CD4","Platelet","2h",1
+"3. EM CD4","CD4","Platelet","2h",1
+"7. CM CD4","CD4","Platelet","2h",2
+"0. Naive CD8","CD8","Platelet","2h",1
+"20. Vd2 gd T cells","MAIT and gd T cells","Platelet","2h",1
+"17. Memory B cells","B cells","T","2h",4
+"32. CD3+ CD19+","B cells","T","2h",5
+"33. Plasmablasts","B cells","T","2h",1
+"5. Naive B cells","B cells","T","2h",3
+"1. Naive CD4","CD4","T","2h",1075
+"11. Naive CD4","CD4","T","2h",456
+"19. Tregs","CD4","T","2h",337
+"23. IFN-high Naive CD4","CD4","T","2h",230
+"3. EM CD4","CD4","T","2h",857
+"7. CM CD4","CD4","T","2h",585
+"8. TE CD4","CD4","T","2h",549
+"0. Naive CD8","CD8","T","2h",1232
+"13. TE CD8","CD8","T","2h",148
+"6. CM and EM CD8","CD8","T","2h",454
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","2h",359
+"12. Vd2 gd T cells","MAIT and gd T cells","T","2h",127
+"20. Vd2 gd T cells","MAIT and gd T cells","T","2h",183
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","2h",88
+"18. Non-classical Monocytes","Monocytes and DCs","T","2h",13
+"25. cDCs","Monocytes and DCs","T","2h",29
+"30. pDCs","Monocytes and DCs","T","2h",1
+"4. Classical Monocytes","Monocytes and DCs","T","2h",1
+"14. NK CD56dim","NK","T","2h",15
+"21. NK CD56bright","NK","T","2h",1
+"9. NK CD56dim","NK","T","2h",3
+"17. Memory B cells","B cells","unassigned","2h",7
+"32. CD3+ CD19+","B cells","unassigned","2h",2
+"33. Plasmablasts","B cells","unassigned","2h",2
+"5. Naive B cells","B cells","unassigned","2h",18
+"1. Naive CD4","CD4","unassigned","2h",44
+"11. Naive CD4","CD4","unassigned","2h",42
+"19. Tregs","CD4","unassigned","2h",19
+"23. IFN-high Naive CD4","CD4","unassigned","2h",12
+"3. EM CD4","CD4","unassigned","2h",48
+"7. CM CD4","CD4","unassigned","2h",27
+"8. TE CD4","CD4","unassigned","2h",24
+"0. Naive CD8","CD8","unassigned","2h",52
+"13. TE CD8","CD8","unassigned","2h",335
+"6. CM and EM CD8","CD8","unassigned","2h",138
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","2h",196
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","2h",373
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","2h",152
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","2h",16
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","2h",241
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","2h",63
+"25. cDCs","Monocytes and DCs","unassigned","2h",38
+"30. pDCs","Monocytes and DCs","unassigned","2h",10
+"4. Classical Monocytes","Monocytes and DCs","unassigned","2h",118
+"14. NK CD56dim","NK","unassigned","2h",202
+"15. IFN-high NK","NK","unassigned","2h",93
+"2. NK CD56dim","NK","unassigned","2h",273
+"21. NK CD56bright","NK","unassigned","2h",143
+"28. NK CIML","NK","unassigned","2h",18
+"9. NK CD56dim","NK","unassigned","2h",182
+"17. Memory B cells","B cells","B","36h",607
+"32. CD3+ CD19+","B cells","B","36h",65
+"33. Plasmablasts","B cells","B","36h",28
+"5. Naive B cells","B cells","B","36h",1179
+"1. Naive CD4","CD4","B","36h",1
+"19. Tregs","CD4","B","36h",2
+"23. IFN-high Naive CD4","CD4","B","36h",1
+"3. EM CD4","CD4","B","36h",2
+"8. TE CD4","CD4","B","36h",3
+"6. CM and EM CD8","CD8","B","36h",2
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","B","36h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","B","36h",1
+"16. Classical monocytes 2","Monocytes and DCs","B","36h",6
+"18. Non-classical Monocytes","Monocytes and DCs","B","36h",16
+"25. cDCs","Monocytes and DCs","B","36h",8
+"4. Classical Monocytes","Monocytes and DCs","B","36h",15
+"21. NK CD56bright","NK","B","36h",2
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","36h",35
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","36h",5
+"25. cDCs","Monocytes and DCs","CD14 Mono","36h",1
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","36h",149
+"17. Memory B cells","B cells","CD16 Mono","36h",1
+"33. Plasmablasts","B cells","CD16 Mono","36h",1
+"5. Naive B cells","B cells","CD16 Mono","36h",1
+"1. Naive CD4","CD4","CD16 Mono","36h",1
+"11. Naive CD4","CD4","CD16 Mono","36h",1
+"19. Tregs","CD4","CD16 Mono","36h",4
+"3. EM CD4","CD4","CD16 Mono","36h",6
+"7. CM CD4","CD4","CD16 Mono","36h",1
+"0. Naive CD8","CD8","CD16 Mono","36h",1
+"6. CM and EM CD8","CD8","CD16 Mono","36h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","CD16 Mono","36h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","36h",83
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","36h",412
+"25. cDCs","Monocytes and DCs","CD16 Mono","36h",68
+"30. pDCs","Monocytes and DCs","CD16 Mono","36h",3
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","36h",503
+"15. IFN-high NK","NK","CD16 Mono","36h",1
+"21. NK CD56bright","NK","CD16 Mono","36h",1
+"25. cDCs","Monocytes and DCs","cDC","36h",2
+"17. Memory B cells","B cells","NK","36h",2
+"5. Naive B cells","B cells","NK","36h",10
+"19. Tregs","CD4","NK","36h",2
+"23. IFN-high Naive CD4","CD4","NK","36h",1
+"8. TE CD4","CD4","NK","36h",1
+"13. TE CD8","CD8","NK","36h",2
+"6. CM and EM CD8","CD8","NK","36h",3
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","36h",2
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","36h",10
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","NK","36h",2
+"16. Classical monocytes 2","Monocytes and DCs","NK","36h",21
+"18. Non-classical Monocytes","Monocytes and DCs","NK","36h",31
+"25. cDCs","Monocytes and DCs","NK","36h",28
+"30. pDCs","Monocytes and DCs","NK","36h",6
+"4. Classical Monocytes","Monocytes and DCs","NK","36h",53
+"14. NK CD56dim","NK","NK","36h",125
+"15. IFN-high NK","NK","NK","36h",273
+"2. NK CD56dim","NK","NK","36h",743
+"21. NK CD56bright","NK","NK","36h",148
+"28. NK CIML","NK","NK","36h",68
+"9. NK CD56dim","NK","NK","36h",396
+"7. CM CD4","CD4","pDC","36h",1
+"16. Classical monocytes 2","Monocytes and DCs","pDC","36h",2
+"18. Non-classical Monocytes","Monocytes and DCs","pDC","36h",1
+"30. pDCs","Monocytes and DCs","pDC","36h",116
+"23. IFN-high Naive CD4","CD4","Platelet","36h",1
+"3. EM CD4","CD4","Platelet","36h",1
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","Platelet","36h",2
+"16. Classical monocytes 2","Monocytes and DCs","Platelet","36h",2
+"18. Non-classical Monocytes","Monocytes and DCs","Platelet","36h",1
+"25. cDCs","Monocytes and DCs","Platelet","36h",1
+"4. Classical Monocytes","Monocytes and DCs","Platelet","36h",3
+"17. Memory B cells","B cells","T","36h",2
+"32. CD3+ CD19+","B cells","T","36h",18
+"33. Plasmablasts","B cells","T","36h",4
+"5. Naive B cells","B cells","T","36h",4
+"1. Naive CD4","CD4","T","36h",1352
+"11. Naive CD4","CD4","T","36h",646
+"19. Tregs","CD4","T","36h",379
+"23. IFN-high Naive CD4","CD4","T","36h",317
+"3. EM CD4","CD4","T","36h",1351
+"7. CM CD4","CD4","T","36h",888
+"8. TE CD4","CD4","T","36h",764
+"0. Naive CD8","CD8","T","36h",1781
+"13. TE CD8","CD8","T","36h",386
+"6. CM and EM CD8","CD8","T","36h",828
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","36h",609
+"12. Vd2 gd T cells","MAIT and gd T cells","T","36h",355
+"20. Vd2 gd T cells","MAIT and gd T cells","T","36h",246
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","36h",143
+"16. Classical monocytes 2","Monocytes and DCs","T","36h",68
+"18. Non-classical Monocytes","Monocytes and DCs","T","36h",145
+"25. cDCs","Monocytes and DCs","T","36h",168
+"30. pDCs","Monocytes and DCs","T","36h",7
+"4. Classical Monocytes","Monocytes and DCs","T","36h",190
+"14. NK CD56dim","NK","T","36h",33
+"15. IFN-high NK","NK","T","36h",4
+"2. NK CD56dim","NK","T","36h",1
+"28. NK CIML","NK","T","36h",3
+"9. NK CD56dim","NK","T","36h",9
+"17. Memory B cells","B cells","unassigned","36h",6
+"32. CD3+ CD19+","B cells","unassigned","36h",2
+"5. Naive B cells","B cells","unassigned","36h",7
+"1. Naive CD4","CD4","unassigned","36h",9
+"11. Naive CD4","CD4","unassigned","36h",6
+"19. Tregs","CD4","unassigned","36h",12
+"23. IFN-high Naive CD4","CD4","unassigned","36h",4
+"3. EM CD4","CD4","unassigned","36h",11
+"7. CM CD4","CD4","unassigned","36h",13
+"8. TE CD4","CD4","unassigned","36h",5
+"0. Naive CD8","CD8","unassigned","36h",8
+"13. TE CD8","CD8","unassigned","36h",228
+"6. CM and EM CD8","CD8","unassigned","36h",51
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","36h",154
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","36h",327
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","36h",196
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","36h",14
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","36h",403
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","36h",262
+"25. cDCs","Monocytes and DCs","unassigned","36h",198
+"30. pDCs","Monocytes and DCs","unassigned","36h",14
+"4. Classical Monocytes","Monocytes and DCs","unassigned","36h",799
+"14. NK CD56dim","NK","unassigned","36h",193
+"15. IFN-high NK","NK","unassigned","36h",102
+"2. NK CD56dim","NK","unassigned","36h",326
+"21. NK CD56bright","NK","unassigned","36h",204
+"28. NK CIML","NK","unassigned","36h",41
+"9. NK CD56dim","NK","unassigned","36h",231
+"17. Memory B cells","B cells","B","4h",278
+"32. CD3+ CD19+","B cells","B","4h",19
+"33. Plasmablasts","B cells","B","4h",9
+"5. Naive B cells","B cells","B","4h",567
+"1. Naive CD4","CD4","B","4h",2
+"19. Tregs","CD4","B","4h",1
+"3. EM CD4","CD4","B","4h",3
+"7. CM CD4","CD4","B","4h",2
+"0. Naive CD8","CD8","B","4h",1
+"6. CM and EM CD8","CD8","B","4h",1
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","B","4h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","B","4h",1
+"18. Non-classical Monocytes","Monocytes and DCs","B","4h",1
+"25. cDCs","Monocytes and DCs","B","4h",2
+"30. pDCs","Monocytes and DCs","B","4h",2
+"4. Classical Monocytes","Monocytes and DCs","B","4h",1
+"17. Memory B cells","B cells","CD14 Mono","4h",1
+"19. Tregs","CD4","CD14 Mono","4h",1
+"7. CM CD4","CD4","CD14 Mono","4h",1
+"0. Naive CD8","CD8","CD14 Mono","4h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","4h",111
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","4h",19
+"30. pDCs","Monocytes and DCs","CD14 Mono","4h",1
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","4h",454
+"5. Naive B cells","B cells","CD16 Mono","4h",3
+"1. Naive CD4","CD4","CD16 Mono","4h",5
+"11. Naive CD4","CD4","CD16 Mono","4h",2
+"19. Tregs","CD4","CD16 Mono","4h",2
+"3. EM CD4","CD4","CD16 Mono","4h",4
+"7. CM CD4","CD4","CD16 Mono","4h",1
+"8. TE CD4","CD4","CD16 Mono","4h",2
+"0. Naive CD8","CD8","CD16 Mono","4h",2
+"6. CM and EM CD8","CD8","CD16 Mono","4h",5
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","4h",8
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","4h",166
+"25. cDCs","Monocytes and DCs","CD16 Mono","4h",19
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","4h",18
+"14. NK CD56dim","NK","CD16 Mono","4h",1
+"15. IFN-high NK","NK","CD16 Mono","4h",1
+"21. NK CD56bright","NK","CD16 Mono","4h",1
+"16. Classical monocytes 2","Monocytes and DCs","cDC","4h",1
+"17. Memory B cells","B cells","NK","4h",2
+"33. Plasmablasts","B cells","NK","4h",1
+"5. Naive B cells","B cells","NK","4h",10
+"1. Naive CD4","CD4","NK","4h",8
+"11. Naive CD4","CD4","NK","4h",7
+"19. Tregs","CD4","NK","4h",1
+"23. IFN-high Naive CD4","CD4","NK","4h",1
+"3. EM CD4","CD4","NK","4h",9
+"8. TE CD4","CD4","NK","4h",1
+"0. Naive CD8","CD8","NK","4h",7
+"13. TE CD8","CD8","NK","4h",9
+"6. CM and EM CD8","CD8","NK","4h",13
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","NK","4h",12
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","4h",21
+"20. Vd2 gd T cells","MAIT and gd T cells","NK","4h",1
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","NK","4h",1
+"18. Non-classical Monocytes","Monocytes and DCs","NK","4h",6
+"25. cDCs","Monocytes and DCs","NK","4h",7
+"30. pDCs","Monocytes and DCs","NK","4h",3
+"4. Classical Monocytes","Monocytes and DCs","NK","4h",5
+"14. NK CD56dim","NK","NK","4h",182
+"15. IFN-high NK","NK","NK","4h",425
+"2. NK CD56dim","NK","NK","4h",787
+"21. NK CD56bright","NK","NK","4h",182
+"28. NK CIML","NK","NK","4h",74
+"9. NK CD56dim","NK","NK","4h",358
+"30. pDCs","Monocytes and DCs","pDC","4h",36
+"1. Naive CD4","CD4","Platelet","4h",1
+"11. Naive CD4","CD4","Platelet","4h",1
+"7. CM CD4","CD4","Platelet","4h",2
+"0. Naive CD8","CD8","Platelet","4h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","Platelet","4h",1
+"16. Classical monocytes 2","Monocytes and DCs","Platelet","4h",1
+"4. Classical Monocytes","Monocytes and DCs","Platelet","4h",1
+"17. Memory B cells","B cells","T","4h",3
+"32. CD3+ CD19+","B cells","T","4h",7
+"33. Plasmablasts","B cells","T","4h",1
+"5. Naive B cells","B cells","T","4h",1
+"1. Naive CD4","CD4","T","4h",935
+"11. Naive CD4","CD4","T","4h",463
+"19. Tregs","CD4","T","4h",251
+"23. IFN-high Naive CD4","CD4","T","4h",167
+"3. EM CD4","CD4","T","4h",738
+"7. CM CD4","CD4","T","4h",534
+"8. TE CD4","CD4","T","4h",568
+"0. Naive CD8","CD8","T","4h",1103
+"13. TE CD8","CD8","T","4h",118
+"6. CM and EM CD8","CD8","T","4h",446
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","4h",322
+"12. Vd2 gd T cells","MAIT and gd T cells","T","4h",90
+"20. Vd2 gd T cells","MAIT and gd T cells","T","4h",220
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","4h",93
+"16. Classical monocytes 2","Monocytes and DCs","T","4h",3
+"18. Non-classical Monocytes","Monocytes and DCs","T","4h",6
+"25. cDCs","Monocytes and DCs","T","4h",36
+"30. pDCs","Monocytes and DCs","T","4h",1
+"4. Classical Monocytes","Monocytes and DCs","T","4h",4
+"14. NK CD56dim","NK","T","4h",8
+"15. IFN-high NK","NK","T","4h",1
+"9. NK CD56dim","NK","T","4h",1
+"17. Memory B cells","B cells","unassigned","4h",4
+"32. CD3+ CD19+","B cells","unassigned","4h",1
+"33. Plasmablasts","B cells","unassigned","4h",2
+"5. Naive B cells","B cells","unassigned","4h",15
+"1. Naive CD4","CD4","unassigned","4h",53
+"11. Naive CD4","CD4","unassigned","4h",29
+"19. Tregs","CD4","unassigned","4h",14
+"23. IFN-high Naive CD4","CD4","unassigned","4h",7
+"3. EM CD4","CD4","unassigned","4h",48
+"7. CM CD4","CD4","unassigned","4h",22
+"8. TE CD4","CD4","unassigned","4h",22
+"0. Naive CD8","CD8","unassigned","4h",53
+"13. TE CD8","CD8","unassigned","4h",228
+"6. CM and EM CD8","CD8","unassigned","4h",92
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","4h",141
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","4h",273
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","4h",138
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","4h",18
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","4h",195
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","4h",70
+"25. cDCs","Monocytes and DCs","unassigned","4h",48
+"30. pDCs","Monocytes and DCs","unassigned","4h",5
+"4. Classical Monocytes","Monocytes and DCs","unassigned","4h",310
+"14. NK CD56dim","NK","unassigned","4h",178
+"15. IFN-high NK","NK","unassigned","4h",69
+"2. NK CD56dim","NK","unassigned","4h",190
+"21. NK CD56bright","NK","unassigned","4h",124
+"28. NK CIML","NK","unassigned","4h",21
+"9. NK CD56dim","NK","unassigned","4h",123
+"17. Memory B cells","B cells","B","8h",139
+"32. CD3+ CD19+","B cells","B","8h",21
+"33. Plasmablasts","B cells","B","8h",4
+"5. Naive B cells","B cells","B","8h",319
+"19. Tregs","CD4","B","8h",1
+"6. CM and EM CD8","CD8","B","8h",1
+"25. cDCs","Monocytes and DCs","B","8h",1
+"4. Classical Monocytes","Monocytes and DCs","B","8h",1
+"21. NK CD56bright","NK","B","8h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD14 Mono","8h",40
+"18. Non-classical Monocytes","Monocytes and DCs","CD14 Mono","8h",3
+"4. Classical Monocytes","Monocytes and DCs","CD14 Mono","8h",131
+"3. EM CD4","CD4","CD16 Mono","8h",1
+"7. CM CD4","CD4","CD16 Mono","8h",1
+"6. CM and EM CD8","CD8","CD16 Mono","8h",1
+"16. Classical monocytes 2","Monocytes and DCs","CD16 Mono","8h",2
+"18. Non-classical Monocytes","Monocytes and DCs","CD16 Mono","8h",16
+"25. cDCs","Monocytes and DCs","CD16 Mono","8h",6
+"30. pDCs","Monocytes and DCs","CD16 Mono","8h",1
+"4. Classical Monocytes","Monocytes and DCs","CD16 Mono","8h",19
+"5. Naive B cells","B cells","NK","8h",2
+"11. Naive CD4","CD4","NK","8h",1
+"12. Vd2 gd T cells","MAIT and gd T cells","NK","8h",1
+"16. Classical monocytes 2","Monocytes and DCs","NK","8h",2
+"18. Non-classical Monocytes","Monocytes and DCs","NK","8h",2
+"25. cDCs","Monocytes and DCs","NK","8h",1
+"4. Classical Monocytes","Monocytes and DCs","NK","8h",9
+"14. NK CD56dim","NK","NK","8h",8
+"15. IFN-high NK","NK","NK","8h",92
+"2. NK CD56dim","NK","NK","8h",211
+"21. NK CD56bright","NK","NK","8h",40
+"28. NK CIML","NK","NK","8h",12
+"9. NK CD56dim","NK","NK","8h",130
+"30. pDCs","Monocytes and DCs","pDC","8h",12
+"1. Naive CD4","CD4","Platelet","8h",2
+"7. CM CD4","CD4","Platelet","8h",1
+"17. Memory B cells","B cells","T","8h",1
+"5. Naive B cells","B cells","T","8h",1
+"1. Naive CD4","CD4","T","8h",422
+"11. Naive CD4","CD4","T","8h",193
+"19. Tregs","CD4","T","8h",126
+"23. IFN-high Naive CD4","CD4","T","8h",84
+"3. EM CD4","CD4","T","8h",283
+"7. CM CD4","CD4","T","8h",237
+"8. TE CD4","CD4","T","8h",209
+"0. Naive CD8","CD8","T","8h",606
+"13. TE CD8","CD8","T","8h",18
+"6. CM and EM CD8","CD8","T","8h",154
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","T","8h",97
+"12. Vd2 gd T cells","MAIT and gd T cells","T","8h",10
+"20. Vd2 gd T cells","MAIT and gd T cells","T","8h",49
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","T","8h",51
+"18. Non-classical Monocytes","Monocytes and DCs","T","8h",3
+"25. cDCs","Monocytes and DCs","T","8h",9
+"30. pDCs","Monocytes and DCs","T","8h",1
+"4. Classical Monocytes","Monocytes and DCs","T","8h",4
+"14. NK CD56dim","NK","T","8h",2
+"17. Memory B cells","B cells","unassigned","8h",3
+"1. Naive CD4","CD4","unassigned","8h",6
+"19. Tregs","CD4","unassigned","8h",1
+"23. IFN-high Naive CD4","CD4","unassigned","8h",1
+"3. EM CD4","CD4","unassigned","8h",5
+"7. CM CD4","CD4","unassigned","8h",4
+"8. TE CD4","CD4","unassigned","8h",1
+"13. TE CD8","CD8","unassigned","8h",11
+"6. CM and EM CD8","CD8","unassigned","8h",5
+"10. Vd2 gd T cells and MAIT","MAIT and gd T cells","unassigned","8h",4
+"12. Vd2 gd T cells","MAIT and gd T cells","unassigned","8h",16
+"20. Vd2 gd T cells","MAIT and gd T cells","unassigned","8h",3
+"27. Non-Vd2 gd T cells","MAIT and gd T cells","unassigned","8h",8
+"16. Classical monocytes 2","Monocytes and DCs","unassigned","8h",53
+"18. Non-classical Monocytes","Monocytes and DCs","unassigned","8h",15
+"25. cDCs","Monocytes and DCs","unassigned","8h",7
+"4. Classical Monocytes","Monocytes and DCs","unassigned","8h",109
+"14. NK CD56dim","NK","unassigned","8h",38
+"15. IFN-high NK","NK","unassigned","8h",27
+"2. NK CD56dim","NK","unassigned","8h",74
+"21. NK CD56bright","NK","unassigned","8h",35
+"28. NK CIML","NK","unassigned","8h",19
+"9. NK CD56dim","NK","unassigned","8h",37

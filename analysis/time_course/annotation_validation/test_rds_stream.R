@@ -1,0 +1,23 @@
+source("analysis/time_course/annotation_validation/utils_rds_stream.R")
+suppressPackageStartupMessages(library(Seurat))
+ok <- function(cond, msg) { if (!isTRUE(cond)) stop("FAIL: ", msg, call. = FALSE); cat("ok -", msg, "\n") }
+set.seed(1)
+m <- Matrix::rsparsematrix(300, 120, 0.2, rand.x = function(n) rpois(n, 3) + 1)
+dimnames(m) <- list(paste0("G", 1:300), paste0("D34_0h_", sprintf("BC%03d-1", 1:120)))
+so <- CreateSeuratObject(m, project = "IFN")
+so$celltype <- factor(sample(c("CD14 Mono", "NK", "T"), 120, TRUE))
+so$time <- sample(c("0h", "4h"), 120, TRUE)
+so <- NormalizeData(so, verbose = FALSE)
+f <- tempfile(fileext = ".rds.gz"); saveRDS(so, f, compress = "gzip")
+for (ml in c(5e6, 200)) {
+  r <- rds_slot_reader(f, "meta.data", max_len = ml)
+  md <- as_metadata_frame(r$value)
+  ok(r$found && identical(md$cell, colnames(so)), sprintf("cell names recovered (max_len %g)", ml))
+  ok(identical(as.character(md$celltype), as.character(so$celltype)) && identical(levels(md$celltype), levels(so$celltype)), sprintf("factor labels recovered (max_len %g)", ml))
+  ok(identical(md$time, unname(so$time)) && identical(as.character(md$orig.ident), as.character(so$orig.ident)), sprintf("character and orig.ident columns recovered (max_len %g)", ml))
+  ok(isTRUE(all.equal(md$nCount_RNA, unname(so$nCount_RNA))), sprintf("numeric columns recovered (max_len %g)", ml))
+}
+ok(rds_slot_reader(f, "meta.data", max_len = 200)$skipped_bytes > 0, "vectors above max_len are skipped, not materialised")
+f2 <- tempfile(fileext = ".rds.gz"); system2("gzip", c("-c", shQuote(f)), stdout = f2)
+ok(identical(as_metadata_frame(rds_slot_reader(f2, "meta.data")$value)$cell, colnames(so)), "a gzip-wrapped gzip RDS (GEO format) is read")
+cat("\nALL TESTS PASSED\n")

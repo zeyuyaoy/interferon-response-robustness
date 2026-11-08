@@ -1,0 +1,16 @@
+item	value
+run_id	20261108T015128Z-d8b3c8c-dirty
+started_utc	2026-11-08T01:51:28Z
+finished_utc	2026-11-08T01:52:09Z
+git_sha	d8b3c8c
+spec_md5	e91d38cc664178f1cc7e3cf488f76344
+category	exploratory prespecified analysis (spec locked before outcomes)
+R	R version 4.6.2 (2026-10-29)
+sha256:analysis/gse226572/specification.tsv	ed6e8946d6ddaa2babd3714cce7ac768870e037bc145b6f23d4ac7f2aba41bd3
+sha256:analysis/gse226572/spec_history.tsv	bd5eb76884fdf74ed6a25fbc69631b18a482093b1117e01ab8a954c2070f5d49
+sha256:cache/gse226572/cell_labels.tsv.gz	b59cd1d3b38da5eb4ff63c58d2888354e74bd2150b72ba34aac00ebb1b1bc63b
+sha256:analysis/inputs/core_isgs.tsv	dde5f7a962938806b068502d6df59d914dc0627faeee2fbe0d5da024b73494e0
+sha256:analysis/inputs/annotation/candidate_rows.tsv	96932b30ae4986638f43bc43ed748a5a5926b492ccdb7aefa3eef8fa0b82725f
+sha256:analysis/gse226572/samples.tsv	ee71e512c925495eb4e9ced1d6ae20b0d5eb0ade609cd96fafd285775f2aaf34
+sha256:analysis/gse226572/downloads.tsv	5a8570bbd65970e4affe95a6cca8222b28f7244d78a0cdc4f999bf80465a4ae2
+sha256:analysis/gse226572/results/cell_counts.csv	af092464d55d7f6e090b079b3af5e06e8f729c6db1696b6dbb8d4354e5f5de81

@@ -1,0 +1,6 @@
+item	value
+run_id	20261108T004705Z-2fa7fca-dirty
+category	feasibility and annotation gate (no panel-gene values read beyond identifier mapping)
+labels_file	cache/gse226572/cell_labels.tsv.gz
+labels_sha256	b59cd1d3b38da5eb4ff63c58d2888354e74bd2150b72ba34aac00ebb1b1bc63b
+panel_values_computed	no

@@ -1,0 +1,21 @@
+R version 4.6.2 (2026-10-29)
+Platform: aarch64-apple-darwin23
+Running under: macOS Golden Gate 27.2
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_SG/en_SG/en_SG/C/en_SG/en_SG
+
+time zone: Asia/Singapore
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.2      Matrix_1.7-6        tools_4.6.2        
+[4] rhdf5_2.56.1        rhdf5filters_1.24.1 grid_4.6.2         
+[7] lattice_0.23-1      Rhdf5lib_2.0.0     

@@ -1,0 +1,5 @@
+item	value
+geo_soft_full	cache/gse226572/GSE226572_full.soft.txt sha256 2a85aa4a29cbb01b5e40a8bf56b0861c85b40615c6024d222aefcbb1bb024e7a
+geo_soft_url	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226572&targ=all&form=text&view=full
+sra_runinfo	eutils esearch(db=sra, term=SRX) + efetch(rettype=runinfo)
+retrieved_utc	2026-11-08T00:41:35Z

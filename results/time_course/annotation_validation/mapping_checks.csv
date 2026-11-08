@@ -1,0 +1,6 @@
+"check","pass","value"
+"every author Sample matches one GSM file token",TRUE,"24"
+"author Donor equals sample donor",TRUE,"0"
+"author Timepoint equals sample time",TRUE,"0"
+">= 90% of author cells map uniquely to an H5 barcode",TRUE,"1.0000 (115503 of 115503)"
+"share of author cells in our called cells (descriptive)",TRUE,"1.0000"

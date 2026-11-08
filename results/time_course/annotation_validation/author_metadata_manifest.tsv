@@ -1,0 +1,13 @@
+item	value
+source	cache/gse226572/GSE226572_SeuratObject_IFN.rds.gz
+source_sha256	c5d594f43239ea98f1fadff75308d234ff6cc02cca65b9d4e1f27ab383ef8819
+output	cache/gse226572/author_metadata.tsv.gz
+output_sha256	b7925137ead77b5c5f892f91f1185f32c55e7f6c7ceca575076315dca2adba0a
+n_cells	115503
+n_columns	85
+items_parsed	4632298
+bytes_skipped	21876569280
+serialization_version	3;262149;197888
+seconds	134
+extracted_utc	2026-11-08T02:03:41Z
+content	meta.data slot only; no expression values read

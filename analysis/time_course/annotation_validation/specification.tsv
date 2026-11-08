@@ -1,0 +1,16 @@
+key	value
+status	LOCKED; prespecified annotation-sensitivity analysis of the GSE226572 time-course result (analysis/time_course/specification.tsv), requested in review; the primary analysis and its outputs are unchanged; descriptive with 3 donors
+question	does Gamma depend on how monocytes and NK cells were identified? The marker rule loses CD14 with IFN exposure, so 24h classical monocytes may be relabelled CD16 Mono
+annotation	depositors' labels from the meta.data slot of GEO GSE226572_SeuratObject_IFN.rds.gz (sha256 in analysis/time_course/annotation_validation/downloads.tsv), extracted without reading expression values (01_extract_author_metadata.R) and mapped to (GSM, barcode) by sample token and barcode (02_map_author_labels.R)
+author_labels	cache/gse226572/author_labels.tsv.gz; sha256 b6f53dfe5aea37cec6b3b079d344a9739bb6ee6e84a3e7f31af434c70607e494; the analysis stops if its sha256 differs
+mapping_gate	recorded before this specification: 115,503 of 115,503 author cells map uniquely to an H5 barcode and all are within our called cells (results/time_course/annotation_validation/mapping_checks.csv)
+lineages_primary	mono = author CellType '4. Classical Monocytes' or '16. Classical monocytes 2'; nk = author Populations 'NK' (CellType 2, 9, 14 NK CD56dim; 15 IFN-high NK; 21 NK CD56bright; 28 NK CIML); IFN-high clusters are kept in their lineage because excluding them would select on the response
+lineages_sensitivity	mono_all = primary mono or '18. Non-classical Monocytes'; nk unchanged
+cell_set	all mapped author-labelled cells in these lineages; no further filtering; counts read from the same 24 H5 files (sha256 in analysis/time_course/downloads.tsv)
+cell_counts_before_lock	group sizes per donor x time (0h pooled, 4h, 24h) were tabulated before this specification from labels only: smallest mono group 322 (D38 4h), smallest nk group 327 (D38 4h); no expression value was read
+normalization	identical to the primary analysis: pseudobulk sums per donor x lineage x time; 0h = both 0h libraries pooled; edgeR TMM per lineage over the 9 primary profiles via logcpm_by_lineage(); filterByExpr only for factor estimation; all genes scored
+transformations	primary edgeR cpm(log = TRUE, prior.count = 2); sensitivity prior.count = 0.5; sensitivity log2(CPM + 1) with prior-count-2 TMM effective library sizes
+estimands	as in the primary analysis: R_dl(t) = mean over the 10 panel genes of y(t) - y(0h); delta_d(t) = R_d,mono(t) - R_d,nk(t); theta(t) = mean_d delta_d(t); gamma_d = delta_d(24h) - delta_d(4h); Gamma = mean_d gamma_d
+comparison_rows	computed in the same run: (a) marker rule CD14 Mono vs NK and (b) marker rule CD14 or CD16 Mono vs NK from cache/gse226572/selected_cells.rds, which must reproduce the frozen Gamma 0.555 and 0.595 within 1e-8; (c) author primary; (d) author mono_all
+decision	author primary Gamma > 0 and gamma_d > 0 in 3/3 donors: 'temporal result preserved under the depositors' annotation'; otherwise: 'annotation-sensitive'; directions only, magnitudes are reported but not compared against a threshold
+not_done	no re-clustering, label transfer, choice among author label columns after outcomes, or change to genes, times, normalization or transformations
