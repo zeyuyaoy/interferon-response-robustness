@@ -1,0 +1,8 @@
+item	value
+run_id	20261108T013909Z-d8b3c8c-dirty
+started_utc	2026-11-08T01:39:09Z
+finished_utc	2026-11-08T01:40:06Z
+git_sha	d8b3c8c
+spec_md5	e6fc97af0ce9de563dd4561ee3ab0fe7
+eligible_sha256	e855faca895691df637c106983ed55d586828c5fab21fe7667de7fc185ded65c
+category	prespecified secondary analysis (spec locked before Hallmark values were computed)

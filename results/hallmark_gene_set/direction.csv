@@ -1,0 +1,7 @@
+"gene_set","cohort","estimand","panel_10","hallmark","persists","donors_same_direction_as_panel","n_donors","run_id"
+"hallmark_93","GSE96583","theta",1.83436592743764,1.4779149817384,TRUE,8,8,"20261108T013909Z-d8b3c8c-dirty"
+"hallmark_93","HIRISA GSE306664","theta",-4.60880389440852,-0.990109226252955,TRUE,4,5,"20261108T013909Z-d8b3c8c-dirty"
+"hallmark_93","GSE226572","Gamma",0.555122097544776,0.322163859352088,TRUE,3,3,"20261108T013909Z-d8b3c8c-dirty"
+"hallmark_minus_panel_88","GSE96583","theta",1.83436592743764,1.42729728118241,TRUE,8,8,"20261108T013909Z-d8b3c8c-dirty"
+"hallmark_minus_panel_88","HIRISA GSE306664","theta",-4.60880389440852,-0.758437346395814,TRUE,4,5,"20261108T013909Z-d8b3c8c-dirty"
+"hallmark_minus_panel_88","GSE226572","Gamma",0.555122097544776,0.311892043045479,TRUE,3,3,"20261108T013909Z-d8b3c8c-dirty"
