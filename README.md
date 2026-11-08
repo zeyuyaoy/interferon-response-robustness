@@ -98,7 +98,7 @@ From these results, we recommended reporting control expression, library sizes, 
 
 #### Reproducibility
 
-We recorded this terminology revision in the specification histories and preserved the original decision dates and completed outputs. Archived run metadata and release checksums described the original runs.
+We recorded this terminology revision in the specification histories and preserved the original decision dates and completed outputs. We preserved archived run metadata and refreshed the release checksum manifest for the current repository files.
 
 We reanalysed public experimental data using the accessions linked above. We recorded download URLs, sizes and checksums in each cohort's sample and download manifests.
 
