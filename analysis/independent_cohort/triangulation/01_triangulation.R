@@ -233,8 +233,8 @@ combine_figs(ST$figs[c("mast_vs_pseudobulk_induction", "mast_vs_pseudobulk_linea
 unlink(file.path(CFG$figures_dir, c("t1_mast_vs_pseudobulk_induction.png", "t1_mast_vs_pseudobulk_lineage_difference.png")))
 inp <- c("analysis/inputs/core_isgs.tsv", "results/independent_cohort/h2_gene_decomposition.csv", "results/independent_cohort/h2_baseline.csv",
          "results/independent_cohort/h2_library.csv", "results/independent_cohort/h2_theta.csv", man$file[man$verified_on_rerun])
-utils::write.table(data.frame(item = c("run_id", "category", "script", "R", paste0("input_sha256:", inp)),
-                              value = c(RUN_ID, "final triangulation (cross-method, same HIRISA cohort); descriptive",
+utils::write.table(data.frame(item = c("run_id", "script", "R", paste0("input_sha256:", inp)),
+                              value = c(RUN_ID,
                                         "analysis/independent_cohort/triangulation/01_triangulation.R", R.version.string, unname(tools::sha256sum(inp)))),
                    file.path(R, "run_manifest.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
 print(do.call(rbind, chk)); print(sm, right = FALSE)

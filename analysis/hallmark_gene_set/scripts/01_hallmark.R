@@ -135,8 +135,7 @@ outcome <- if (hp && gp) "both persist: findings extend beyond the ten-gene sign
 out(res, "estimates"); out(donors, "donor_values"); out(dir_tab, "direction"); out(data.frame(outcome = outcome), "outcome")
 out(data.frame(cohort = c("GSE96583", "HIRISA GSE306664", "GSE226572"), n_profiles = c(ncol(PBk$counts), ncol(PBh$counts), ncol(PBg$counts))), "profiles")
 finish()
-man <- data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "eligible_sha256", "category"),
-                  value = c(RUN_ID, STARTED, format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"), sha[1], unname(tools::md5sum(SPEC)), ELIG_SHA,
-                            "prespecified secondary analysis (spec locked before Hallmark values were computed)"))
+man <- data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "eligible_sha256"),
+                  value = c(RUN_ID, STARTED, format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"), sha[1], unname(tools::md5sum(SPEC)), ELIG_SHA))
 utils::write.table(man, file.path(OUT, "run_manifest.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
 print(do.call(rbind, chk)[, 1:3]); print(res[, c(1, 2, 4, 5, 6, 7, 8)]); print(dir_tab); cat(outcome, "\n")

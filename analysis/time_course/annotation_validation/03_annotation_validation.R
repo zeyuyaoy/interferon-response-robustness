@@ -122,9 +122,9 @@ out(counts, "cell_counts_by_annotation.csv"); out(summ, "gamma_by_annotation.csv
 finish()
 inputs <- c(SPEC, HIST, AL_FILE, file.path(D, "specification.tsv"), "analysis/inputs/core_isgs.tsv", "analysis/inputs/annotation/candidate_rows.tsv",
             file.path(D, "samples.tsv"), file.path(D, "downloads.tsv"), "results/time_course/g3_summary.csv", "results/time_course/g3_sensitivity.csv")
-man <- rbind(data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "category", "R"),
+man <- rbind(data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "R"),
                         value = c(RUN_ID, STARTED, format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"), sha[1], h[nrow(h), 2],
-                                  "prespecified annotation-sensitivity analysis (spec locked before outcomes)", R.version.string)),
+                                  R.version.string)),
              data.frame(item = paste0("sha256:", inputs), value = unname(tools::sha256sum(inputs))))
 utils::write.table(man, file.path(OUT, "run_manifest.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
 print(summ[, c("annotation", "transformation", "theta_4h", "theta_24h", "Gamma", "n_donor_gamma_pos", "gamma_min", "gamma_max")], digits = 3)

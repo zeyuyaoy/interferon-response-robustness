@@ -314,9 +314,9 @@ unlink(file.path(CFG$figures_dir, c("g3_fig4a_baseline.png", "g3_fig4b_gene_cont
 finish()
 inputs <- c(SPEC, HIST, LABELS_FILE, "analysis/inputs/core_isgs.tsv", "analysis/inputs/annotation/candidate_rows.tsv",
             file.path(D, "samples.tsv"), file.path(D, "downloads.tsv"), file.path(OUT, "cell_counts.csv"))
-man <- rbind(data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "category", "R"),
+man <- rbind(data.frame(item = c("run_id", "started_utc", "finished_utc", "git_sha", "spec_md5", "R"),
                         value = c(RUN_ID, STARTED, format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"), sha[1],
-                                  h[nrow(h), 2], "exploratory prespecified analysis (spec locked before outcomes)", R.version.string)),
+                                  h[nrow(h), 2], R.version.string)),
              data.frame(item = paste0("sha256:", inputs), value = unname(tools::sha256sum(inputs))))
 utils::write.table(man, file.path(OUT, "g3_run_manifest.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
 print(summary_tab); print(sens[, -2]); print(donor_tab[donor_tab$setting == "primary",]); print(contrib); print(traj_mean)

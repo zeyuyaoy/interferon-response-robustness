@@ -146,8 +146,8 @@ utils::write.csv(at, file.path(OUT, "h5_attributes.csv"), row.names = FALSE)
 cc <- do.call(rbind, chk)
 cc$gate <- !grepl("rule\\)$", cc$check)
 out(cc, "feasibility_checks.csv")
-utils::write.table(data.frame(item = c("run_id", "category", "labels_file", "labels_sha256", "panel_values_computed"),
-                              value = c(RUN_ID, "feasibility and annotation gate (no panel-gene values read beyond identifier mapping)",
+utils::write.table(data.frame(item = c("run_id", "labels_file", "labels_sha256", "panel_values_computed"),
+                              value = c(RUN_ID,
                                         LABELS_FILE, unname(tools::sha256sum(LABELS_FILE)), "no")),
                    file.path(OUT, "annotation_manifest.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
 writeLines(utils::capture.output(sessionInfo()), file.path(OUT, "annotation_sessionInfo.txt"))
