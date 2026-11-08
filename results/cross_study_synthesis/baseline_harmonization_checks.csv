@@ -1,0 +1,4 @@
+"check","pass","value","run_id"
+"GSE96583: prior-2 level formula reproduces edgeR logcpm_ctrl",TRUE,3.5527136788005e-14,"20261108T015127Z-d8b3c8c-dirty"
+"GSE96583: mono prior-2 means equal ctrl_mono of the frozen decomposition",TRUE,7.105427357601e-15,"20261108T015127Z-d8b3c8c-dirty"
+"HIRISA: 10 panel genes per donor x lineage",TRUE,10,"20261108T015127Z-d8b3c8c-dirty"
