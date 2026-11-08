@@ -57,6 +57,39 @@ ok <- (!is.na(rc$max_rel_diff) & rc$max_rel_diff < 1e-10) | rc$file == "status.c
 add("reproduction", "numeric values in steps 01-13 reproduce prior record within 1e-10", all(ok),
     sprintf("%d/%d tables numerically match; status.csv differs only by the added step-14 row; %d tables differ in label text only", sum(!is.na(rc$max_rel_diff) & rc$max_rel_diff < 1e-10), nrow(rc), sum(!is.na(rc$text_equal) & !rc$text_equal)))
 
+fc <- utils::read.csv("results/time_course/feasibility_checks.csv")
+add("time_course", "20 feasibility gates and 2 annotation-rule checks passed",
+    nrow(fc) == 22 && sum(fc$gate) == 20 && sum(!fc$gate) == 2 && all(fc$pass) &&
+      grepl("20 feasibility gates and 2 annotation-rule checks passed", readme, fixed = TRUE))
+for (f in c("time_course/g3_checks.csv", "time_course/annotation_validation/mapping_checks.csv",
+            "time_course/annotation_validation/checks.csv", "hallmark_gene_set/checks.csv",
+            "independent_cohort/triangulation/checks.csv", "cross_study_synthesis/baseline_harmonization_checks.csv")) {
+  x <- utils::read.csv(file.path("results", f))
+  add("implementation", f, nrow(x) > 0 && isTRUE(all(x$pass)), sprintf("%d/%d", sum(x$pass), nrow(x)))
+}
+for (d in c("independent_cohort", "time_course", "time_course/annotation_validation", "hallmark_gene_set")) {
+  p <- file.path("analysis", d)
+  h <- utils::read.delim(file.path(p, "spec_history.tsv"), header = FALSE, colClasses = "character")
+  add("specification", d, identical(unname(tools::md5sum(file.path(p, "specification.tsv"))), tail(h[[2]], 1)))
+}
+av <- utils::read.csv("results/time_course/annotation_validation/gamma_by_annotation.csv")
+av <- av[av$transformation == "edgeR logCPM, prior count 2", ]
+add("annotation", "four definitions preserve positive temporal change in all three donors",
+    nrow(av) == 4 && all(av$n_donors == 3 & av$n_donor_gamma_pos == 3 & av$gamma_min > 0) &&
+      identical(round(av$Gamma, 3), c(0.555, 0.595, 0.597, 0.553)))
+commands <- regmatches(readme, gregexpr("Rscript [A-Za-z0-9_./]+\\.R", readme))[[1]]
+paths <- unique(sub("^Rscript ", "", commands))
+add("layout", "documented Rscript entry points exist", length(paths) > 0 && all(file.exists(paths)))
+scripts <- c(list.files("analysis", "\\.R$", recursive = TRUE, full.names = TRUE),
+             list.files("release", "\\.R$", full.names = TRUE))
+syntax <- vapply(scripts, function(p) tryCatch({parse(p); TRUE}, error = function(e) FALSE), logical(1))
+add("layout", "all R sources parse", all(syntax), paste(scripts[!syntax], collapse = ";"))
+tracked <- system2("git", c("ls-files"), stdout = TRUE)
+add("data_access", "raw datasets and cell caches are outside Git",
+    length(tracked) > 0 && !any(grepl("^cache/|\\.(h5|rds|rds.gz|Rda)$", tracked, ignore.case = TRUE)))
+ignored <- system2("git", c("check-ignore", "cache/gse226572/GSE226572_SeuratObject_IFN.rds.gz"), stdout = TRUE)
+add("data_access", "Seurat download is Git-ignored", length(ignored) == 1)
+
 if (file.exists("release/checksums.sha256")) {
   ln <- readLines("release/checksums.sha256")
   h <- sub("  .*", "", ln); p <- sub("^[0-9a-f]+  ", "", ln)

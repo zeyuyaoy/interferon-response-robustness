@@ -153,4 +153,15 @@ cst <- sapply(c("mono", "nk"), function(l) {
 })
 ok(all(cst < 1e-10), "edgeR logCPM = log2(CPM + c_L) + lineage constant, c_L = 1e6 p / mean_L(E)")
 
+
+
+local({
+  path <- tempfile(fileext = ".Rda")
+  on.exit(unlink(path))
+  ok(identical(load_kang(path, function() "downloaded"), "downloaded"), "missing optional Kang cache uses public loader")
+  expected <- list(counts = 1:3)
+  save(expected, file = path)
+  ok(identical(load_kang(path, function() stop("unexpected download")), expected), "existing Kang cache is loaded without download")
+})
+
 cat("\nALL TESTS PASSED\n")

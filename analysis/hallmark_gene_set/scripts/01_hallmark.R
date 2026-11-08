@@ -39,7 +39,7 @@ score <- function(pb, rows, ctrl, stim) {
   })
 }
 
-e <- new.env(); nm <- load("cache/Kang18_8vs8.Rda", envir = e); sce <- e[[nm[1]]]
+sce <- load_kang("cache/Kang18_8vs8.Rda")
 cd <- as.data.frame(SummarizedExperiment::colData(sce))
 cnt <- SingleCellExperiment::counts(sce)
 lin <- c("CD14+ Monocytes" = MONO, "NK cells" = NK)[as.character(cd$cell)]

@@ -1,3 +1,10 @@
+load_kang <- function(path, fetch = muscData::Kang18_8vs8) {
+  if (!file.exists(path)) return(fetch())
+  e <- new.env()
+  nm <- load(path, envir = e)
+  e[[nm[1]]]
+}
+
 MONO <- "mono"; NK <- "nk"
 LIN <- c(mono = "CD14+ monocytes", nk = "NK cells")
 

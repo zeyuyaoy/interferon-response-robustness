@@ -10,18 +10,18 @@ Core signature
 Primary dataset
   Kang et al. (2018) Nat Biotechnol; GEO GSE96583
   Loaded via muscData::Kang18_8vs8() from ExperimentHub (record EH2259), Bioconductor 3.23.
-  md5 of the cached file is recorded at run time in results/01_quality_control/input_checksums.csv.
+  md5 of the cached file is recorded at run time in results/primary_contrast/01_quality_control/input_checksums.csv.
 
 Hallmark gene sets (alternative signature / control-gene exclusion)
   msigdbr 26.1.1, MSigDB db_version 2026.1.Hs, collection H, human
   HALLMARK_INTERFERON_ALPHA_RESPONSE  97 genes  (analysis/inputs/hallmark_ifna.tsv)
   HALLMARK_INTERFERON_GAMMA_RESPONSE 200 genes  (analysis/inputs/hallmark_ifng.tsv; exclusion only)
 
-Software: R 4.6.2; edgeR 4.10.7; see results/sessionInfo.txt.
+Software: R 4.6.2; edgeR 4.10.7; see results/primary_contrast/sessionInfo.txt.
 
 Annotation snapshot
   analysis/inputs/annotation/  HGNC REST + Ensembl REST (GRCh38 release 116; GRCh37.p13 via
-  grch37.rest.ensembl.org) snapshot written by analysis/00_fetch_annotation.R; retrieval time in
+  grch37.rest.ensembl.org) snapshot written by analysis/primary_contrast/scripts/00_fetch_annotation.R; retrieval time in
   analysis/inputs/annotation/retrieval.tsv. Used for reference-panel exclusion of renamed /
   alternative-annotation Hallmark rows and for the revised Hallmark analysis.
 

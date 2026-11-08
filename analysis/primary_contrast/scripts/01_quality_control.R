@@ -6,12 +6,11 @@ ST$data_ok <- FALSE
 
 sce <- run_component("load_dataset", function() {
   if (file.exists(CFG$local_rda)) {
-    e <- new.env(); nm <- load(CFG$local_rda, envir = e)
-    x <- e[[nm[1]]]
+    x <- load_kang(CFG$local_rda)
     ST$input_source <- data.frame(source = "local copy of ExperimentHub EH2259", path = CFG$local_rda,
                                   md5 = unname(tools::md5sum(CFG$local_rda)))
   } else {
-    x <- muscData::Kang18_8vs8()
+    x <- load_kang(CFG$local_rda)
     eh <- ExperimentHub::ExperimentHub()
     p <- unname(AnnotationHub::cache(eh["EH2259"]))
     ST$input_source <- data.frame(source = "muscData::Kang18_8vs8() (EH2259)", path = p,
