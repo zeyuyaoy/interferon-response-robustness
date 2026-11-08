@@ -387,7 +387,7 @@ Raw inputs and derived cell caches belong under Git-ignored `cache/`, including 
 Rscript release/compare_runs.R /path/to/archived/results/primary_contrast results/primary_contrast /tmp/reproduction_comparison.csv
 ```
 
-The comparison ignores run IDs and reports numerical and text differences; inspect its CSV, since it does not exit nonzero on a mismatch. Historical paths in locked specifications and original run logs are intentional; see [the path map](release/FINALIZATION.md). Automated checks do not resolve the study’s small donor counts, design confounding or unmeasured mechanisms.
+The comparison ignores run IDs and reports numerical and text differences; inspect its CSV, since it does not exit nonzero on a mismatch. Historical paths in locked specifications and original run logs are intentional. Automated checks do not resolve the study’s small donor counts, design confounding or unmeasured mechanisms.
 
 #### References
 
@@ -400,7 +400,7 @@ Each experiment has a folder under `analysis/` (code and locked inputs) and a fo
 ```
 README.md
 references/        references.bib
-release/           checksums.sha256, verification and reproduction records
+release/           checksums.sha256, run logs and reproduction records
 analysis/
   inputs/          frozen inputs shared by all experiments (gene sets, annotation snapshot)
   shared/          utils_*.R used by all experiments
