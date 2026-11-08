@@ -1,4 +1,4 @@
 "donor_set","transformation","n_donors","theta","sd","ci_lower","ci_upper","n_pos_delta","signflip_p_one_sided","R_mono","R_nk","interval","run_id"
-"all_donors","edgeR logCPM, prior count 2",5,-4.60880389440852,2.05266741844859,-7.157527128182,-2.06008066063505,0,1,1.99708491294397,6.60588880735249,"95% t-interval over 5 donor contrasts (descriptive)","20261107T231254Z-490359a"
-"all_donors","edgeR logCPM, prior count 0.5",5,-4.6158088862773,2.05242656432552,-7.16423306015734,-2.06738471239725,0,1,1.99731641501315,6.61312530129045,"95% t-interval over 5 donor contrasts (descriptive)","20261107T231254Z-490359a"
-"all_donors","log2(CPM + 1)",5,-4.4540541229285,2.04964730547979,-6.9990273911581,-1.90908085469889,0,1,1.98615524848362,6.44020937141211,"95% t-interval over 5 donor contrasts (descriptive)","20261107T231254Z-490359a"
+"all_donors","edgeR logCPM, prior count 2",5,-4.60880389440852,2.05266741844859,-7.157527128182,-2.06008066063505,0,1,1.99708491294397,6.60588880735249,"95% t-interval over 5 donor contrasts (descriptive)","20261108T000207Z-1bb9c3f"
+"all_donors","edgeR logCPM, prior count 0.5",5,-4.6158088862773,2.05242656432552,-7.16423306015734,-2.06738471239725,0,1,1.99731641501315,6.61312530129045,"95% t-interval over 5 donor contrasts (descriptive)","20261108T000207Z-1bb9c3f"
+"all_donors","log2(CPM + 1)",5,-4.4540541229285,2.04964730547979,-6.9990273911581,-1.90908085469889,0,1,1.98615524848362,6.44020937141211,"95% t-interval over 5 donor contrasts (descriptive)","20261108T000207Z-1bb9c3f"
