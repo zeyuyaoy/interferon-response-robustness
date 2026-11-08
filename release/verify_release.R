@@ -2,7 +2,7 @@ RUN <- "20261107T124310Z-f1823b7"
 cache <- new.env()
 
 r <- function(f) {
-  if (is.null(cache[[f]])) cache[[f]] <- utils::read.csv(file.path("results", f), stringsAsFactors = FALSE)
+  if (is.null(cache[[f]])) cache[[f]] <- utils::read.csv(file.path("results/primary_contrast", f), stringsAsFactors = FALSE)
   cache[[f]]
 }
 
@@ -27,7 +27,7 @@ for (i in seq_len(nrow(rv))) {
               if (grepl(rv$readme_context[i], readme, fixed = TRUE)) "found" else "MISSING"))
 }
 
-csvs <- list.files("results", pattern = "\\.csv(\\.gz)?$", recursive = TRUE, full.names = TRUE)
+csvs <- list.files("results/primary_contrast", pattern = "\\.csv(\\.gz)?$", recursive = TRUE, full.names = TRUE)
 ids <- unique(unlist(lapply(csvs, function(p) {
   x <- utils::read.csv(if (grepl("gz$", p)) gzfile(p) else p, stringsAsFactors = FALSE)
   if ("run_id" %in% names(x)) unique(x$run_id) else character()
@@ -40,15 +40,15 @@ ck <- r("12_verification/checks.csv")
 add("implementation", "step 12 checks pass", all(ck$pass), sprintf("%d/%d", sum(ck$pass), nrow(ck)))
 fo <- r("14_fixed_offset_measurement/fixed_offset_checks.csv")
 add("implementation", "step 14 checks pass", all(fo$pass), sprintf("%d/%d", sum(fo$pass), nrow(fo)))
-hp <- utils::read.csv("hirisa/results/pilot_checks.csv", stringsAsFactors = FALSE)
+hp <- utils::read.csv("results/independent_cohort/pilot_checks.csv", stringsAsFactors = FALSE)
 add("hirisa", "pilot checks pass", nrow(hp) > 0 && all(hp$pass), sprintf("%d/%d", sum(hp$pass), nrow(hp)))
-hc <- utils::read.csv("hirisa/results/h2_checks.csv", stringsAsFactors = FALSE)
+hc <- utils::read.csv("results/independent_cohort/h2_checks.csv", stringsAsFactors = FALSE)
 add("hirisa", "5-donor analysis checks pass", nrow(hc) > 0 && all(hc$pass), sprintf("%d/%d", sum(hc$pass), nrow(hc)))
-hs <- utils::read.csv("hirisa/results/h2_status.csv", stringsAsFactors = FALSE)
+hs <- utils::read.csv("results/independent_cohort/h2_status.csv", stringsAsFactors = FALSE)
 add("hirisa", "contrast estimable and full outputs written",
     identical(hs$value[hs$item == "contrast_estimable"], "TRUE") && identical(hs$value[hs$item == "outputs"], "full"),
     paste(hs$item, hs$value, sep = "=", collapse = "; "))
-hid <- unique(unlist(lapply(list.files("hirisa/results", "^h2_.*\\.csv$", full.names = TRUE),
+hid <- unique(unlist(lapply(list.files("results/independent_cohort", "^h2_.*\\.csv$", full.names = TRUE),
                             function(p) utils::read.csv(p, stringsAsFactors = FALSE)$run_id)))
 add("hirisa", "5-donor tables share one run ID from a clean commit", length(hid) == 1 && !grepl("-dirty$", hid),
     paste(hid, collapse = ";"))
