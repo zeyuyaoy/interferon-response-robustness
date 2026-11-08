@@ -40,6 +40,18 @@ ck <- r("12_verification/checks.csv")
 add("implementation", "step 12 checks pass", all(ck$pass), sprintf("%d/%d", sum(ck$pass), nrow(ck)))
 fo <- r("14_fixed_offset_measurement/fixed_offset_checks.csv")
 add("implementation", "step 14 checks pass", all(fo$pass), sprintf("%d/%d", sum(fo$pass), nrow(fo)))
+hp <- utils::read.csv("hirisa/results/pilot_checks.csv", stringsAsFactors = FALSE)
+add("hirisa", "pilot checks pass", nrow(hp) > 0 && all(hp$pass), sprintf("%d/%d", sum(hp$pass), nrow(hp)))
+hc <- utils::read.csv("hirisa/results/h2_checks.csv", stringsAsFactors = FALSE)
+add("hirisa", "5-donor analysis checks pass", nrow(hc) > 0 && all(hc$pass), sprintf("%d/%d", sum(hc$pass), nrow(hc)))
+hs <- utils::read.csv("hirisa/results/h2_status.csv", stringsAsFactors = FALSE)
+add("hirisa", "contrast estimable and full outputs written",
+    identical(hs$value[hs$item == "contrast_estimable"], "TRUE") && identical(hs$value[hs$item == "outputs"], "full"),
+    paste(hs$item, hs$value, sep = "=", collapse = "; "))
+hid <- unique(unlist(lapply(list.files("hirisa/results", "^h2_.*\\.csv$", full.names = TRUE),
+                            function(p) utils::read.csv(p, stringsAsFactors = FALSE)$run_id)))
+add("hirisa", "5-donor tables share one run ID from a clean commit", length(hid) == 1 && !grepl("-dirty$", hid),
+    paste(hid, collapse = ";"))
 rc <- utils::read.csv("release/reproduction_comparison.csv", stringsAsFactors = FALSE)
 ok <- (!is.na(rc$max_rel_diff) & rc$max_rel_diff < 1e-10) | rc$file == "status.csv"
 add("reproduction", "numeric values in steps 01-13 reproduce prior record within 1e-10", all(ok),
