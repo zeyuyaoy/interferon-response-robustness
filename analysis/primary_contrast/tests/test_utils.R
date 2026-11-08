@@ -1,5 +1,5 @@
-source("analysis/config.R")
-for (f in Sys.glob("analysis/utils_*.R")) source(f)
+source("analysis/primary_contrast/scripts/config.R")
+for (f in Sys.glob("analysis/shared/utils_*.R")) source(f)
 suppressPackageStartupMessages(library(Matrix))
 
 ok <- function(cond, msg) { if (!isTRUE(cond)) stop("FAIL: ", msg, call. = FALSE); cat("ok -", msg, "\n") }

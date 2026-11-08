@@ -33,6 +33,6 @@ CFG <- list(
   crit_influence_flag = 0.25,
   crit_subsample_min_agree = 95L,
   annotation_dir = "analysis/inputs/annotation",
-  results_dir = "results",
-  figures_dir = "figures"
+  results_dir = "results/primary_contrast",
+  figures_dir = "results/primary_contrast/figures"
 )

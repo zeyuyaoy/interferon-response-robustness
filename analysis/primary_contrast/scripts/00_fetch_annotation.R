@@ -1,5 +1,5 @@
 suppressPackageStartupMessages({ library(SingleCellExperiment); library(httr2) })
-source("analysis/config.R")
+source("analysis/primary_contrast/scripts/config.R")
 out <- CFG$annotation_dir
 dir.create(out, showWarnings = FALSE, recursive = TRUE)
 
