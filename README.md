@@ -338,15 +338,7 @@ This project is implemented in R 4.6.2 with Bioconductor 3.23. The following pac
 
 The CRAN packages `msigdbr` and `httr2` were also used to retrieve gene annotations.
 
-Verify the archived release first:
-
-```bash
-git clone --branch v1.2.0 https://github.com/zeyuyaoy/interferon-response-robustness.git
-cd interferon-response-robustness
-Rscript release/verify_release.R
-```
-
-For a full rerun, use a separate checkout and install R 4.6.2, Bioconductor 3.23 and the packages recorded in `release/renv.lock`. With `renv` installed, restore with `Rscript -e 'renv::restore(lockfile="release/renv.lock", prompt=FALSE); renv::activate()'`. The activation creates a local `.Rprofile` so subsequent `Rscript` commands use the restored project library. The saved `sessionInfo.txt` files describe each original run, and `release/software_versions.tsv` records the finalization environment. Restoration requires network access and appropriate platform libraries (including HDF5); R and operating-system libraries require separate installation.
+To rerun the analysis, use a separate checkout and install R 4.6.2, Bioconductor 3.23 and the packages recorded in `release/renv.lock`. With `renv` installed, restore with `Rscript -e 'renv::restore(lockfile="release/renv.lock", prompt=FALSE); renv::activate()'`. The activation creates a local `.Rprofile` so subsequent `Rscript` commands use the restored project library. The saved `sessionInfo.txt` files describe each original run, and `release/software_versions.tsv` records the finalization environment. Restoration requires network access and appropriate platform libraries (including HDF5); R and operating-system libraries require separate installation.
 
 Run the commands below from the repository root:
 
