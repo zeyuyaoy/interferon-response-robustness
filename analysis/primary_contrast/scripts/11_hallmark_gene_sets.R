@@ -1,4 +1,4 @@
-run_component("hallmark_ifna_post_hoc", function() {
+run_component("hallmark_ifna_repaired", function() {
   need_primary()
   if (!dir.exists(CFG$annotation_dir)) not_estimable("annotation snapshot missing")
   ann <- load_annotation()

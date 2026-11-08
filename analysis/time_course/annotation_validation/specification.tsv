@@ -1,5 +1,5 @@
 key	value
-status	LOCKED; prespecified annotation-sensitivity analysis of the GSE226572 time-course result (analysis/time_course/specification.tsv), requested in review; the primary analysis and its outputs are unchanged; descriptive with 3 donors
+status	LOCKED; formal annotation-sensitivity analysis of the GSE226572 time-course result (analysis/time_course/specification.tsv), requested in review; the primary analysis and its outputs are unchanged; descriptive with 3 donors
 question	does Gamma depend on how monocytes and NK cells were identified? The marker rule loses CD14 with IFN exposure, so 24h classical monocytes may be relabelled CD16 Mono
 annotation	depositors' labels from the meta.data slot of GEO GSE226572_SeuratObject_IFN.rds.gz (sha256 in analysis/time_course/annotation_validation/downloads.tsv), extracted without reading expression values (01_extract_author_metadata.R) and mapped to (GSM, barcode) by sample token and barcode (02_map_author_labels.R)
 author_labels	cache/gse226572/author_labels.tsv.gz; sha256 b6f53dfe5aea37cec6b3b079d344a9739bb6ee6e84a3e7f31af434c70607e494; the analysis stops if its sha256 differs

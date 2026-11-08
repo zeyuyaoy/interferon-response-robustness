@@ -1,5 +1,5 @@
 key	value
-status	LOCKED; prespecified secondary analysis of gene-set generality across three cohorts; one fixed gene set, run once; descriptive
+status	LOCKED; formal analysis of gene-set generality across three cohorts; one fixed gene set, run once; decisions fixed before original Hallmark estimates; descriptive
 question	(1) is the negative HIRISA monocyte-NK contrast specific to the ten-gene panel; (2) does the positive GSE226572 change between 4h and 24h persist for a broader IFN-alpha response program
 gene_set	MSigDB HALLMARK_INTERFERON_ALPHA_RESPONSE from the frozen snapshot analysis/inputs/hallmark_ifna.tsv (97 symbols), identifiers from the frozen analysis/inputs/annotation snapshot (HGNC-approved Ensembl id; GSE96583 rows via resolve_set(build = grch37))
 eligible_genes	crosscohort/hallmark_ifna/eligible_genes.tsv (sha256 e855faca895691df637c106983ed55d586828c5fab21fe7667de7fc185ded65c), written from feature identifiers only: genes resolved in GSE96583 and present as exactly one feature in HIRISA and GSE226572; 93 eligible; excluded CASP1, HLA-C, PNPT1 (absent from HIRISA Flex probes) and TXNIP (unresolved in GSE96583)

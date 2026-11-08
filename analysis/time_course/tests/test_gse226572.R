@@ -71,4 +71,11 @@ writeLines(paste("2026-01-01T00:00:00Z", unname(tools::md5sum(tmp)), "locked", s
 ok(spec_gate(tmp, hist), "spec gate accepts the locked specification")
 cat("b\t2\n", file = tmp, append = TRUE)
 ok(!spec_gate(tmp, hist), "spec gate refuses a modified specification")
+for (d in c("analysis/time_course", "analysis/time_course/annotation_validation",
+            "analysis/hallmark_gene_set", "analysis/independent_cohort")) {
+  spec <- file.path(d, "specification.tsv")
+  ok(spec_gate(spec, file.path(d, "spec_history.tsv")), paste(d, "spec hash"))
+  status <- utils::read.delim(spec, stringsAsFactors = FALSE)
+  ok(grepl("formal", status$value[status$key == "status"]), paste(d, "formal analysis"))
+}
 cat("\nALL TESTS PASSED\n")

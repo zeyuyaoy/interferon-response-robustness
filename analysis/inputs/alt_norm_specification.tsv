@@ -2,3 +2,4 @@ method	TMM with IFN-linked rows removed from factor estimation
 reason	TMM assumes most genes are not DE; IFN-beta up-regulates IFN genes asymmetrically
 pseudocount	kappa_L = pc/mean_L(eff_TMM) held constant; pc_alt_L = kappa_L*mean_L(eff_alt)
 specified_utc	2026-11-06T22:37:31Z
+status	formal analysis of normalization sensitivity

@@ -1,5 +1,5 @@
 key	value
-status	LOCKED; external cross-context transferability check of the GSE96583 monocyte-NK contrast and its low-count regularization sensitivity; descriptive; not a replication (healthy vs SLE, 21 h vs 6 h, enriched populations vs PBMC, 10x Flex vs 10x 3')
+status	LOCKED; formal cross-context transferability analysis of the GSE96583 monocyte-NK contrast and its low-count regularization sensitivity; descriptive; not a replication (healthy vs SLE, 21 h vs 6 h, enriched populations vs PBMC, 10x Flex vs 10x 3')
 data	GEO GSE306664 (HIRISA); 20 per-sample *_labeled.h5 files listed in hirisa/samples.tsv (5 donors x mono/nk x none/IFNb); md5 recorded in hirisa/downloads.tsv
 design	control and IFN-b samples of each donor x lineage share one Flex pool (batch_pool), so stimulation is not confounded with pool; lineage maps to pool and is normalized separately
 fixed_inputs	10 core genes (analysis/inputs/core_isgs.tsv) mapped by features/name, unique match required; donors 3955BW, 3283BW, 2616BW, 6811BW, 3491BW
