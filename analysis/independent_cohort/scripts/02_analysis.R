@@ -1,14 +1,13 @@
-for (f in c("analysis/utils_estimation.R", "analysis/utils_pipeline.R", "analysis/utils_annotation.R",
-            "analysis/utils_figures.R", "hirisa/utils_hirisa.R")) source(f)
+for (f in c("analysis/shared/utils_estimation.R", "analysis/shared/utils_pipeline.R", "analysis/shared/utils_annotation.R",
+            "analysis/shared/utils_figures.R", "analysis/independent_cohort/scripts/utils_hirisa.R")) source(f)
 suppressPackageStartupMessages(library(ggplot2))
 sha <- tryCatch(system2("git", c("rev-parse", "--short", "HEAD"), stdout = TRUE), error = function(e) "nogit")
-dirty <- length(system2("git", c("status", "--porcelain", "--", "hirisa", "analysis", "':(exclude)hirisa/results'",
-                                 "':(exclude)hirisa/figures'"), stdout = TRUE)) > 0
+dirty <- length(system2("git", c("status", "--porcelain", "--", "analysis/independent_cohort", "analysis/shared", "analysis/inputs"), stdout = TRUE)) > 0
 RUN_ID <- paste0(format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"), "-", sha[1], if (dirty) "-dirty" else "")
-OUT <- "hirisa/results"
-CFG <- list(step = "h2", figures_dir = "hirisa/figures")
+OUT <- "results/independent_cohort"
+CFG <- list(step = "h2", figures_dir = "results/independent_cohort/figures")
 ST <- new.env(); ST$figs <- list(); ST$dims <- list()
-dir.create(OUT, showWarnings = FALSE); dir.create(CFG$figures_dir, showWarnings = FALSE)
+dir.create(CFG$figures_dir, recursive = TRUE, showWarnings = FALSE)
 unlink(Sys.glob(file.path(OUT, "h2_*"))); unlink(Sys.glob(file.path(CFG$figures_dir, "h2_*.png")))
 TOL <- 1e-8
 PRIOR <- 2; PRIOR_SENS <- 0.5; OFFSET <- 1; MIN_GENES <- 200; MIN_CELLS_WARN <- 20
@@ -27,15 +26,15 @@ finish <- function(msg = NULL) {
   out(cc, "checks")
   writeLines(utils::capture.output(sessionInfo()), file.path(OUT, "h2_sessionInfo.txt"))
   if (!is.null(msg)) stop(msg, call. = FALSE)
-  if (!all(cc$pass)) stop(sprintf("HIRISA validation failed: %s; see hirisa/results/h2_checks.csv",
+  if (!all(cc$pass)) stop(sprintf("HIRISA validation failed: %s; see results/independent_cohort/h2_checks.csv",
                                   paste(cc$check[!cc$pass], collapse = "; ")), call. = FALSE)
 }
 
 core <- utils::read.delim("analysis/inputs/core_isgs.tsv")$gene
-s <- merge(utils::read.delim("hirisa/samples.tsv"), utils::read.delim("hirisa/downloads.tsv")[, c("gsm", "file", "md5")], by = "gsm")
+s <- merge(utils::read.delim("analysis/independent_cohort/samples.tsv"), utils::read.delim("analysis/independent_cohort/downloads.tsv")[, c("gsm", "file", "md5")], by = "gsm")
 md5_ok <- nrow(s) == 20 && all(unname(tools::md5sum(s$file)) == s$md5)
-add("20 files with md5 equal to hirisa/downloads.tsv", md5_ok, nrow(s))
-if (!md5_ok) finish("input files missing or MD5 differs from hirisa/downloads.tsv")
+add("20 files with md5 equal to analysis/independent_cohort/downloads.tsv", md5_ok, nrow(s))
+if (!md5_ok) finish("input files missing or MD5 differs from analysis/independent_cohort/downloads.tsv")
 s$profile <- paste(s$donor, s$lineage, s$cond, sep = "|")
 s <- s[order(s$profile),]
 in_lineage <- function(l1, l2, L) if (L == MONO) l2 == "CD14 Mono" else l1 == "NK"
@@ -162,7 +161,7 @@ for (k in c("p2", "p05")) for (L in c(MONO, NK)) {
   }
 }
 
-ref_norm <- utils::read.csv("results/02_primary_estimate/normalization.csv")
+ref_norm <- utils::read.csv("results/primary_contrast/02_primary_estimate/normalization.csv")
 me <- tapply(nn$eff_lib_size, nn$lineage, mean)[c(MONO, NK)]
 rme <- tapply(ref_norm$eff_lib_size, ref_norm$lineage, mean)[c(MONO, NK)]
 lib <- data.frame(cohort = rep(c("HIRISA GSE306664", "GSE96583 (reference)"), each = 2), lineage = c(MONO, NK, MONO, NK),
@@ -222,8 +221,8 @@ donor_tab <- do.call(rbind, lapply(names(res), function(nm_set) do.call(rbind, l
   data.frame(donor_set = nm_set, transformation = TR[[k]], res[[nm_set]][[k]]$delta)))))
 out(donor_tab, "donor_contrasts")
 
-ref_sum <- utils::read.csv("results/14_fixed_offset_measurement/fixed_offset_summary.csv")
-ref_cmp <- utils::read.csv("results/14_fixed_offset_measurement/fixed_offset_comparison.csv")
+ref_sum <- utils::read.csv("results/primary_contrast/14_fixed_offset_measurement/fixed_offset_summary.csv")
+ref_cmp <- utils::read.csv("results/primary_contrast/14_fixed_offset_measurement/fixed_offset_comparison.csv")
 sens <- do.call(rbind, lapply(names(res), function(nm_set) {
   F <- res[[nm_set]]
   a <- F$p2$delta; b <- F$fixed$delta[match(a$donor, F$fixed$delta$donor),]; c5 <- F$p05$delta[match(a$donor, F$p05$delta$donor),]

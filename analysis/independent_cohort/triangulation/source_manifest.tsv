@@ -1,0 +1,6 @@
+id	url	file	bytes	sha256	retrieved_utc	verified_on_rerun
+deg_L1	https://allenimmunology.org/public/publication/download/3ed360b9-5ed9-43aa-9b8c-b17873594700/filesets/a5ffcb1b-ffcf-481a-97d9-6b4371d1aa10/hirisa_deg_AIFI_L1_2026-05-19.csv	cache/hirisa_deg/hirisa_deg_AIFI_L1_2026-05-19.csv	10862776	4d9c4c64c7fe992fe37d241f13762e0027529e1e989cfa94c7b10ccad2ef9f56	2026-11-08T00:30:45Z	TRUE
+deg_L2	https://allenimmunology.org/public/publication/download/3ed360b9-5ed9-43aa-9b8c-b17873594700/filesets/a5ffcb1b-ffcf-481a-97d9-6b4371d1aa10/hirisa_deg_AIFI_L2_2026-05-19.csv	cache/hirisa_deg/hirisa_deg_AIFI_L2_2026-05-19.csv	32758554	26a10ba491eb465a77dd056e23b91f685eb868221ae51dd8d79e7001b0ebc672	2026-11-08T00:30:49Z	TRUE
+page_deg	https://apps.allenimmunology.org/aifi/resources/ifn-response/downloads/deg/	cache/hirisa_deg/page_deg.html	9320	81a5c5bc477135effe01e952ebba6fbb90be00d6a81f6f3f27683c259a5fc96b	2026-11-08T00:30:50Z	FALSE
+page_analysis	https://apps.allenimmunology.org/aifi/resources/ifn-response/analysis/	cache/hirisa_deg/page_analysis.html	17406	8cbd0863baea8956aa66e8333d2c3b7a00d1f714ce0a3a40e3e9a502dc723f8f	2026-11-08T00:30:50Z	FALSE
+page_downloads	https://apps.allenimmunology.org/aifi/resources/ifn-response/downloads/	cache/hirisa_deg/page_downloads.html	5306	1473a18382c12c960dfeed296c55c4e07b215880341f0edc8f395323969d7913	2026-11-08T00:30:51Z	FALSE

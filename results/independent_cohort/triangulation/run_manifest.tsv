@@ -1,0 +1,12 @@
+item	value
+run_id	20261108T003601Z-2fa7fca-dirty
+category	final triangulation (cross-method, same HIRISA cohort); descriptive
+script	hirisa/triangulation/01_triangulation.R
+R	R version 4.6.2 (2026-10-29)
+input_sha256:analysis/inputs/core_isgs.tsv	dde5f7a962938806b068502d6df59d914dc0627faeee2fbe0d5da024b73494e0
+input_sha256:hirisa/results/h2_gene_decomposition.csv	f49c7935a6e8fbe4d850517fac644311a2a5a5bccca0ad2cab9a47a108eb7b08
+input_sha256:hirisa/results/h2_baseline.csv	1aaadbc21b72823abaa93269b21052dae88bb95118059d53ed248a41a5ced175
+input_sha256:hirisa/results/h2_library.csv	57f9e5cb5bdb7ddfc4fab82d7b40e3c67f54644621522868b0d6abf09692fc77
+input_sha256:hirisa/results/h2_theta.csv	d00fbf8a58418ac669f7a914289405eb38e1c7ff41315d1be59cde6d6677f36d
+input_sha256:cache/hirisa_deg/hirisa_deg_AIFI_L1_2026-05-19.csv	4d9c4c64c7fe992fe37d241f13762e0027529e1e989cfa94c7b10ccad2ef9f56
+input_sha256:cache/hirisa_deg/hirisa_deg_AIFI_L2_2026-05-19.csv	26a10ba491eb465a77dd056e23b91f685eb868221ae51dd8d79e7001b0ebc672

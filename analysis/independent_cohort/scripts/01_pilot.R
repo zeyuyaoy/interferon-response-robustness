@@ -1,11 +1,11 @@
-for (f in c("analysis/utils_estimation.R", "analysis/utils_pipeline.R", "analysis/utils_annotation.R", "hirisa/utils_hirisa.R")) source(f)
+for (f in c("analysis/shared/utils_estimation.R", "analysis/shared/utils_pipeline.R", "analysis/shared/utils_annotation.R", "analysis/independent_cohort/scripts/utils_hirisa.R")) source(f)
 RUN_ID <- paste0("pilot-", format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"))
-OUT <- "hirisa/results"
+OUT <- "results/independent_cohort"
 dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
 TOL <- 1e-8
 core <- utils::read.delim("analysis/inputs/core_isgs.tsv")$gene
-s <- utils::read.delim("hirisa/samples.tsv")
-dl <- utils::read.delim("hirisa/downloads.tsv")
+s <- utils::read.delim("analysis/independent_cohort/samples.tsv")
+dl <- utils::read.delim("analysis/independent_cohort/downloads.tsv")
 s <- merge(s, dl[, c("gsm", "file", "md5")], by = "gsm")
 s <- s[s$donor == "3955BW" | (s$lineage == MONO & s$cond == "ctrl"),]
 stopifnot(nrow(s) == 8, all(unname(tools::md5sum(s$file)) == s$md5))
@@ -108,6 +108,6 @@ for (L in c(MONO, NK)) {
 }
 chk <- do.call(rbind, chk)
 write_result(chk, "pilot_checks.csv", RUN_ID, dir = OUT)
-if (!all(chk$pass)) stop("HIRISA pilot validation failed; see hirisa/results/pilot_checks.csv", call. = FALSE)
+if (!all(chk$pass)) stop("HIRISA pilot validation failed; see results/independent_cohort/pilot_checks.csv", call. = FALSE)
 print(files[, c("gsm", "donor", "lineage", "cond", "n_cells_file", "n_cells_lineage", "n_cells_kept", "frac_lineage", "top_l1", "panel_mapped", "median_umis_kept")])
 print(chk); print(donor); print(lib); print(det)

@@ -1,10 +1,10 @@
-s <- utils::read.delim("hirisa/samples.tsv")
+s <- utils::read.delim("analysis/independent_cohort/samples.tsv")
 want <- commandArgs(TRUE)
 if (!length(want)) want <- s$gsm
 stopifnot(all(want %in% s$gsm))
 dir.create("cache/hirisa", recursive = TRUE, showWarnings = FALSE)
 options(timeout = 3600)
-log_file <- "hirisa/downloads.tsv"
+log_file <- "analysis/independent_cohort/downloads.tsv"
 done <- if (file.exists(log_file)) utils::read.delim(log_file, colClasses = "character") else
   data.frame(gsm = character(), file = character(), bytes = character(), md5 = character(), downloaded_utc = character())
 for (g in want) {
