@@ -4,7 +4,7 @@
 
 We examined how analytical choices affect the direction, magnitude and donor-level agreement of a monocyte-natural killer (NK) cell induction contrast. Our primary analysis used paired untreated and interferon-β (IFN-β)-stimulated peripheral blood mononuclear cells from eight donors with systemic lupus erythematosus (SLE; GSE96583). We quantified induction of a published ten-gene panel using donor-level pseudobulk profiles and assessed transferability across experimental settings.
 
-At 6 h, we estimated mean induction to be 1.834 $\log_2$ units greater in $\mathrm{CD14}^{+}$ monocytes than in NK cells (95% donor-level $t$-interval, 1.163-2.506). We retained a positive mean across the evaluated specifications and found that its magnitude and donor-level sign agreement depended on low-count regularization and cell sampling. In a separate cohort of five healthy donors whose monocytes and NK cells were enriched and cultured separately for 21 h, the contrast was negative in every donor; stimulated monocyte and NK panel levels resembled those of the primary cohort, and the difference arose mainly in untreated-cell baselines. Because disease, cell preparation, exposure duration and assay differed together between the cohorts, we could not attribute the difference to any single factor. In an exploratory three-donor PBMC time course, the contrast increased between 4 and 24 h, opposite to our hypothesized decrease (smallest attainable two-sided sign-flip $p$, 0.25).
+At 6 h, we estimated mean induction to be 1.834 $\log_2$ units greater in $\mathrm{CD14}^{+}$ monocytes than in NK cells (95% donor-level $t$-interval, 1.163-2.506). We retained a positive mean across the evaluated specifications and found that its magnitude and donor-level sign agreement depended on low-count regularization and cell sampling. In a separate cohort of five healthy donors whose monocytes and NK cells were enriched and cultured separately for 21 h, the contrast was negative in every donor; stimulated monocyte and NK panel levels resembled those of the primary cohort, and the difference arose mainly in untreated-cell baselines. Because disease, cell preparation, exposure duration and assay differed together between the cohorts, we could not attribute the difference to any single factor. In an exploratory three-donor PBMC time course, the contrast increased between 4 and 24 h, opposite to our hypothesized decrease (smallest attainable two-sided sign-flip $p$, 0.25). Between sampled times, the contrast changed from negative to positive within 2-12 h in every donor (bracketing intervals 2-4, 4-8 and 4-12 h), with further sign changes at 1-2 h in one donor and 24-36 h in another, so we could not identify a single crossing time ([crossing intervals](results/time_course/crossing/crossing_range.csv)). Within HIRISA, untreated fresh PBMC from the same donors showed baseline monocyte-NK differences close to the primary cohort, so the high baseline was confined to separated cells; in 255 donors from an independent lupus cohort, SLE status shifted this baseline by at most 7% of the between-cohort gap, in the opposite direction.
 
 We further documented stability of the average direction within the primary dataset and limited transferability across experimental contexts.
 
@@ -83,6 +83,14 @@ In GSE226572, we observed a rise in the mean contrast from -0.173 at 4 h to +0.3
 
 We also obtained positive changes in every donor with the 93- and 88-gene Hallmark sets, with means of 0.322 and 0.312. The latter's $t$-interval included zero (-0.008 to +0.632). We therefore interpreted the broader-program temporal effect cautiously in view of its limited precision. We recorded the [time-course results](results/time_course/g3_summary.csv), [annotation checks](results/time_course/annotation_validation/gamma_by_annotation.csv) and [paired-contrast figure](results/time_course/figures/g3_fig3_paired_4h_24h.png).
 
+##### We located the baseline difference in separated-cell preparations
+
+We compared untreated panel levels across HIRISA preparations in the same donors and assay. Untreated monocyte levels (mean $\log_2(\mathrm{CPM}+1)$ over the ten genes) were 5.98-6.71 in fresh PBMC against 9.57-11.32 in separated wells. The monocyte-NK baseline difference fell from +5.32 to +6.22 in separated wells to +0.43 to +1.00 in fresh PBMC; the paired fresh-minus-separated difference was -4.95 (descriptive 95% $t$-interval, -5.41 to -4.48; four donors). Cultured unstimulated PBMC gave -0.53 to +1.23. Both pre-specified rules classified separation, rather than culture, as the candidate explanation. All PBMC wells were processed in one Flex batch, so preparation and batch remained aliased ([preparation levels](results/independent_cohort/preparation/levels.csv), [rules](results/independent_cohort/preparation/rules.csv)).
+
+Using fresh PBMC from Perez et al. (2022; 156 SLE and 99 healthy donors), we estimated the SLE-minus-healthy shift in the same baseline difference as +0.141 (95% CI, 0.025 to 0.257), or +0.220 (0.049 to 0.390) after adjustment for ancestry and processing cohort. The largest limit covered 7% of the 5.55 between-cohort gap, and the shift ran in the direction opposite to that required ([SLE bound](results/cross_study_synthesis/sle_bound/sle_effect.csv)).
+
+In leave-panel-out transcription-factor activity on untreated cells (CollecTRI targets with the ten panel genes removed), the pre-specified ISGF3 rule did not fire. On a shared gene universe, STAT1, STAT2 and IRF9 had higher regression slopes in HIRISA and NF-$\kappa$B factors slightly lower; we treated this as directional only ([activity](results/cross_study_synthesis/regulators/sensitivity_shared_universe.csv)).
+
 #### Interpretation and limitations
 
 We evaluated mean direction, effect magnitude and donor-level sign stability as separate properties of a defined transcriptional contrast. We retained a positive primary mean across the evaluated analytical changes and identified sensitivity in its magnitude and individual donor signs. Our external analyses established limits on transferring that direction to other settings. The experimental factors responsible for the differences remained unresolved. We interpreted each gene-set analysis according to its specific estimand.
@@ -91,7 +99,7 @@ We identified several constraints on interpretation:
 
 - We analysed GSE96583 with donors pooled by condition in the original experiment. Stimulation remained confounded with processing pool after donor pairing. Our eight SLE donors at one dose and time point provided limited population coverage.
 - We retained one primary group with 18 cells. We found zero counts in all 13 mitochondrial features, preventing informative mitochondrial filtering. We counted 24,679 singlets in the supplied annotation and noted the original article's reported count of 24,305; the discrepancy remained unresolved. We observed exposure-dependent changes in time-course monocyte markers and reused the same donors across annotation alternatives.
-- We analysed cohorts that differed in health status, preparation, duration, dose and assay, and kept their donor contrasts separate. We found no documentation of the experimental role of the second untreated time-course library per donor. The individual contributions of disease, culture and duration remained unresolved.
+- We analysed cohorts that differed in health status, preparation, duration, dose and assay, and kept their donor contrasts separate. We found no documentation of the experimental role of the second untreated time-course library per donor. Within HIRISA, the baseline difference tracked separated-cell preparation, aliased with processing batch, and SLE status in an independent cohort could not account for it; the contributions of separation, batch and duration remained unresolved.
 - We measured induction on a normalized relative RNA scale. Absolute transcript abundance, receptor signalling, protein and cellular function remained unmeasured in our reanalysis. We observed high control expression alongside reduced induction; the biological cause remained unresolved.
 
 From these results, we recommended reporting control expression, library sizes, the gene panel and regularization alongside donor-level contrasts. We identified an independent experiment with comparable preparation and exposure and replicated processing batches as the next test of transcriptional reproducibility. We also identified signalling or functional measurements as necessary to evaluate whether the contrast reflected a difference in cellular responsiveness.
@@ -123,6 +131,8 @@ Rscript analysis/independent_cohort/scripts/00_download.R
 Rscript analysis/independent_cohort/scripts/01_pilot.R
 Rscript analysis/independent_cohort/scripts/02_analysis.R
 Rscript analysis/independent_cohort/triangulation/01_triangulation.R
+Rscript analysis/independent_cohort/preparation/00_download.R
+Rscript analysis/independent_cohort/preparation/01_preparation.R
 
 ### Time course
 Rscript analysis/time_course/scripts/00_manifest.R
@@ -135,14 +145,23 @@ Rscript analysis/time_course/annotation_validation/01_extract_author_metadata.R
 Rscript analysis/time_course/annotation_validation/02_map_author_labels.R
 Rscript analysis/time_course/annotation_validation/test_rds_stream.R
 Rscript analysis/time_course/annotation_validation/03_annotation_validation.R
+Rscript analysis/time_course/crossing/01_crossing.R
 
 ### Fixed gene-set comparison and descriptive baseline synthesis
 Rscript analysis/hallmark_gene_set/scripts/00_eligible_genes.R
 Rscript analysis/hallmark_gene_set/scripts/01_hallmark.R
 Rscript analysis/cross_study_synthesis/baseline_harmonization.R
+Rscript analysis/cross_study_synthesis/regulators/01_regulators.R
+
+### SLE bound (Python 3.12 for the Census fetch)
+python3.12 -m venv .venv-perez && .venv-perez/bin/pip install -r analysis/cross_study_synthesis/sle_bound/requirements.txt
+.venv-perez/bin/python -I analysis/cross_study_synthesis/sle_bound/00_fetch.py
+Rscript analysis/cross_study_synthesis/sle_bound/01_sle_bound.R
 ```
 
-Our HIRISA downloads totalled approximately 727 MB, and the analysis required about 5 GB RAM. Our time-course count files totalled about 1.2 GB; for annotation validation, we additionally downloaded a 10.4 GB Seurat object and extracted its metadata. We archived the original [session information](release/sessionInfo.txt), [software versions](release/software_versions.tsv), [run log](release/canonical_run.log) and [test log](release/canonical_tests.log) to document the environment and primary run.
+`release/reproduce.sh` runs every step above in order from a clean checkout.
+
+Our HIRISA downloads totalled approximately 727 MB, plus 516 MB of PBMC wells for the preparation comparison, and the analysis required about 5 GB RAM. Our time-course count files totalled about 1.2 GB; for annotation validation, we additionally downloaded a 10.4 GB Seurat object and extracted its metadata. We archived the original [session information](release/sessionInfo.txt), [software versions](release/software_versions.tsv), [run log](release/canonical_run.log) and [test log](release/canonical_tests.log) to document the environment and primary run.
 
 To compare primary CSV tables with an archived run:
 
