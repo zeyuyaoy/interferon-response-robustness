@@ -1,0 +1,7 @@
+"figure","check","pass","value"
+"cohort_overview_forest","one GSE96583 and one HIRISA summary row",TRUE,"1 / 1"
+"cohort_overview_forest","GSE96583 and HIRISA estimates match reported values (3 dp)",TRUE,"1.834 / -4.609"
+"cohort_overview_forest","time-course 4 h and 24 h means match reported values (3 dp)",TRUE,"-0.173 / 0.382"
+"cohort_overview_forest","horizontal layout has its standard aspect ratio",TRUE,"12.8 /  7.2"
+"all","every output written",TRUE,"3"
+"all","source files unchanged",TRUE,"3"
