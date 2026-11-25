@@ -1,6 +1,5 @@
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork) })
 source("analysis/presentation/utils_presentation.R")
-OUT <- "results/presentation/figures"
 TOL <- 1e-8
 
 IN <- c(gs = "results/hallmark_gene_set/estimates.csv", gs_donor = "results/hallmark_gene_set/donor_values.csv")
@@ -10,7 +9,6 @@ rd <- function(key) {
   if ("donor" %in% names(d)) d$donor <- as.character(d$donor)
   d
 }
-
 
 TRANSFORM <- "edgeR logCPM, prior count 2"
 COHORTS <- c(GSE96583 = "GSE96583", HIRISA = "HIRISA GSE306664")
@@ -23,26 +21,23 @@ gd <- gd[gd$transformation == "p2" & gd$quantity == "delta" & gd$gene_set %in% S
 est <- function(co, s) gs[gs$cohort == COHORTS[[co]] & gs$gene_set == s, ]
 don <- function(co, s) { x <- gd[gd$cohort == COHORTS[[co]] & gd$gene_set == s, ]; x[order(x$donor), ] }
 
-chk <- list()
-add <- function(fig, check, pass, value) chk[[length(chk) + 1]] <<- data.frame(figure = fig, check = check, pass = isTRUE(pass),
-                                                                                value = paste(if (is.numeric(value)) signif(value, 6) else value, collapse = "; "))
 expect <- list(GSE96583 = list(panel_10 = c(1.834, 1.163, 2.506), hallmark_93 = c(1.478, 1.217, 1.739)),
                HIRISA = list(panel_10 = c(-4.609, -7.158, -2.060), hallmark_93 = c(-0.990, -2.354, 0.374)))
-add("both", "one estimate per cohort and gene set at the primary transformation", nrow(gs) == 4 && !anyDuplicated(gs[, c("cohort", "gene_set")]), nrow(gs))
+add_check("both", "one estimate per cohort and gene set at the primary transformation", nrow(gs) == 4 && !anyDuplicated(gs[, c("cohort", "gene_set")]), nrow(gs))
 for (co in names(COHORTS)) {
   for (s in SETS) {
     r <- est(co, s)
     v <- don(co, s)$value
-    add("both", paste(co, s, "mean and interval match reported 3-decimal values"),
+    add_check("both", paste(co, s, "mean and interval match reported 3-decimal values"),
         all(abs(round(c(r$estimate, r$ci_lower, r$ci_upper), 3) - expect[[co]][[s]]) < 1e-9), c(r$estimate, r$ci_lower, r$ci_upper))
-    add("both", paste(co, s, "mean and interval recomputed from donor values"),
+    add_check("both", paste(co, s, "mean and interval recomputed from donor values"),
         length(v) == r$n_donors && abs(mean(v) - r$estimate) < TOL && all(abs(ci_t(v) - c(r$ci_lower, r$ci_upper)) < TOL), length(v))
-    add("both", paste(co, s, "positive-donor count matches table"), sum(v > 0) == r$n_donors_positive, sum(v > 0))
+    add_check("both", paste(co, s, "positive-donor count matches table"), sum(v > 0) == r$n_donors_positive, sum(v > 0))
   }
-  add("both", paste(co, "same donors under both gene sets"), identical(don(co, SETS[1])$donor, don(co, SETS[2])$donor), nrow(don(co, SETS[1])))
+  add_check("both", paste(co, "same donors under both gene sets"), identical(don(co, SETS[1])$donor, don(co, SETS[2])$donor), nrow(don(co, SETS[1])))
 }
-add("both", "donor counts are 8 and 5", nrow(don("GSE96583", "panel_10")) == 8 && nrow(don("HIRISA", "panel_10")) == 5, 0)
-add("both", "HIRISA Hallmark interval spans zero and ten-gene interval excludes it",
+add_check("both", "donor counts are 8 and 5", nrow(don("GSE96583", "panel_10")) == 8 && nrow(don("HIRISA", "panel_10")) == 5, 0)
+add_check("both", "HIRISA Hallmark interval spans zero and ten-gene interval excludes it",
     est("HIRISA", "hallmark_93")$ci_lower < 0 && est("HIRISA", "hallmark_93")$ci_upper > 0 && est("HIRISA", "panel_10")$ci_upper < 0, 0)
 
 X <- c(.46, .76)
@@ -77,30 +72,19 @@ gene_sets <- function(co, yl, h, ytitle = TRUE, dirs = NULL, name = NULL) {
                axis.title.y = element_text(size = 23, margin = margin(r = 10)), plot.margin = margin(10, 120, if (is.null(name)) 10 else 70, 4))
 }
 
-fig_a <- function(h) gene_sets("HIRISA", c(-7.6, 1.4), h, dirs = .02)
-fig_b <- function(h) {
+fig_a <- function(h, layout) gene_sets("HIRISA", c(-7.6, 1.4), h, dirs = .02)
+fig_b <- function(h, layout) {
+  stack <- layout == "vertical"
   yl <- c(-7.6, 3.4)
-  (gene_sets("GSE96583", yl, h, name = "GSE96583", dirs = .02) | plot_spacer() | gene_sets("HIRISA", yl, h, ytitle = FALSE, name = "HIRISA")) +
-    plot_layout(widths = c(1, .04, 1)) & theme(plot.background = element_rect(fill = NA, colour = NA))
+  top <- gene_sets("GSE96583", yl, h, name = "GSE96583", dirs = .02)
+  bot <- gene_sets("HIRISA", yl, h, ytitle = stack, name = "HIRISA")
+  (if (stack) (top / plot_spacer() / bot) + plot_layout(heights = c(1, .04, 1)) else (top | plot_spacer() | bot) + plot_layout(widths = c(1, .04, 1))) &
+    theme(plot.background = element_rect(fill = NA, colour = NA))
 }
 
-FIGS <- list(list(name = "hirisa_gene_set_sensitivity", make = fig_a, w = 8.2, h = 6.6),
-             list(name = "cross_cohort_gene_set_comparison", make = fig_b, w = 15.4, h = 7.4))
-paths <- file.path(OUT, c(outer(sapply(FIGS, `[[`, "name"), c(".svg", ".pdf", ".png"), paste0)))
-if (any(file.exists(paths)) && Sys.getenv("OVERWRITE") != "1") stop("outputs exist; set OVERWRITE=1 to replace them")
-for (f in FIGS) {
-  stem <- file.path(OUT, f$name)
-  ggsave(paste0(stem, ".png"), f$make("-"), width = f$w, height = f$h, dpi = 300, bg = "transparent", device = ragg::agg_png)
-  ggsave(paste0(stem, ".svg"), f$make("-"), width = f$w, height = f$h, device = svglite::svglite, bg = "transparent")
-  ggsave(paste0(stem, ".pdf"), f$make("­"), width = f$w, height = f$h, device = grDevices::pdf, useDingbats = FALSE, encoding = "WinAnsi",
-         bg = "white")
-}
-add("all", "every output written", all(file.exists(paths) & file.size(paths) > 0), length(paths))
-add("all", "source files unchanged", identical(unname(md5_before), unname(tools::md5sum(IN))), length(IN))
-cc <- do.call(rbind, chk)
-utils::write.csv(cc, file.path(OUT, "splash_figures_checks.csv"), row.names = FALSE)
-cat(sum(cc$pass), "of", nrow(cc), "checks passed\n")
-if (!all(cc$pass)) {
-  print(cc[!cc$pass, ])
-  stop("checks failed")
-}
+render_figures("fig_gene_set_sensitivity",
+               list(list(name = "hirisa_gene_set_sensitivity", make = fig_a,
+                         sizes = list(horizontal = c(w = 11.2, h = 6.3), vertical = c(w = 7.2, h = 9.6))),
+                    list(name = "cross_cohort_gene_set_comparison", make = fig_b,
+                         sizes = list(horizontal = c(w = 16, h = 9), vertical = c(w = 9, h = 12)))),
+               IN, md5_before)

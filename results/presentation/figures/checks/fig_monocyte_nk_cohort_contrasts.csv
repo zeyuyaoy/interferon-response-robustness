@@ -11,4 +11,7 @@
 "monocyte_nk_cohort_contrasts","HIRISA positive donors",TRUE,"0"
 "monocyte_nk_cohort_contrasts","GSE96583 frozen run_id single",TRUE,"20261107T124310Z-f1823b7"
 "monocyte_nk_cohort_contrasts","HIRISA frozen run_id single",TRUE,"20261108T000207Z-1bb9c3f"
-"all","source files unchanged by this script",TRUE,"4"
+"monocyte_nk_cohort_contrasts","horizontal layout has its standard aspect ratio",TRUE,"12.8 /  7.2"
+"monocyte_nk_cohort_contrasts","vertical layout has its standard aspect ratio",TRUE,"6.6 / 8.8"
+"all","every output written",TRUE,"6"
+"all","source files unchanged",TRUE,"4"

@@ -1,6 +1,5 @@
 suppressPackageStartupMessages(library(ggplot2))
 source("analysis/presentation/utils_presentation.R")
-OUT <- "results/presentation/figures"
 TOL <- 1e-8
 
 IN <- c(k_donor = "results/primary_contrast/02_primary_estimate/donor_contrasts.csv",
@@ -13,11 +12,6 @@ CHR <- c(donor = "character")
 
 hy <- function(s, h) gsub("(?<=[a-z])-(?=[a-z])", h, s, perl = TRUE)
 r3 <- function(x) sprintf("%.3f", x)
-
-chk <- list()
-add <- function(figure, check, pass, value)
-  chk[[length(chk) + 1]] <<- data.frame(figure = figure, check = check, pass = isTRUE(pass),
-                                        value = paste(format(value, digits = 10), collapse = " / "))
 
 k <- rd("k_donor", colClasses = CHR)
 kp <- rd("k_summary")
@@ -39,17 +33,17 @@ for (id in names(src)) {
   x <- src[[id]]; dl <- x$d$delta; n <- length(dl)
   ci <- ci_t(dl)
   lab <- sub(" ·.*", "", PANELS[[id]])
-  add(F1, paste(lab, "donor count"), n == x$n && x$s$n == x$n && !anyDuplicated(x$d$donor), n)
-  add(F1, paste(lab, "mean of donor contrasts equals frozen theta"), abs(mean(dl) - x$s$theta) < TOL, abs(mean(dl) - x$s$theta))
-  add(F1, paste(lab, "t-interval equals frozen interval"), max(abs(ci - c(x$s$lo, x$s$hi))) < TOL, max(abs(ci - c(x$s$lo, x$s$hi))))
-  add(F1, paste(lab, "frozen estimate matches expected (3 dp)"), all(abs(c(x$s$theta, x$s$lo, x$s$hi) - x$exp) < 5e-4),
+  add_check(F1, paste(lab, "donor count"), n == x$n && x$s$n == x$n && !anyDuplicated(x$d$donor), n)
+  add_check(F1, paste(lab, "mean of donor contrasts equals frozen theta"), abs(mean(dl) - x$s$theta) < TOL, abs(mean(dl) - x$s$theta))
+  add_check(F1, paste(lab, "t-interval equals frozen interval"), max(abs(ci - c(x$s$lo, x$s$hi))) < TOL, max(abs(ci - c(x$s$lo, x$s$hi))))
+  add_check(F1, paste(lab, "frozen estimate matches expected (3 dp)"), all(abs(c(x$s$theta, x$s$lo, x$s$hi) - x$exp) < 5e-4),
       r3(c(x$s$theta, x$s$lo, x$s$hi)))
-  add(F1, paste(lab, "positive donors"), sum(dl > 0) == x$pos && (is.na(x$s$pos) || x$s$pos == x$pos), sum(dl > 0))
+  add_check(F1, paste(lab, "positive donors"), sum(dl > 0) == x$pos && (is.na(x$s$pos) || x$s$pos == x$pos), sum(dl > 0))
 }
-add(F1, "GSE96583 frozen run_id single", length(unique(k$run_id)) == 1 && k$run_id[1] == kp$run_id, kp$run_id)
-add(F1, "HIRISA frozen run_id single", length(unique(hd$run_id)) == 1 && hd$run_id[1] == hp$run_id, hp$run_id)
+add_check(F1, "GSE96583 frozen run_id single", length(unique(k$run_id)) == 1 && k$run_id[1] == kp$run_id, kp$run_id)
+add_check(F1, "HIRISA frozen run_id single", length(unique(hd$run_id)) == 1 && hd$run_id[1] == hp$run_id, hp$run_id)
 
-fig1 <- function(h) {
+fig1 <- function(h, layout) {
   DX <- .36
   dd <- do.call(rbind, lapply(seq_along(src), function(i) data.frame(cohort = PANELS[[i]], x = i, est = src[[i]]$d$delta)))
   sm <- do.call(rbind, lapply(seq_along(src), function(i) { x <- src[[i]]
@@ -60,7 +54,7 @@ fig1 <- function(h) {
   ann <- data.frame(x = sm$x - DX, vjust = ifelse(up, 0, 1), val = sprintf("Mean %+.2f", sm$est),
                     y = ifelse(up, sapply(src, function(x) max(x$d$delta)) + .3, sapply(src, function(x) min(x$d$delta)) - .3))
   dirs <- data.frame(x = c(2, 1) + DX / 2, y = c(.3, -.3), vjust = c(0, 1), colour = c(SHADE$pos[["dark"]], SHADE$neg[["dark"]]),
-                     text = sprintf(DIR, c("greater monocyte induction", "greater NK induction")))
+                     text = sprintf(DIR, c("monocyte > NK", "NK > monocyte")))
   lab <- data.frame(x = sm$x - DX / 2, name = sub(" · .*", "", PANELS), det = sub(" · ", "\n", sub("^[^·]* · ", "", PANELS)))
   ggplot(dd, aes(x, est)) +
     geom_hline(yintercept = 0, colour = COL[["ink"]], linewidth = .6) +
@@ -87,14 +81,6 @@ fig1 <- function(h) {
                plot.margin = margin(6, 6, 78, 4))
 }
 
-paths <- file.path(OUT, paste0(F1, c(".png", ".pdf")))
-cc <- do.call(rbind, chk)
-if (!all(cc$pass)) { print(cc); stop("checks failed: ", paste(cc$check[!cc$pass], collapse = "; ")) }
-dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
-if (any(file.exists(paths)) && !identical(Sys.getenv("OVERWRITE"), "1")) stop("outputs exist; set OVERWRITE=1 to replace: ", OUT)
-ggsave(paths[1], fig1("-"), width = 7, height = 8, dpi = 300, bg = "transparent", device = grDevices::png)
-ggsave(paths[2], fig1("­"), width = 7, height = 8, device = grDevices::pdf, useDingbats = FALSE, encoding = "WinAnsi", bg = "white")
-add("all", "source files unchanged by this script", identical(unname(md5_before), unname(tools::md5sum(IN))), length(IN))
-cc <- do.call(rbind, chk)
-utils::write.csv(cc, file.path(OUT, "presentation_figures_checks.csv"), row.names = FALSE)
-print(cc[, c("figure", "check", "pass")], right = FALSE)
+render_figures("fig_monocyte_nk_cohort_contrasts",
+               list(list(name = F1, make = fig1, sizes = list(horizontal = c(w = 12.8, h = 7.2), vertical = c(w = 6.6, h = 8.8)))),
+               IN, md5_before)
