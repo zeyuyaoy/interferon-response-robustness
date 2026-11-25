@@ -1,0 +1,9 @@
+key	value
+network	CollecTRI (Mueller-Dott et al. 2023, Nucleic Acids Res 51:10934), human, as served by the OmniPath web service
+url	https://omnipathdb.org/interactions?datasets=collectri&genesymbols=yes&organisms=9606&fields=sources,references,curation_effort,extra_attrs&license=academic
+server	omnipath-server 0.1.5 (from https://omnipathdb.org/about)
+file	cache/collectri/collectri_human.tsv
+retrieved_utc	2026-11-25T23:39:13Z
+md5	c10f36fcef78a513b1f5152e5e2e3a50
+n_rows	64515
+version_note	OmniPath serves a live build; rows carry both CollecTRI and CollecTRI2 provenance tags (all 64515 rows carry the original CollecTRI tag). No frozen release file exists in the saezlab/CollecTRI GitHub repository; this md5-pinned download is the version used.
