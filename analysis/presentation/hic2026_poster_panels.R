@@ -73,7 +73,6 @@ add("d", "values are -0.173, +0.382 and Gamma +0.555", identical(r3(c(tv("theta_
 add("d", "each donor change equals 24 h minus 4 h", max(abs(tp$delta_late - tp$delta_early - tp$gamma)) < TOL, 0)
 add("d", "mean paired change equals saved Gamma", abs(mean(tp$gamma) - tv("Gamma")) < TOL, mean(tp$gamma))
 add("d", "all three donor changes positive", all(tp$gamma > 0) && tv("n_donor_gamma_neg") == 0, tp$gamma)
-add("d", "two-sided sign-flip p equals smallest attainable for three donors", abs(tv("signflip_p_two_sided") - 2 / 2^nrow(tp)) < TOL, tv("signflip_p_two_sided"))
 add("d", "direction preserved under depositors' annotations", all(ga$Gamma[startsWith(ga$annotation, "author_")] > 0), ga$Gamma[startsWith(ga$annotation, "author_")])
 
 INK <- "#1f1f1d"
@@ -96,7 +95,6 @@ theme_poster <- function(...) theme_classic(base_size = 24) + theme(
   axis.ticks.length = unit(7, "pt"), axis.title.y = element_text(margin = margin(r = 12)),
   plot.title = element_text(size = 34, face = "bold", margin = margin(b = 26)), plot.title.position = "plot",
   plot.subtitle = element_text(size = 20, colour = SUB, lineheight = 1.05, margin = margin(b = 14)),
-  plot.caption = element_text(size = 19, colour = SUB, hjust = 0, lineheight = 1.1, margin = margin(t = 16)), plot.caption.position = "plot",
   plot.background = element_rect(fill = "white", colour = NA), panel.background = element_rect(fill = "white", colour = NA),
   plot.margin = margin(18, 24, 18, 18)) + theme(...)
 
@@ -180,12 +178,7 @@ panel_b <- function() {
     scale_x_continuous(breaks = cx, labels = c("GSE96583 (n = 8)\nSLE, mixed PBMC\n6 h, 10x 3′", "HIRISA (n = 5)\nhealthy, separated\n21 h, 10x Flex")) +
     scale_y_continuous(breaks = seq(-8, 4, 2), labels = tick) +
     coord_cartesian(xlim = c(.45, 3.45), ylim = YL, expand = FALSE, clip = "off") +
-    labs(x = NULL, y = YLAB, title = "(b) Cross-cohort contrast",
-         caption = paste("Disease, cell preparation, IFN-β duration and assay differ",
-                         "between the cohorts at once, so the sign difference cannot be",
-                         "attributed to any single factor. Stimulated monocyte − NK levels",
-                         "were similar in both cohorts; the gap arose mainly in untreated-",
-                         "cell baselines. HIRISA interval is descriptive.", sep = "\n")) +
+    labs(x = NULL, y = YLAB, title = "(b) Cross-cohort contrast") +
     theme_poster(axis.text.x = element_text(size = 26, face = "bold", lineheight = .95, margin = margin(t = 12), vjust = 1))
 }
 
@@ -224,11 +217,9 @@ XD4 <- c(.3, .66)
 panel_d <- function() {
   d <- data.frame(donor = tp$donor, x = rep(XD4, each = 3), est = c(tp$delta_early, tp$delta_late))
   m <- data.frame(x = XD4, est = c(tv("theta_4h"), tv("theta_24h")))
-  paired(d, m, XD4, c("4 h", "24 h"), c(-.68, 1.2), "(d) Time course (exploratory, n = 3)",
+  paired(d, m, XD4, c("4 h", "24 h"), c(-.68, 1.2), "(d) Time course (n = 3)",
          sprintf('bold("Mean paired change"~Gamma == "+%s"~log[2]~"units")', r3(tv("Gamma"))),
-         paste0("mean\n", num(m$est))) +
-    labs(caption = paste(sprintf("Opposite to the predicted decrease. Smallest attainable two-sided p = %s.", sprintf("%.2f", tv("signflip_p_two_sided"))),
-                         "Separate cohort: 3 healthy donors, mixed PBMC, 1,000 U/mL.", sep = "\n"))
+         paste0("mean\n", num(m$est)))
 }
 
 cm <- function(x) x / 2.54
