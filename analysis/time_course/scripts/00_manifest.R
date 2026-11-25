@@ -42,6 +42,7 @@ runinfo <- do.call(rbind, lapply(smp$srx, function(s) {
   r <- utils::read.csv(paste0("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=sra&rettype=runinfo&retmode=text&id=", id),
                        stringsAsFactors = FALSE)
   r <- r[r$Experiment == s,]
+  r <- r[order(r$Run),]
   data.frame(srx = s, n_runs = nrow(r), runs = paste(r$Run, collapse = ";"), release_date = paste(unique(r$ReleaseDate), collapse = ";"),
              load_date = paste(unique(r$LoadDate), collapse = ";"), spots = sum(as.numeric(r$spots)), bases = sum(as.numeric(r$bases)),
              avg_length = paste(unique(r$avgLength), collapse = ";"), model = paste(unique(r$Model), collapse = ";"),
