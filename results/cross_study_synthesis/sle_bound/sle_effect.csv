@@ -1,0 +1,5 @@
+"model","estimate","ci_low","ci_high","p","n_healthy","n_sle","terms","dropped_aliased","fraction_of_gap","gap","run_id"
+"unadjusted Welch",0.140988204112606,0.0252555143074706,0.256720893917741,0.017229905459715,99,156,"","",0.0254032800202894,5.55,"20261125T235351Z-2db29a8"
+"lm adjusted ancestry + Processing_Cohort membership indicators",0.21969732355951,0.049107140303409,0.390287506815611,0.0118110561978447,99,156,"(Intercept);groupSLE;ancestryAsian;ancestryEuropean American;ancestryOther;cohort1;cohort2;cohort3;cohort4","",0.0395851033440558,5.55,"20261125T235351Z-2db29a8"
+"bound: max |CI limit| over unadjusted and adjusted",0.390287506815611,NA,NA,NA,99,156,"","",0.07032207330011,5.55,"20261125T235351Z-2db29a8"
+"bound: extreme group percentile contrast (SLE q95 - healthy q05 or SLE q05 - healthy q95)",1.54319832966117,NA,NA,NA,99,156,"","",0.278053753092103,5.55,"20261125T235351Z-2db29a8"
