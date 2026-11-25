@@ -1,0 +1,18 @@
+key	value
+status	LOCKED; exploratory, descriptive
+title	Zero crossings of the monocyte-NK induction contrast delta_d(t) in GSE226572, reported as time ranges
+motivation	with 3 donors and sparse, donor-varying sampling the crossing time is not identifiable (earlier review: crossings non-unique, roughly 1-12 h; lag and rate not identifiable); this analysis replaces any point crossing time with bracketing intervals
+input	results/time_course/g3_trajectory.csv (time, donor, R_mono, R_nk, delta, time_h, run_id) from analysis/time_course/scripts/03_analysis.R; read only, upstream pipeline not re-run
+time_grid	observed exposure times per donor from analysis/time_course/samples.tsv excluding 0h: D34 2,4,8,12,24,36 h; D38 and D39 1,2,4,12,24,36 h; delta_d(0h) = 0 by construction (0h is the reference) and is not used
+sign_change	per donor, a sign change is any adjacent pair of observed times (t_i, t_j) in ascending order with sign(delta_d(t_i)) != sign(delta_d(t_j)); delta exactly 0 is not expected and is flagged by a check
+direction	each sign change labelled neg_to_pos or pos_to_neg
+crossing_interval	primary: [t_i, t_j], the bracketing observed times; no interpolation
+interpolation	secondary, descriptive only: linear interpolation point t_i + (t_j - t_i) * delta_i / (delta_i - delta_j); not a crossing-time estimate
+non_uniqueness	all sign changes per donor are reported with their count; none is selected as the crossing
+aggregation	across donors: union of donor-level intervals (merged where overlapping or touching) and intersection of donor-level intervals, each for all crossings, neg_to_pos only and pos_to_neg only; intersection over donors uses, per donor, the union of that donor's intervals of the given direction; a donor without a crossing of a direction makes that intersection empty
+sensitivity	settings in results/time_course/g3_delta_by_time.csv (prior_0.5, log2_cpm_plus_1, ref_0h_library_1, ref_0h_library_2, mono_cd14_or_cd16) contain only 4h and 24h, so no full trajectory exists for them; primary trajectory only
+inference	no model is fit, no curve is smoothed, no p-value or interval estimate is computed; donors, not cells or genes, are the units; n = 3
+not_done	no change-point search, no lag or rate estimate, no re-normalization, no selection of times or donors after outcomes
+run_id	timestamp-git short sha, suffixed -dirty if analysis/time_course/crossing has uncommitted changes
+outputs	results/time_course/crossing/crossings_by_donor.csv, crossing_range.csv, checks.csv
+specified_utc	2026-11-25T23:38:54Z
