@@ -1,0 +1,19 @@
+key	value
+status	LOCKED; descriptive bound
+specified_utc	2026-11-25T23:40:31Z
+question	Bound how much SLE status alone can shift the untreated monocyte-minus-NK baseline difference (Delta_ctrl) of the 10-gene ISG panel, relative to the 5.55 log2 gap between GSE96583 (-0.72) and HIRISA (+4.83)
+data	Perez et al. 2022 Science (doi 10.1126/science.abf1970; GEO GSE174188); CELLxGENE dataset 218acb0f-9f2f-4f76-b90b-15a4b7c7f629 via CELLxGENE Census 2025-11-08 (raw counts, X/raw) plus author obs columns read by HTTP range from the CELLxGENE h5ad of the same dataset; see data_source.tsv
+panel	analysis/inputs/core_isgs.tsv: IFI44L ISG15 IFIT3 XAF1 MX1 IFI6 IFIT1 TRIM22 MX2 RSAD2
+cell_inclusion	author_cell_type == cM (classical CD14 monocytes) for the monocyte lineage; author_cell_type == NK (all NK, bright and dim) for the NK lineage; is_primary_data == TRUE; no further QC beyond the authors' published object
+groups	disease == systemic lupus erythematosus (SLE) versus disease == normal (healthy); SLE disease_state (managed, flare, treated) is not stratified
+donor_pseudobulk	one profile per donor (donor_id) per lineage; donors with several samples are pooled by summing counts over all their samples; the number of samples and the disease_state set per donor are recorded
+min_cells	at least 20 cells per lineage per donor; donors failing either lineage are excluded and reported
+library_size	pseudobulk total UMI = sum over included cells of Census raw_sum (per-cell total raw counts across all genes)
+estimand	Delta_ctrl per donor = mean over the 10 panel genes of log2(CPM+1) in the cM pseudobulk minus the same in the NK pseudobulk, with CPM = 1e6 * pseudobulk gene count / pseudobulk total UMI
+sle_effect_unadjusted	mean Delta_ctrl(SLE) - mean Delta_ctrl(healthy) with 95% Welch t confidence interval
+sle_effect_adjusted	lm(Delta_ctrl ~ SLE + self_reported_ethnicity + Processing_Cohort) coefficient for SLE with 95% model-based CI; ethnicity levels with fewer than 3 donors are pooled into Other; if a term is aliased it is dropped and reported
+group_quantiles	5%, 50%, 95% quantiles (type 7) of per-donor Delta_ctrl in each group, plus n, mean, sd
+bound_statement	maximum plausible SLE shift = max(|lower CI|, |upper CI|) over the unadjusted and adjusted effects, and the extreme group-percentile contrast max(|q95(SLE) - q5(healthy)|, |q5(SLE) - q95(healthy)|); each reported as a fraction of the 5.55 gap; sign is reported (the gap needs SLE to lower Delta_ctrl by 5.55 to explain GSE96583 vs HIRISA)
+scope_caveat	fresh uncultured PBMC only; the bound assumes the disease effect transfers to 6 h cultured PBMC (GSE96583 is SLE, cultured 6 h); it says nothing about culture duration, cell separation, or preparation; 10x 3' v2 platform; mostly female; Asian and European ancestry; medication and flare status not modelled
+amendment_1_utc	2026-11-25T23:46:46Z
+amendment_1	Processing_Cohort is not unique per donor (57 donors have cells in 2-3 cohorts; the same sample was re-run in several cohorts), so the adjusted model uses four 0/1 indicators (donor has cells in cohort k) instead of a single cohort factor; ethnicity is unique per donor. Made after a first run had printed the unadjusted Welch estimate in checks.csv; the adjusted estimate had not been viewed

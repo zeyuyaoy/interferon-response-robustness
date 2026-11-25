@@ -1,0 +1,17 @@
+key	value
+source	Perez et al. 2022 Science doi:10.1126/science.abf1970; GEO GSE174188; CELLxGENE collection 436154da-bcf1-4130-9c8b-120ff9a888f2
+census_version	2025-11-08
+census_uri	s3://cellxgene-census-public-us-west-2/cell-census/2025-11-08/soma/
+census_api	cellxgene_census 1.18.0; X_name=raw; obs filter dataset_id and cell_type in ['classical monocyte', 'natural killer cell']; var filter feature_name in panel
+dataset_id	218acb0f-9f2f-4f76-b90b-15a4b7c7f629
+dataset_version_id	c55dc602-d168-4d15-acc1-5de4f2f5d551
+h5ad_url	https://datasets.cellxgene.cziscience.com/c55dc602-d168-4d15-acc1-5de4f2f5d551.h5ad
+h5ad_bytes_not_downloaded	12218105530
+h5ad_access	HTTP range reads of obs/{observation_joinid,author_cell_type,ct_cov,Processing_Cohort,disease_state,sample_uuid,ind_cov,library_uuid} only; joined on observation_joinid
+library_size	Census obs raw_sum = per-cell sum of raw counts over all genes
+retrieval_start_utc	2026-11-25T23:41:11Z
+retrieval_end_utc	2026-11-25T23:45:47Z
+output_file	cache/perez2022/perez2022_cM_NK_panel_counts.csv.gz
+output_bytes	18888981
+output_md5	fb2bf48cb0d9b2425c4c911e511fc1ff
+output_n_cells	399983
