@@ -1,0 +1,4 @@
+"setting","direction","n_crossings","n_donors_with_crossing","donor_intervals","union","union_min_h","union_max_h","intersection","intersection_is_single_time","interp_min_h","interp_max_h","run_id"
+"primary","all",5,3,"D34: [4, 8] h; D38: [1, 4] h; D39: [4, 12] h U [24, 36] h","[1, 12] h U [24, 36] h",1,36,"[4, 4] h",TRUE,1.6502093348026,30.4530380260077,"20261125T235114Z-90aba14"
+"primary","neg_to_pos",3,3,"D34: [4, 8] h; D38: [2, 4] h; D39: [4, 12] h","[2, 12] h",2,12,"[4, 4] h",TRUE,2.53235512063149,9.97795880041263,"20261125T235114Z-90aba14"
+"primary","pos_to_neg",2,2,"D34: empty; D38: [1, 2] h; D39: [24, 36] h","[1, 2] h U [24, 36] h",1,36,"empty",FALSE,1.6502093348026,30.4530380260077,"20261125T235114Z-90aba14"
