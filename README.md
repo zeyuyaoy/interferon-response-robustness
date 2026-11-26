@@ -85,7 +85,9 @@ We also obtained positive changes in every donor with the 93- and 88-gene Hallma
 
 ##### We located the baseline difference in separated-cell preparations
 
-We compared untreated panel levels across HIRISA preparations in the same donors and assay. Untreated monocyte levels (mean $\log_2(\mathrm{CPM}+1)$ over the ten genes) were 5.98-6.71 in fresh PBMC against 9.57-11.32 in separated wells. The monocyte-NK baseline difference fell from +5.32 to +6.22 in separated wells to +0.43 to +1.00 in fresh PBMC; the paired fresh-minus-separated difference was -4.95 (descriptive 95% $t$-interval, -5.41 to -4.48; four donors). Cultured unstimulated PBMC gave -0.53 to +1.23. Both pre-specified rules classified separation, rather than culture, as the candidate explanation. All PBMC wells were processed in one Flex batch, so preparation and batch remained aliased ([preparation levels](results/independent_cohort/preparation/levels.csv), [rules](results/independent_cohort/preparation/rules.csv)).
+We compared untreated panel levels across HIRISA preparations in the same donors and assay. Untreated monocyte levels (mean $\log_2(\mathrm{CPM}+1)$ over the ten genes) were 5.98-6.71 in fresh PBMC against 9.57-11.32 in separated wells. The monocyte-NK baseline difference fell from +5.32 to +6.22 in separated wells to +0.43 to +1.00 in fresh PBMC; the paired fresh-minus-separated difference was -4.95 (descriptive 95% $t$-interval, -5.41 to -4.48; four donors). Cultured unstimulated PBMC gave -0.53 to +1.23. Both pre-specified rules classified separation, rather than culture, as the candidate explanation. All PBMC wells were processed in one Flex batch ([preparation levels](results/independent_cohort/preparation/levels.csv), [rules](results/independent_cohort/preparation/rules.csv)).
+
+To examine this batch aliasing, we mapped all 131 GSE306664 samples to Flex batches and pre-specified three tests. In separated minus fresh monocytes, the panel rose by +4.27 while ten housekeeping genes changed by -0.13 and ten expression-matched random genes by -0.47, in every donor. Separated B and T cells were not raised relative to the same donors' fresh PBMC (-0.21 and -0.08). Separated T cells processed in two different batches differed by -0.24. The pre-specified rule classified the result as separation supported: a batch-wide or gene-unspecific offset did not fit. No separated untreated well was processed in the PBMC batch, so an artefact of that batch confined to interferon genes or monocytes remained untestable ([batch rules](results/independent_cohort/batch/rules.csv), [differences](results/independent_cohort/batch/paired_summary.csv)).
 
 Using fresh PBMC from Perez et al. (2022; 156 SLE and 99 healthy donors), we estimated the SLE-minus-healthy shift in the same baseline difference as +0.141 (95% CI, 0.025 to 0.257), or +0.220 (0.049 to 0.390) after adjustment for ancestry and processing cohort. The largest limit covered 7% of the 5.55 between-cohort gap, and the shift ran in the direction opposite to that required ([SLE bound](results/cross_study_synthesis/sle_bound/sle_effect.csv)).
 
@@ -99,7 +101,7 @@ We identified several constraints on interpretation:
 
 - We analysed GSE96583 with donors pooled by condition in the original experiment. Stimulation remained confounded with processing pool after donor pairing. Our eight SLE donors at one dose and time point provided limited population coverage.
 - We retained one primary group with 18 cells. We found zero counts in all 13 mitochondrial features, preventing informative mitochondrial filtering. We counted 24,679 singlets in the supplied annotation and noted the original article's reported count of 24,305; the discrepancy remained unresolved. We observed exposure-dependent changes in time-course monocyte markers and reused the same donors across annotation alternatives.
-- We analysed cohorts that differed in health status, preparation, duration, dose and assay, and kept their donor contrasts separate. We found no documentation of the experimental role of the second untreated time-course library per donor. Within HIRISA, the baseline difference tracked separated-cell preparation, aliased with processing batch, and SLE status in an independent cohort could not account for it; the contributions of separation, batch and duration remained unresolved.
+- We analysed cohorts that differed in health status, preparation, duration, dose and assay, and kept their donor contrasts separate. We found no documentation of the experimental role of the second untreated time-course library per donor. Within HIRISA, the baseline difference tracked separated-cell preparation in an interferon- and monocyte-specific pattern that a batch-wide offset did not explain, and SLE status in an independent cohort could not account for it; the contributions of separation, batch and duration remained unresolved.
 - We measured induction on a normalized relative RNA scale. Absolute transcript abundance, receptor signalling, protein and cellular function remained unmeasured in our reanalysis. We observed high control expression alongside reduced induction; the biological cause remained unresolved.
 
 From these results, we recommended reporting control expression, library sizes, the gene panel and regularization alongside donor-level contrasts. We identified an independent experiment with comparable preparation and exposure and replicated processing batches as the next test of transcriptional reproducibility. We also identified signalling or functional measurements as necessary to evaluate whether the contrast reflected a difference in cellular responsiveness.
@@ -133,6 +135,9 @@ Rscript analysis/independent_cohort/scripts/02_analysis.R
 Rscript analysis/independent_cohort/triangulation/01_triangulation.R
 Rscript analysis/independent_cohort/preparation/00_download.R
 Rscript analysis/independent_cohort/preparation/01_preparation.R
+Rscript analysis/independent_cohort/batch/00_download.R design
+Rscript analysis/independent_cohort/batch/00_download.R
+Rscript analysis/independent_cohort/batch/01_batch.R
 
 ### Time course
 Rscript analysis/time_course/scripts/00_manifest.R
@@ -161,7 +166,7 @@ Rscript analysis/cross_study_synthesis/sle_bound/01_sle_bound.R
 
 `release/reproduce.sh` runs every step above in order from a clean checkout.
 
-Our HIRISA downloads totalled approximately 727 MB, plus 516 MB of PBMC wells for the preparation comparison, and the analysis required about 5 GB RAM. Our time-course count files totalled about 1.2 GB; for annotation validation, we additionally downloaded a 10.4 GB Seurat object and extracted its metadata. We archived the original [session information](release/sessionInfo.txt), [software versions](release/software_versions.tsv), [run log](release/canonical_run.log) and [test log](release/canonical_tests.log) to document the environment and primary run.
+Our HIRISA downloads totalled approximately 727 MB, plus 516 MB of PBMC wells for the preparation comparison and 690 MB of separated B and T wells for the batch analysis, and the analysis required about 5 GB RAM. Our time-course count files totalled about 1.2 GB; for annotation validation, we additionally downloaded a 10.4 GB Seurat object and extracted its metadata. We archived the original [session information](release/sessionInfo.txt), [software versions](release/software_versions.tsv), [run log](release/canonical_run.log) and [test log](release/canonical_tests.log) to document the environment and primary run.
 
 To compare primary CSV tables with an archived run:
 
