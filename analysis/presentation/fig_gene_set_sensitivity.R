@@ -33,6 +33,7 @@ for (co in names(COHORTS)) {
     add_check("both", paste(co, s, "mean and interval recomputed from donor values"),
         length(v) == r$n_donors && abs(mean(v) - r$estimate) < TOL && all(abs(ci_t(v) - c(r$ci_lower, r$ci_upper)) < TOL), length(v))
     add_check("both", paste(co, s, "positive-donor count matches table"), sum(v > 0) == r$n_donors_positive, sum(v > 0))
+    add_check("both", paste(co, s, "mean label reads the 3-decimal estimate"), identical(num(r$estimate), num(expect[[co]][[s]][1])), num(r$estimate))
   }
   add_check("both", paste(co, "same donors under both gene sets"), identical(don(co, SETS[1])$donor, don(co, SETS[2])$donor), nrow(don(co, SETS[1])))
 }
@@ -43,41 +44,47 @@ add_check("both", "HIRISA Hallmark interval spans zero and ten-gene interval exc
 X <- c(.46, .76)
 XM <- c(.27, .92)
 XL <- c(0, 1)
-gene_sets <- function(co, yl, h, ytitle = TRUE, dirs = NULL, name = NULL) {
+gene_sets <- function(co, yl, b, ytitle = TRUE, dirs = NULL, title = NULL) {
+  z <- b / 24
   d <- rbind(transform(don(co, SETS[1]), x = X[1]), transform(don(co, SETS[2]), x = X[2]))
   m <- rbind(est(co, SETS[1]), est(co, SETS[2]))
   m$x <- XM
-  ml <- data.frame(x = XM + c(-.05, .05), y = m$estimate, hj = c(1, 0), lab = sprintf("%+.3f", m$estimate), col = shade(m$estimate, "dark"))
-  xl <- sprintf(c("10%sgene\npanel", "93%sgene\nHallmark"), h)
+  ml <- data.frame(x = XM + c(-.05, .05), y = m$estimate, hj = c(1, 0), lab = num(m$estimate),
+                   col = dcol(m$estimate, "dark"))
+  xl <- c("10-gene\npanel", "93-gene\nHallmark")
+  dy <- diff(yl) * .045
   ggplot(d, aes(x, value)) +
-    geom_hline(yintercept = 0, colour = COL[["ink"]], linewidth = .7) +
-    geom_line(aes(group = donor), colour = COL[["light"]], linewidth = .9) +
-    geom_point(colour = shade(d$value, "mid"), size = 5, alpha = .55, stroke = 0) +
-    geom_errorbar(data = m, aes(x = x, ymin = ci_lower, ymax = ci_upper), colour = shade(m$estimate, "dark"), width = .05, linewidth = 1.3,
+    zero_line() +
+    geom_line(aes(group = donor), colour = MUTED, linewidth = 1.3) +
+    geom_point(shape = dshape(d$value), size = 5.6 * z, stroke = .8, fill = dcol(d$value, "mid"), colour = dcol(d$value, "dark"), alpha = .9) +
+    geom_errorbar(data = m, aes(x = x, ymin = ci_lower, ymax = ci_upper), colour = dcol(m$estimate, "dark"), width = .05, linewidth = 1.6,
                   inherit.aes = FALSE) +
-    geom_point(data = m, aes(x = x, y = estimate), shape = 23, size = 7.2, fill = shade(m$estimate, "dark"), colour = "white", stroke = 1.3,
+    geom_point(data = m, aes(x = x, y = estimate), shape = 23, size = 10.5 * z, fill = dcol(m$estimate, "dark"), colour = "white", stroke = 1.4,
                inherit.aes = FALSE) +
-    geom_text(data = ml, aes(x = x, y = y, label = lab, hjust = hj), colour = ml$col, size = 7.6, fontface = "bold", inherit.aes = FALSE) +
-    (if (!is.null(dirs)) annotate("text", x = dirs, y = c(1, -1) * diff(yl) * .025, vjust = c(0, 1), hjust = 0, size = 6.6, fontface = "bold",
-                                  colour = c(SHADE$pos[["dark"]], SHADE$neg[["dark"]]), parse = TRUE,
-                                  label = sprintf(DIR, c("monocyte > NK", "NK > monocyte")))) +
-    (if (!is.null(name)) annotate("text", x = mean(XL), y = yl[1] - .2 * diff(yl), vjust = 1, label = name, size = 8, fontface = "bold",
-                                  colour = TXT[["main"]])) +
+    geom_text(data = ml, aes(x = x, y = y, label = lab, hjust = hj), fontface = "bold", colour = ml$col, size = pt(25 * z), inherit.aes = FALSE) +
+    (if (!is.null(dirs)) list(
+      annotate("point", x = dirs, y = c(1, -1) * dy, shape = c(24, 25), size = 4.6 * z, stroke = .8,
+               fill = c(POS[["mid"]], NEG[["mid"]]), colour = c(POS[["dark"]], NEG[["dark"]])),
+      annotate("text", x = dirs + .03, y = c(1, -1) * dy, hjust = 0, size = pt(21 * z),
+               colour = c(POS[["dark"]], NEG[["dark"]]), label = c("monocyte > NK", "NK > monocyte")))) +
     scale_x_continuous(breaks = X, labels = xl) +
-    scale_y_continuous(breaks = seq(-8, 4, 2)) +
+    scale_y_continuous(breaks = seq(-8, 4, 2), labels = waiver()) +
     coord_cartesian(xlim = XL, ylim = yl, expand = FALSE, clip = "off") +
-    labs(x = NULL, y = if (ytitle) quote(atop("Monocyte" - "NK induction", "contrast (" * log[2] * ")")) else NULL) +
-    pres_theme(text = element_text(size = 23, colour = TXT[["main"]]), axis.text.y = element_text(size = 23, colour = TXT[["main"]]),
-               axis.text.x = element_text(size = 21, colour = TXT[["main"]], margin = margin(t = 8), vjust = 1, lineheight = .9),
-               axis.title.y = element_text(size = 23, margin = margin(r = 10)), plot.margin = margin(10, 120, if (is.null(name)) 10 else 70, 4))
+    labs(x = NULL, y = if (ytitle) YLAB else NULL, title = title) +
+    pres_theme(b, axis.text.x = element_text(margin = margin(t = 10 * z), vjust = 1, lineheight = .9),
+               plot.margin = margin(14 * z, 110 * z, 10 * z, 14 * z))
 }
 
-fig_a <- function(h, layout) gene_sets("HIRISA", c(-7.6, 1.4), h, dirs = .02)
-fig_b <- function(h, layout) {
+fig_a <- function(layout) {
+  b <- BASE[[layout]]
+  gene_sets("HIRISA", c(-7.6, 1.4), b, dirs = .03, title = "Gene-set sensitivity, HIRISA (n = 5)")
+}
+fig_b <- function(layout) {
   stack <- layout == "vertical"
+  b <- BASE[[layout]]
   yl <- c(-7.6, 3.4)
-  top <- gene_sets("GSE96583", yl, h, name = "GSE96583", dirs = .02)
-  bot <- gene_sets("HIRISA", yl, h, ytitle = stack, name = "HIRISA")
+  top <- gene_sets("GSE96583", yl, b, dirs = .03, title = "(a) GSE96583 (n = 8)")
+  bot <- gene_sets("HIRISA", yl, b, ytitle = stack, title = "(b) HIRISA (n = 5)")
   (if (stack) (top / plot_spacer() / bot) + plot_layout(heights = c(1, .04, 1)) else (top | plot_spacer() | bot) + plot_layout(widths = c(1, .04, 1))) &
     theme(plot.background = element_rect(fill = NA, colour = NA))
 }

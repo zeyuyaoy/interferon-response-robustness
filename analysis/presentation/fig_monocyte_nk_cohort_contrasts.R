@@ -10,7 +10,6 @@ md5_before <- tools::md5sum(IN)
 rd <- function(key, ...) utils::read.csv(IN[[key]], stringsAsFactors = FALSE, ...)
 CHR <- c(donor = "character")
 
-hy <- function(s, h) gsub("(?<=[a-z])-(?=[a-z])", h, s, perl = TRUE)
 r3 <- function(x) sprintf("%.3f", x)
 
 k <- rd("k_donor", colClasses = CHR)
@@ -43,42 +42,52 @@ for (id in names(src)) {
 add_check(F1, "GSE96583 frozen run_id single", length(unique(k$run_id)) == 1 && k$run_id[1] == kp$run_id, kp$run_id)
 add_check(F1, "HIRISA frozen run_id single", length(unique(hd$run_id)) == 1 && hd$run_id[1] == hp$run_id, hp$run_id)
 
-fig1 <- function(h, layout) {
-  DX <- .36
-  dd <- do.call(rbind, lapply(seq_along(src), function(i) data.frame(cohort = PANELS[[i]], x = i, est = src[[i]]$d$delta)))
-  sm <- do.call(rbind, lapply(seq_along(src), function(i) { x <- src[[i]]
-    data.frame(cohort = PANELS[[i]], x = i + DX, est = x$s$theta, lo = x$s$lo, hi = x$s$hi) }))
-  by_cohort <- function(kk) setNames(shade(sm$est, kk), sm$cohort)
-  YL <- c(-8.3, 4.4)
-  up <- sm$hi > 0
-  ann <- data.frame(x = sm$x - DX, vjust = ifelse(up, 0, 1), val = sprintf("Mean %+.2f", sm$est),
-                    y = ifelse(up, sapply(src, function(x) max(x$d$delta)) + .3, sapply(src, function(x) min(x$d$delta)) - .3))
-  dirs <- data.frame(x = c(2, 1) + DX / 2, y = c(.3, -.3), vjust = c(0, 1), colour = c(SHADE$pos[["dark"]], SHADE$neg[["dark"]]),
-                     text = sprintf(DIR, c("monocyte > NK", "NK > monocyte")))
-  lab <- data.frame(x = sm$x - DX / 2, name = sub(" · .*", "", PANELS), det = sub(" · ", "\n", sub("^[^·]* · ", "", PANELS)))
-  ggplot(dd, aes(x, est)) +
-    geom_hline(yintercept = 0, colour = COL[["ink"]], linewidth = .6) +
-    geom_boxplot(aes(group = cohort, colour = cohort, fill = cohort), width = .32, alpha = .18, linewidth = .7,
-                 outlier.shape = NA, staplewidth = .4) +
-    geom_point(aes(colour = cohort), position = position_jitter(width = .07, height = 0, seed = 1), size = 3.4, alpha = .45, stroke = 0) +
-    geom_errorbar(data = sm, aes(x = x, ymin = lo, ymax = hi), colour = shade(sm$est, "dark"), width = .08, linewidth = 1.1, inherit.aes = FALSE) +
-    geom_point(data = sm, aes(x = x, y = est), shape = 23, size = 5.6, fill = shade(sm$est, "dark"), colour = "white", stroke = 1.1) +
-    geom_text(data = ann, aes(x = x, y = y, label = val, vjust = vjust), colour = shade(sm$est, "dark"), hjust = .5, size = 6.4,
-              fontface = "bold", inherit.aes = FALSE) +
-    geom_text(data = dirs, aes(x = x, y = y, label = text, vjust = vjust), colour = dirs$colour, hjust = .5, size = 5.8,
-              fontface = "bold", parse = TRUE, inherit.aes = FALSE) +
-    geom_text(data = lab, aes(x = x, y = YL[1] - .3, label = name), vjust = 1, size = 6.2, fontface = "bold",
-              colour = TXT[["main"]], inherit.aes = FALSE) +
-    geom_text(data = lab, aes(x = x, y = YL[1] - .95, label = det), vjust = 1, size = 5, lineheight = .95,
-              colour = TXT[["sub"]], inherit.aes = FALSE) +
-    scale_colour_manual(values = by_cohort("mid"), guide = "none") +
-    scale_fill_manual(values = by_cohort("light"), guide = "none") +
-    scale_y_continuous(breaks = seq(-8, 4, 2)) +
-    coord_cartesian(xlim = c(.5, 2.9), ylim = YL, expand = FALSE, clip = "off") +
-    labs(x = NULL, y = bquote("Monocyte" - .(hy("NK ten-gene induction contrast (", h)) * log[2] * ")")) +
-    pres_theme(text = element_text(size = 18, colour = TXT[["main"]]), axis.text.y = element_text(size = 16, colour = TXT[["main"]]),
-               axis.title.y = element_text(size = 18, margin = margin(r = 10)), axis.text.x = element_blank(),
-               plot.margin = margin(6, 6, 78, 4))
+XLAB <- c(k = "GSE96583 (n = 8)\nSLE, mixed PBMCs\n6 h", h = "HIRISA (n = 5)\nhealthy, enriched cells\n21 h")
+SIGN <- c(k = 1, h = -1)
+for (id in names(src)) {
+  x <- src[[id]]
+  lab <- sub(" ·.*", "", PANELS[[id]])
+  add_check(F1, paste(lab, "mean label reads the frozen theta (3 dp)"), identical(paste("Mean", num(x$s$theta)), paste("Mean", num(x$exp[1]))),
+            paste("Mean", num(x$s$theta)))
+  add_check(F1, paste(lab, "donor-count label matches donors sharing the mean's sign"),
+            sum(sign(x$d$delta) == SIGN[[id]]) == x$n && sign(x$s$theta) == SIGN[[id]], sum(sign(x$d$delta) == SIGN[[id]]))
+}
+
+fig1 <- function(layout) {
+  v <- layout == "vertical"
+  b <- BASE[[layout]]
+  s <- b / 24
+  XD <- c(1, 2.55)
+  XM <- XD + .45
+  YL <- c(-9.6, 5.8)
+  u <- diff(YL) * (if (v) .052 else .068)
+  dd <- do.call(rbind, lapply(1:2, function(i) data.frame(x = XD[i], est = src[[i]]$d$delta)))
+  set.seed(7)
+  dd$x <- dd$x + stats::runif(nrow(dd), -.09, .09)
+  sm <- do.call(rbind, lapply(1:2, function(i) data.frame(x = XM[i], est = src[[i]]$s$theta, lo = src[[i]]$s$lo, hi = src[[i]]$s$hi)))
+  cx <- (XD + XM) / 2
+  top <- max(sm$hi[1], max(src[[1]]$d$delta)) + u * .75
+  bot <- min(sm$lo[2], min(src[[2]]$d$delta)) - u * .4
+  lab <- data.frame(x = cx, y = c(top + u, bot), vjust = c(0, 1), col = dcol(sm$est, "dark"),
+                    t = paste("Mean", num(sm$est)))
+  cnt <- data.frame(x = cx, y = c(top, bot - u * 1.15), vjust = c(0, 1), col = dcol(sm$est, "dark"),
+                    t = c(sprintf("%d/%d donors positive", sum(src$k$d$delta > 0), src$k$n), sprintf("%d/%d donors negative", sum(src$h$d$delta < 0), src$h$n)))
+  ggplot() +
+    zero_line() +
+    geom_point(data = dd, aes(x, est), shape = dshape(dd$est), size = 7 * s, stroke = .9, fill = dcol(dd$est, "mid"), colour = dcol(dd$est, "dark"), alpha = .9) +
+    geom_errorbar(data = sm, aes(x = x, ymin = lo, ymax = hi), width = .16, linewidth = 1.6, colour = dcol(sm$est, "dark")) +
+    geom_point(data = sm, aes(x, est), shape = 23, size = 12 * s, stroke = 1.4, fill = dcol(sm$est, "dark"), colour = "white") +
+    geom_text(data = lab, aes(x, y, label = t, vjust = vjust), size = pt(30 * s), fontface = "bold", colour = lab$col) +
+    geom_text(data = cnt, aes(x, y, label = t, vjust = vjust), size = pt(22 * s), colour = cnt$col) +
+    annotate("point", x = c(1.78, .62), y = c(.42, -.42) * u / .9, shape = c(24, 25), size = 5 * s, stroke = .8,
+             fill = c(POS[["mid"]], NEG[["mid"]]), colour = c(POS[["dark"]], NEG[["dark"]])) +
+    annotate("text", x = c(1.78, .62) + (if (v) .08 else .055), y = c(.42, -.42) * u / .9, hjust = 0, size = pt(22 * s),
+             colour = c(POS[["dark"]], NEG[["dark"]]), label = c("positive contrast", "negative contrast")) +
+    scale_x_continuous(breaks = cx, labels = XLAB) +
+    scale_y_continuous(breaks = seq(-8, 4, 2), labels = waiver()) +
+    coord_cartesian(xlim = c(.45, 3.45), ylim = YL, expand = FALSE, clip = "off") +
+    labs(x = NULL, y = YLAB, title = "Cross-cohort contrast") +
+    pres_theme(b, axis.text.x = element_text(lineheight = .95, margin = margin(t = 12 * s), vjust = 1))
 }
 
 render_figures("fig_monocyte_nk_cohort_contrasts",

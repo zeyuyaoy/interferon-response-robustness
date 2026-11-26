@@ -75,29 +75,6 @@ add("d", "mean paired change equals saved Gamma", abs(mean(tp$gamma) - tv("Gamma
 add("d", "all three donor changes positive", all(tp$gamma > 0) && tv("n_donor_gamma_neg") == 0, tp$gamma)
 add("d", "direction preserved under depositors' annotations", all(ga$Gamma[startsWith(ga$annotation, "author_")] > 0), ga$Gamma[startsWith(ga$annotation, "author_")])
 
-INK <- "#1f1f1d"
-SUB <- "#55544f"
-MUTED <- "#a3a29a"
-POS <- c(dark = "#1b6e3c", mid = "#2f9e5b", pale = "#e3f3e8", soft = "#b5dfc2", edge = "#6fbb8a")
-NEG <- c(dark = "#a31d22", mid = "#d64545", pale = "#fbe3e3", soft = "#efb4b4", edge = "#d98c8c")
-pt <- function(x) x / .pt
-MINUS <- "−"
-num <- function(x) paste0(ifelse(x < 0, MINUS, "+"), sprintf("%.3f", abs(x)))
-tick <- function(b) sub("^-", MINUS, format(b, trim = TRUE))
-dcol <- function(v, kk) ifelse(v > 0, POS[[kk]], NEG[[kk]])
-dshape <- function(v) ifelse(v > 0, 24, 25)
-YLAB <- quote("Monocyte" - "NK contrast, " * delta[italic(d)] * " (" * log[2] * " units)")
-
-theme_poster <- function(...) theme_classic(base_size = 24) + theme(
-  text = element_text(colour = INK), axis.text = element_text(size = 24, colour = INK), axis.title = element_text(size = 24, colour = INK),
-  axis.line.x = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_text(margin = margin(t = 10), vjust = 1),
-  axis.line.y = element_line(colour = INK, linewidth = .7), axis.ticks.y = element_line(colour = INK, linewidth = .7),
-  axis.ticks.length = unit(7, "pt"), axis.title.y = element_text(margin = margin(r = 12)),
-  plot.title = element_text(size = 34, face = "bold", margin = margin(b = 26)), plot.title.position = "plot",
-  plot.subtitle = element_text(size = 20, colour = SUB, lineheight = 1.05, margin = margin(b = 14)),
-  plot.background = element_rect(fill = "white", colour = NA), panel.background = element_rect(fill = "white", colour = NA),
-  plot.margin = margin(18, 24, 18, 18)) + theme(...)
-
 panel_a <- function(W = 17, H = 4.05) {
   z <- pt(24)
   ar <- grid::arrow(type = "closed", length = unit(.13, "in"))
@@ -130,11 +107,11 @@ panel_a <- function(W = 17, H = 4.05) {
       annotate("segment", x = 1.6, xend = 1.9, y = y + c(.5, -.5), yend = y + c(.5, -.5), linewidth = .9, colour = SUB, arrow = ar) +
       annotate("rect", xmin = 1.9, xmax = 4.85, ymin = y + .14, ymax = y + .86, fill = "#ededea", colour = "#8f8e86", linewidth = .8) +
       annotate("text", x = 3.375, y = y + .5, label = "Untreated", size = z, colour = INK) +
-      annotate("rect", xmin = 1.9, xmax = 4.85, ymin = y - .86, ymax = y - .14, fill = P[["mid"]], colour = P[["dark"]], linewidth = .8) +
+      annotate("rect", xmin = 1.9, xmax = 4.85, ymin = y - .86, ymax = y - .14, fill = P[["dark"]], colour = P[["dark"]], linewidth = .8) +
       annotate("text", x = 3.375, y = y - .5, label = '"IFN-"*beta~"stimulated"', parse = TRUE, size = z, colour = "white") +
       annotate("segment", x = 4.85, xend = 5.3, y = y + c(.5, -.5), yend = y + c(.14, -.14), linewidth = .9, colour = SUB, arrow = ar) +
       annotate("rect", xmin = 5.3, xmax = 10.6, ymin = y - .5, ymax = y + .5, fill = P[["pale"]], colour = P[["dark"]], linewidth = 1) +
-      annotate("text", x = 7.95, y = y + .19, label = "Stimulated − untreated", size = z, fontface = "bold", colour = INK) +
+      annotate("text", x = 7.95, y = y + .19, label = "Stimulated - untreated", size = z, fontface = "bold", colour = INK) +
       annotate("text", x = 7.95, y = y - .2, label = "mean over 10 predefined genes", size = z, colour = INK) +
       annotate("segment", x = 10.6, xend = CX - .74, y = y, yend = y, linewidth = .9, colour = SUB, arrow = ar) +
       geom_polygon(data = ring(CX, y, .72), aes(x, y), fill = P[["pale"]], colour = P[["dark"]], linewidth = 1.6) +
@@ -142,10 +119,10 @@ panel_a <- function(W = 17, H = 4.05) {
       annotate("segment", x = CX + .72, xend = 13.15, y = y, yend = mid + sign(y - mid) * .2, linewidth = 1.1, colour = SUB, arrow = ar)
   }
   g + annotate("rect", xmin = 13.15, xmax = 16.95, ymin = mid - .46, ymax = mid + .46, fill = "white", colour = INK, linewidth = 1.4) +
-    annotate("text", x = 15.05, y = mid, label = "delta[italic(d)] == italic(R)[list(italic(d), mono)] - italic(R)[list(italic(d), NK)]", parse = TRUE, size = z * 1.05, colour = INK) +
+    annotate("text", x = 15.05, y = mid, label = 'delta[italic(d)] == italic(R)[list(italic(d), mono)] * " - " * italic(R)[list(italic(d), NK)]', parse = TRUE, size = z * 1.05, colour = INK) +
     annotate("point", x = 13.5, y = mid - c(.85, 1.3), shape = c(24, 25), size = 5.5, stroke = .8,
              fill = c(POS[["mid"]], NEG[["mid"]]), colour = c(POS[["dark"]], NEG[["dark"]])) +
-    annotate("text", x = 13.75, y = mid - c(.85, 1.3), hjust = 0, parse = TRUE, size = pt(22), fontface = "bold",
+    annotate("text", x = 13.75, y = mid - c(.85, 1.3), hjust = 0, parse = TRUE, size = pt(22),
              colour = c(POS[["dark"]], NEG[["dark"]]), label = c('delta[italic(d)] > 0*":"~"monocyte > NK"', 'delta[italic(d)] < 0*":"~"NK > monocyte"'))
 }
 
@@ -165,30 +142,30 @@ panel_b <- function() {
   cnt <- data.frame(x = cx, y = c(top, bot - .85), vjust = c(0, 1), col = dcol(sm$est, "dark"),
                     t = c(sprintf("%d/%d donors positive", sum(cohorts[[1]]$d > 0), 8), sprintf("%d/%d donors negative", sum(cohorts[[2]]$d < 0), 5)))
   ggplot() +
-    geom_hline(yintercept = 0, colour = INK, linewidth = .9) +
+    zero_line() +
     geom_point(data = dd, aes(x, est), shape = dshape(dd$est), size = 7, stroke = .9, fill = dcol(dd$est, "mid"), colour = dcol(dd$est, "dark"), alpha = .9) +
     geom_errorbar(data = sm, aes(x = x, ymin = lo, ymax = hi), width = .16, linewidth = 1.9, colour = dcol(sm$est, "dark")) +
     geom_point(data = sm, aes(x, est), shape = 23, size = 12, stroke = 1.6, fill = dcol(sm$est, "dark"), colour = "white") +
     geom_text(data = lab, aes(x, y, label = t, vjust = vjust), size = pt(30), fontface = "bold", colour = lab$col) +
-    geom_text(data = cnt, aes(x, y, label = t, vjust = vjust), size = pt(22), fontface = "bold", colour = cnt$col) +
+    geom_text(data = cnt, aes(x, y, label = t, vjust = vjust), size = pt(22), colour = cnt$col) +
     annotate("point", x = c(1.78, .62), y = c(.42, -.42), shape = c(24, 25), size = 5, stroke = .8,
              fill = c(POS[["mid"]], NEG[["mid"]]), colour = c(POS[["dark"]], NEG[["dark"]])) +
-    annotate("text", x = c(1.86, .7), y = c(.42, -.42), hjust = 0, size = pt(22), fontface = "bold",
+    annotate("text", x = c(1.86, .7), y = c(.42, -.42), hjust = 0, size = pt(22),
              colour = c(POS[["dark"]], NEG[["dark"]]), label = c("positive contrast", "negative contrast")) +
     scale_x_continuous(breaks = cx, labels = c("GSE96583 (n = 8)\nSLE, mixed PBMC\n6 h, 10x 3′", "HIRISA (n = 5)\nhealthy, separated\n21 h, 10x Flex")) +
-    scale_y_continuous(breaks = seq(-8, 4, 2), labels = tick) +
+    scale_y_continuous(breaks = seq(-8, 4, 2)) +
     coord_cartesian(xlim = c(.45, 3.45), ylim = YL, expand = FALSE, clip = "off") +
     labs(x = NULL, y = YLAB, title = "(b) Cross-cohort contrast") +
-    theme_poster(axis.text.x = element_text(size = 26, face = "bold", lineheight = .95, margin = margin(t = 12), vjust = 1))
+    theme_poster(axis.text.x = element_text(lineheight = .95, margin = margin(t = 12), vjust = 1))
 }
 
 paired <- function(d, m, X, xl, yl, title, head, ml, hl = NULL, hl_lab = NULL) {
   ld <- data.frame(x = m$x + c(-.05, .05), est = m$est, hj = c(1, 0), t = ml)
   ggplot(d, aes(x, est)) +
-    geom_hline(yintercept = 0, colour = INK, linewidth = .9) +
+    zero_line() +
     geom_line(aes(group = donor), colour = MUTED, linewidth = 1.3) +
     (if (!is.null(hl)) list(
-      geom_line(data = d[d$donor == hl, ], aes(group = donor), colour = NEG[["dark"]], linewidth = 2.2, linetype = "22"),
+      geom_line(data = d[d$donor == hl, ], aes(group = donor), colour = NEG[["dark"]], linewidth = 2.2),
       annotate("text", x = X[2], y = d$est[d$donor == hl & d$x == X[2]] - .07 * diff(yl), vjust = 1, label = hl_lab, parse = TRUE,
                size = pt(21), colour = NEG[["dark"]]))) +
     geom_point(shape = dshape(d$est), size = 5.6, stroke = .8, fill = dcol(d$est, "mid"), colour = dcol(d$est, "dark"), alpha = .9) +
@@ -197,7 +174,6 @@ paired <- function(d, m, X, xl, yl, title, head, ml, hl = NULL, hl_lab = NULL) {
     geom_text(data = ld, aes(label = t, hjust = hj), size = pt(25), fontface = "bold", lineheight = .9, colour = dcol(ld$est, "dark")) +
     annotate("text", x = mean(X), y = yl[2], vjust = 1, label = head, parse = TRUE, size = pt(24), colour = INK) +
     scale_x_continuous(breaks = X, labels = xl) +
-    scale_y_continuous(labels = tick) +
     coord_cartesian(xlim = c(0, 1), ylim = yl, expand = FALSE, clip = "off") +
     labs(x = NULL, y = quote(delta[italic(d)] * " (" * log[2] * " units)"), title = title) +
     theme_poster()
@@ -209,8 +185,8 @@ panel_c <- function() {
   m <- data.frame(x = XC, est = c(pri$theta, alt$theta))
   paired(d, m, XC, parse(text = c('atop("edgeR"~log[2]~"CPM", "(prior count 2)")', 'log[2]*"(CPM + 1)"')), c(-1.15, 3.75),
          "(c) Analytical sensitivity",
-         sprintf('bold("Estimate shift"~"%s"~log[2]~"units")', paste0(MINUS, r3(abs(alt$theta - pri$theta)))),
-         num(m$est), hl = "1016", hl_lab = sprintf('bold("Donor 1016:")~"+"%%->%%"%s"', MINUS))
+         sprintf('bold("Estimate shift"~"%s"~log[2]~"units")', paste0("-", r3(abs(alt$theta - pri$theta)))),
+         num(m$est), hl = "1016", hl_lab = 'bold("Donor 1016:")~"+"%->%"-"')
 }
 
 XD4 <- c(.3, .66)
@@ -277,6 +253,8 @@ for (i in seq_along(PANELS))
       c(man$effective_ppi_w[i], man$megapixels[i], man$file_mb[i]))
 add("export", "full-resolution figure at 400 ppi", all(man$effective_ppi_w[5] == PPI, man$effective_ppi_h[5] == PPI), man$megapixels[5])
 add("export", "Slides figure within 25 MP and 50 MB", man$megapixels[6] <= MAX_MP && man$file_mb[6] < 50, c(man$effective_ppi_w[6], man$megapixels[6]))
+svgs <- grep("\\.svg$", paths, value = TRUE)
+add("export", "SVGs contain no U+2212 or U+2013", !any(sapply(svgs, function(f) has_bytes(f, "\u2212") || has_bytes(f, "\u2013"))), length(svgs))
 add("all", "source files unchanged", identical(unname(md5_before), unname(tools::md5sum(IN))), length(IN))
 cc <- do.call(rbind, chk)
 utils::write.csv(man, file.path(OUT, "panel_manifest.csv"), row.names = FALSE)

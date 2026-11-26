@@ -20,30 +20,37 @@ add_check(NAME, "time-course 4 h and 24 h means match reported values (3 dp)", !
 
 rows <- data.frame(y = c(3, 2, 1), name = c("GSE96583", "HIRISA", "GSE226572"), det = c("SLE · n = 8", "Healthy · n = 5", "Healthy · n = 3"))
 ci <- data.frame(y = c(3, 2), est = c(kp$theta, hp$theta), lo = c(kp$ci_lower, hp$ci_lower), hi = c(kp$ci_upper, hp$ci_upper))
-tc <- data.frame(y = 1, x = c(g[["h4"]], g[["h24"]]), lab = c("4 h", "24 h"), fill = c("white", "#5b6b8c"))
-SLATE <- "#5b6b8c"
+tc <- data.frame(y = 1, x = c(g[["h4"]], g[["h24"]]), lab = c("4 h", "24 h"))
+add_check(NAME, "mean labels read +1.834 and -4.609", identical(num(ci$est), c("+1.834", "-4.609")), num(ci$est))
+add_check(NAME, "time-course labels read 4 h -0.173 and 24 h +0.382",
+          identical(paste(tc$lab, num(tc$x)), c("4 h -0.173", "24 h +0.382")), paste(tc$lab, num(tc$x)))
 XL <- c(-8.3, 4.4)
+B <- BASE[["horizontal"]]
+S <- B / 24
 
-fig <- function(h, layout) {
+fig <- function(layout) {
   ggplot() +
-    geom_vline(xintercept = 0, colour = COL[["ink"]], linewidth = .6, linetype = "dashed") +
-    geom_errorbar(data = ci, aes(y = y, xmin = lo, xmax = hi), orientation = "y", width = .14, linewidth = 1.3, colour = shade(ci$est, "dark")) +
-    geom_point(data = ci, aes(est, y), size = 6.5, colour = shade(ci$est, "dark")) +
-    geom_text(data = ci, aes(est, y + .3, label = sprintf("%+.2f", est)), colour = shade(ci$est, "dark"), size = 6.4, fontface = "bold") +
-    geom_segment(aes(x = g[["h4"]], xend = g[["h24"]], y = 1, yend = 1), colour = SLATE, linewidth = 1.3) +
-    geom_point(data = tc, aes(x, y), shape = 21, size = 6.5, stroke = 1.6, colour = SLATE, fill = tc$fill) +
-    geom_text(data = tc, aes(x + c(-.28, .28), y, label = lab), hjust = c(1, 0), colour = TXT[["sub"]], size = 5.4) +
-    geom_text(data = rows, aes(x = XL[1] - .4, y = y + .07, label = name), hjust = 1, size = 6.2, fontface = "bold", colour = TXT[["main"]]) +
-    geom_text(data = rows, aes(x = XL[1] - .4, y = y - .17, label = det), hjust = 1, size = 5, colour = TXT[["sub"]]) +
-    annotate("text", x = XL[1], y = -.38, hjust = 0, vjust = 1, size = 5.8, fontface = "bold", colour = SHADE$neg[["dark"]], label = "NK > monocyte") +
-    annotate("text", x = XL[2], y = -.38, hjust = 1, vjust = 1, size = 5.8, fontface = "bold", colour = SHADE$pos[["dark"]], label = "Monocyte > NK") +
-    scale_x_continuous(breaks = seq(-8, 4, 2)) +
-    coord_cartesian(xlim = XL, ylim = c(.2, 3.6), expand = FALSE, clip = "off") +
-    labs(x = expression("Monocyte" - "NK induction (" * log[2] * " units)"), y = NULL) +
-    pres_theme(text = element_text(size = 18, colour = TXT[["main"]]), axis.text.x = element_text(size = 16, colour = TXT[["main"]]),
-               axis.title.x = element_text(size = 18, margin = margin(t = 8)), axis.text.y = element_blank(), axis.ticks.y = element_blank(),
-               axis.line.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.major.x = element_line(colour = "grey88"),
-               axis.line.x = element_blank(), plot.margin = margin(6, 10, 50, 190))
+    zero_line("x") +
+    geom_errorbar(data = ci, aes(y = y, xmin = lo, xmax = hi), orientation = "y", width = .16, linewidth = 1.6, colour = dcol(ci$est, "dark")) +
+    geom_point(data = ci, aes(est, y), shape = 23, size = 12 * S, stroke = 1.4, fill = dcol(ci$est, "dark"), colour = "white") +
+    geom_text(data = ci, aes(est, y + .3, label = num(est)), fontface = "bold", colour = dcol(ci$est, "dark"), size = pt(30 * S), vjust = 0) +
+    annotate("segment", x = g[["h4"]], xend = g[["h24"]], y = 1, yend = 1, colour = INK, linewidth = 2.2) +
+    geom_point(data = tc, aes(x, y), shape = 23, size = 10 * S, stroke = 1.3, fill = dcol(tc$x, "dark"), colour = "white") +
+    geom_text(data = tc, aes(x + c(-.3, .3), y, label = paste(lab, num(x))), hjust = c(1, 0), colour = dcol(tc$x, "dark"),
+              size = pt(24 * S)) +
+    geom_text(data = rows, aes(x = XL[1] - .4, y = y + .07, label = name), hjust = 1, size = pt(26 * S), fontface = "bold", colour = INK) +
+    geom_text(data = rows, aes(x = XL[1] - .4, y = y - .2, label = det), hjust = 1, size = pt(22 * S), colour = SUB) +
+    annotate("point", x = XL[1] + .12, y = -.5, shape = 25, size = 5 * S, stroke = .8, fill = NEG[["mid"]], colour = NEG[["dark"]]) +
+    annotate("text", x = XL[1] + .35, y = -.5, hjust = 0, size = pt(22 * S), colour = NEG[["dark"]], label = "NK > monocyte") +
+    annotate("point", x = XL[2] - .12, y = -.5, shape = 24, size = 5 * S, stroke = .8, fill = POS[["mid"]], colour = POS[["dark"]]) +
+    annotate("text", x = XL[2] - .35, y = -.5, hjust = 1, size = pt(22 * S), colour = POS[["dark"]], label = "monocyte > NK") +
+    scale_x_continuous(breaks = seq(-8, 4, 2), labels = waiver()) +
+    coord_cartesian(xlim = XL, ylim = c(.4, 3.75), expand = FALSE, clip = "off") +
+    labs(x = YLAB, y = NULL, title = "Contrast by cohort") +
+    pres_theme(B, axis.line.x = element_line(colour = INK, linewidth = .7), axis.ticks.x = element_line(colour = INK, linewidth = .7),
+               axis.text.x = element_text(margin = margin(t = 6)), axis.title.x = element_text(margin = margin(t = 8)),
+               axis.text.y = element_blank(), axis.ticks.y = element_blank(), axis.line.y = element_blank(),
+               plot.margin = margin(14, 20, 50, 170))
 }
 
 render_figures("fig_cohort_overview_forest", list(list(name = NAME, make = fig, sizes = list(horizontal = c(w = 12.8, h = 7.2)))),
