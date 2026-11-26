@@ -1,60 +1,66 @@
-# Presentation figures
+### Presentation figures
 
-Slide and splash figures. Poster panels are separate, in `../hic2026_poster/`.
+#### Overview
 
-## Naming
+We generated these slide and splash figures from frozen result tables. We kept the poster panels separately in [`../hic2026_poster/`](../hic2026_poster/README.md).
 
-`<figure>_<layout>.<format>`
+#### Naming and formats
 
-| Layout | Aspect | Use |
-|---|---|---|
-| `horizontal` | 16:9 | slides |
-| `vertical` | 3:4 | portrait columns |
+We named each output `<figure>_<layout>.<format>`:
 
-Each layout is written as `.png` (300 dpi, transparent), `.svg` (transparent) and `.pdf` (white). The script that writes a figure checks every plotted value against its source CSV. It also checks the aspect ratio of each layout, and that the inputs are unchanged. Results go to `checks/<script>.csv`.
+| Layout       | Aspect | Use              |
+|--------------|-------:|------------------|
+| `horizontal` |   16:9 | Slides           |
+| `vertical`   |    3:4 | Portrait columns |
 
-## Style
+We wrote each layout as `.png` (300 dpi, transparent), `.svg` (transparent) and `.pdf` (white). Each script checked every plotted value against its source CSV, the aspect ratio of each layout and the integrity of its inputs, and wrote the results to `checks/<script>.csv`.
 
-These figures and the poster panels in `../hic2026_poster/` share one style, defined in `analysis/presentation/utils_presentation.R`.
+#### Style
 
-**Sign palette.** The colours are the Okabe-Ito blue and vermillion, which stay distinct under red-green colour vision deficiency. Text always uses the darker shade of each pair.
+We defined one shared style for these figures and the poster panels in [`utils_presentation.R`](../../../analysis/presentation/utils_presentation.R).
 
-| Role | Colour | Contrast on white |
-|---|---|---|
-| Positive contrast, text and mean | `#005a8c` | 7.4:1 |
-| Positive contrast, donor fill | `#0072b2` | 5.2:1 |
-| Negative contrast, text and mean | `#a84a00` | 5.8:1 |
-| Negative contrast, donor fill | `#d55e00` | 3.9:1 (fill only, never text) |
-| Main text | `#1f1f1d` | 16.5:1 |
-| Secondary text and reference labels | `#55544f` | 7.6:1 |
-| NK cells, preparation figure | `#6b6a66` | 5.4:1 |
-| Donor lines | `#a3a29a` | 2.6:1 (lines only, never text) |
+##### Sign palette
 
-Sign is never shown by colour alone:
+We used the Okabe-Ito blue and vermillion, which remain distinct under red-green colour vision deficiency, and drew all text in the darker shade of each pair:
 
-- Donor values are up triangles when positive and down triangles when negative.
-- Means are diamonds with a white outline.
-- Paired donor lines are muted grey.
+| Role                                | Colour    | Contrast on white |
+|-------------------------------------|-----------|------------------:|
+| Positive contrast, text and mean    | `#005a8c` |             7.4:1 |
+| Positive contrast, donor fill       | `#0072b2` |             5.2:1 |
+| Negative contrast, text and mean    | `#a84a00` |             5.8:1 |
+| Negative contrast, donor fill       | `#d55e00` |  3.9:1; fill only |
+| Main text                           | `#1f1f1d` |            16.5:1 |
+| Secondary text and reference labels | `#55544f` |             7.6:1 |
+| NK cells, preparation figure        | `#6b6a66` |             5.4:1 |
+| Donor lines                         | `#a3a29a` | 2.6:1; lines only |
 
-Lineage in the preparation figure is not a sign, so it uses greys: monocytes black, NK cells dark grey.
+We never encoded sign by colour alone:
 
-**Lines.** Data lines are solid. The zero line is dotted. External reference lines, such as the GSE96583 range and mean, are dashed.
+- We drew positive donor values as up triangles and negative values as down triangles.
+- We drew means as diamonds with a white outline.
+- We drew paired donor lines in muted grey.
 
-**Minus sign.** Every minus sign is the ASCII hyphen-minus `-`, in numbers, ticks, intervals and headings. By default R's `pdf()` device draws `-` with the minus glyph. `save_figure()` patches the PDF font encoding so that `-` prints as the same hyphen in PDF, PNG and SVG. The checks confirm that no PDF keeps the minus mapping and that no SVG contains U+2212 or U+2013.
+Lineage in the preparation figure did not denote sign, so we drew monocytes in black and NK cells in dark grey.
 
-**Text.** The base size is 19 pt for horizontal layouts and 15 pt for vertical ones. The smallest text is about 12 pt at the saved size. Titles are in sentence case: "(a) Title" in multi-panel figures and a plain title in single-panel figures. Bold is kept for titles, means and short labels. The figures have no captions.
+##### Lines, minus signs and text
 
-## Figures
+We drew data lines solid, the zero line dotted and external reference lines, such as the GSE96583 range and mean, dashed.
 
-| Figure | Layouts | Script |
-|---|---|---|
-| `monocyte_nk_cohort_contrasts` | horizontal, vertical | `analysis/presentation/fig_monocyte_nk_cohort_contrasts.R` |
-| `hirisa_gene_set_sensitivity` | horizontal, vertical | `analysis/presentation/fig_gene_set_sensitivity.R` |
-| `cross_cohort_gene_set_comparison` | horizontal, vertical | `analysis/presentation/fig_gene_set_sensitivity.R` |
-| `cohort_overview_forest` | horizontal | `analysis/presentation/fig_cohort_overview_forest.R` |
-| `preparation_baseline` | horizontal, vertical | `analysis/presentation/fig_preparation_baseline.R` |
+We used the ASCII hyphen-minus `-` for every minus sign in numbers, ticks, intervals and headings. Because R's `pdf()` device maps `-` to the minus glyph, `save_figure()` patched the PDF font encoding so that `-` printed identically in PDF, PNG and SVG. Our checks confirmed that no PDF retained the minus mapping and that no SVG contained U+2212 or U+2013.
 
-## Regenerate
+We set the base text size to 19 pt for horizontal layouts and 15 pt for vertical layouts; the smallest text measured about 12 pt at the saved size. We wrote titles in sentence case, as "(a) Title" in multi-panel figures and as a plain title in single-panel figures. We reserved bold for titles, means and short labels, and we omitted captions.
+
+#### Figures
+
+| Figure                             | Layouts              | Script                                                                                                     |
+|------------------------------------|----------------------|------------------------------------------------------------------------------------------------------------|
+| `monocyte_nk_cohort_contrasts`     | horizontal, vertical | [`fig_monocyte_nk_cohort_contrasts.R`](../../../analysis/presentation/fig_monocyte_nk_cohort_contrasts.R) |
+| `hirisa_gene_set_sensitivity`      | horizontal, vertical | [`fig_gene_set_sensitivity.R`](../../../analysis/presentation/fig_gene_set_sensitivity.R)                 |
+| `cross_cohort_gene_set_comparison` | horizontal, vertical | [`fig_gene_set_sensitivity.R`](../../../analysis/presentation/fig_gene_set_sensitivity.R)                 |
+| `cohort_overview_forest`           | horizontal           | [`fig_cohort_overview_forest.R`](../../../analysis/presentation/fig_cohort_overview_forest.R)             |
+| `preparation_baseline`             | horizontal, vertical | [`fig_preparation_baseline.R`](../../../analysis/presentation/fig_preparation_baseline.R)                 |
+
+#### Reproducibility
 
 Run from the repository root:
 
@@ -62,4 +68,4 @@ Run from the repository root:
 for s in analysis/presentation/fig_*.R; do OVERWRITE=1 Rscript "$s"; done
 ```
 
-The shared saving code (`render_figures()`, `save_figure()`, `add_check()`) is in `analysis/presentation/utils_presentation.R`. So is the shared style: the palette, `dcol()`, `dshape()`, `num()`, `zero_line()`, `BASE` and `theme_poster()`.
+We kept the shared saving code (`render_figures()`, `save_figure()`, `add_check()`) and the shared style (the palette, `dcol()`, `dshape()`, `num()`, `zero_line()`, `BASE` and `theme_poster()`) in [`utils_presentation.R`](../../../analysis/presentation/utils_presentation.R).
