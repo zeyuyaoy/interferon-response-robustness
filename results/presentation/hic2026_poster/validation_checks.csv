@@ -30,4 +30,5 @@
 "export","panel_d_time_course.png at least 300 ppi at placed size and within Google Slides 25 MP",TRUE,"400.0 /  10.1 /   0.3"
 "export","full-resolution figure at 400 ppi",TRUE,"65.6"
 "export","Slides figure within 25 MP and 50 MB",TRUE,"245.0 /  24.6"
+"export","SVGs contain no U+2212 or U+2013",TRUE,"5"
 "all","source files unchanged",TRUE,"9"
