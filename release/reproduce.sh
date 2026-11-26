@@ -11,6 +11,9 @@ run analysis/independent_cohort/scripts/02_analysis.R
 run analysis/independent_cohort/triangulation/01_triangulation.R
 run analysis/independent_cohort/preparation/00_download.R
 run analysis/independent_cohort/preparation/01_preparation.R
+run analysis/independent_cohort/batch/00_download.R design
+run analysis/independent_cohort/batch/00_download.R
+run analysis/independent_cohort/batch/01_batch.R
 run analysis/time_course/scripts/00_manifest.R
 run analysis/time_course/scripts/01_download.R
 run analysis/time_course/scripts/02_annotation.R
